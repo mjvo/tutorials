@@ -1,0 +1,56 @@
+#titleb4authors {
+    margin: 0 0 4rem 0;
+}
+#titleb4authors h1 {
+    margin-bottom: 0rem;
+}
+
+#titleb4authors p {
+    margin: 0rem;
+    font-size: 1.2rem;
+    color: rgba(0,0,0,.33);
+}
+
+#titleb4authors hr {
+    margin: 0rem;
+    border-style: inset;
+    clear: both;
+}
+
+img[src*='#left'] { 
+    float: left;
+    width: 33%;
+    height: auto;
+    margin: 0 1rem 1rem 0;
+}
+img[src*='#right'] { 
+    float: right;
+    width: 33%;
+    height: auto;
+    margin: 0 0 1rem 1rem;
+}
+img[src*='#center'] { 
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 1rem auto;
+    float: none!important;
+}
+
+img[src*='#5']{
+    width: 4%;
+    height: auto;
+}
+
+img[src*='#15']{
+    width: 15%;
+    height: auto;
+}
+
+img[src*='#50']{
+    width: 49%;
+    height: auto;
+}
+img[src*='#pad-top']{
+    padding-top: 1rem;
+}

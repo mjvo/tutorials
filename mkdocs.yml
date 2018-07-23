@@ -1,0 +1,43 @@
+# Site information
+site_name: Wired! Lab - Tutorial Repository
+
+## To DO - Creative Commons and Google Analytics
+
+# Copyright
+# copyright: '<a href="#">Copyright</a> &copy; 2016 - 2017 Martin Donath'
+
+# Google Analytics
+# google_analytics:
+#  - 'UA-XXXXXXXX-X'
+#  - 'auto'
+
+# Material for MkDocs Theme Configuration
+theme:
+  name: 'material'
+  custom_dir: 'theme'
+  palette:
+    primary: 'white'
+    accent: 'indigo'
+  logo: 'images/wired_avatar.svg'
+  favicon: 'images/favicon.ico'
+
+extra_css:
+  - 'stylesheets/extra.css'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Page Hierarchy for Nav / TOC
+pages:
+  - 'index.md'
+  - Sketchup:
+    - 'Introduction to SketchUp 2018' : 'intro2sketchup/index.md'
+
+
