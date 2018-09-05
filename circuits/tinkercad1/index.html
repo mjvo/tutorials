@@ -1,0 +1,695 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="An introductory tutorial to Tinkercad Circuits">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Tinkercad Circuits</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#assumptions" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Tutorial Repository" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Mark Olson's Tutorial Repository
+              </span>
+              <span class="md-header-nav__topic">
+                Tinkercad
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Tutorial Repository" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Tutorial Repository
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tinkercad
+      </label>
+    
+    <a href="./" title="Tinkercad" class="md-nav__link md-nav__link--active">
+      Tinkercad
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assumptions" title="Assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-setup" title="Circuit Setup" class="md-nav__link">
+    Circuit Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit-1-no-breadboard-led-circuit" title="Circuit #1 - No Breadboard LED Circuit" class="md-nav__link">
+    Circuit #1 - No Breadboard LED Circuit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-2-led-circuit-on-a-breadboard" title="Circuit #2 - LED Circuit on a Breadboard" class="md-nav__link">
+    Circuit #2 - LED Circuit on a Breadboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-multimeter" title="Using a Multimeter" class="md-nav__link">
+    Using a Multimeter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-voltages" title="Reading Voltages" class="md-nav__link">
+    Reading Voltages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-amperage" title="Reading Amperage" class="md-nav__link">
+    Reading Amperage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assumptions" title="Assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-setup" title="Circuit Setup" class="md-nav__link">
+    Circuit Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circuit-1-no-breadboard-led-circuit" title="Circuit #1 - No Breadboard LED Circuit" class="md-nav__link">
+    Circuit #1 - No Breadboard LED Circuit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-2-led-circuit-on-a-breadboard" title="Circuit #2 - LED Circuit on a Breadboard" class="md-nav__link">
+    Circuit #2 - LED Circuit on a Breadboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-multimeter" title="Using a Multimeter" class="md-nav__link">
+    Using a Multimeter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-voltages" title="Reading Voltages" class="md-nav__link">
+    Reading Voltages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-amperage" title="Reading Amperage" class="md-nav__link">
+    Reading Amperage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">Tinkercad</h1>
+                <p style="float:left;">Last Update: <em>2018-09-04</em></p>
+                
+                <p style="float:right;">Author(s): <em>Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <h2 id="assumptions">Assumptions</h2>
+<p>The following tutorial assumes that:</p>
+<ol>
+<li>
+<p>You have created a Tinkercad / Autodesk account. (If you have not yet done so, please <a href="https://www.tinkercad.com/auth/shadowbox_register_fullscreen">create one</a>.)</p>
+</li>
+<li>
+<p>You are <a href="https://www.tinkercad.com/auth/shadowbox_fullscreen">signed in</a> using your account.</p>
+</li>
+<li>
+<p>You have already completed the four tutorials in the <a href="https://www.tinkercad.com/learn/#/learn/circuits/learning">Circuits “Getting Started” Project Gallery</a>:</p>
+<ul>
+<li>Start Simulating</li>
+<li>Editing Components (we’ll cover Arduino in a future class; this just shows you how to modify components whose properties are editable.)</li>
+<li>Wiring Components</li>
+<li>Adding Components</li>
+</ul>
+</li>
+<li>
+<p>You have already completed the three <a href="https://www.tinkercad.com/learn/#/learn/circuits/lessons">Circuits “Skill Builders Lessons”</a>: </p>
+<ul>
+<li>Introducing the Breadboard</li>
+<li>Ohm’s Law</li>
+<li>Series and Parallel Circuits</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="circuit-setup">Circuit Setup</h2>
+<p>In this section of the tutorial you will create two identical circuits in the same Tinkercad Circuits workspace:  one without a breadboard, and the second using a breadboard.  Later in the tutorial we will use these circuits to gain a better understanding of current, resistance, and voltage. </p>
+<p>In both cases, you will be creating a simple LED circuit using a battery, LED, and resistor.  Here is the circuit diagram:</p>
+<p><img alt="Circuit Diagram" src="circuit_diagram.png" /></p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Calculate the Proper Resistor Value:</strong></p>
+<p>The circuit diagram above indicates a 3V battery (2 x AA) and an LED with a forward voltage (voltage drop) of approximately 2.06V.  The LED's ideal forward current is 20mA.</p>
+<p>What is the ideal resistor value (in ohms) for this circuit?  In other words, what resistor (R) will keep the current (I) through the LED closest to 20mA, the current at which the LED will burn the brightest without jeopardizing its longevity or, worse, overloading?</p>
+<p>Use this formula (based on Ohm's Law and Kirchhoff’s voltage law):</p>
+<div>
+<div class="MathJax_Preview">
+R = \frac{V_{source}-V_{drop}}{I_{forward}}
+</div>
+<script type="math/tex; mode=display">
+R = \frac{V_{source}-V_{drop}}{I_{forward}}
+</script>
+</div>
+<hr />
+<p>Answer: 
+$$ R\ =\ \Rule{1cm}{0.15mm}{0.15mm} \ \Omega $$</p>
+</div>
+<p><br /><br /></p>
+<h3 id="circuit-1-no-breadboard-led-circuit">Circuit #1 - No Breadboard LED Circuit</h3>
+<ol>
+<li>
+<p>Go to your Tinkercad Dashboard <a href="https://www.tinkercad.com/#/dashboard">https://www.tinkercad.com/#/dashboard</a></p>
+</li>
+<li>
+<p>Click on the <a href="https://www.tinkercad.com/#/dashboard?type=circuits&amp;collection=designs">Circuits button</a> in the left panel.</p>
+</li>
+<li>
+<p>Click on the green "Create new Circuit" button.</p>
+<p><button data-md-color-primary="green">Create new Circuit</button></p>
+<p>A new blank canvas will open in your browser.</p>
+</li>
+<li>
+<p>Using the Components Palette on the right, click and drag the following components into the canvas:</p>
+<ul>
+<li>Resistor</li>
+<li>LED</li>
+<li>1.5V Battery (AA)</li>
+</ul>
+</li>
+<li>
+<p>Click on the Battery in the canvas.  In the configuration panel that appears, set the "Count" to "2 Batteries" (e.g. we want a 3V supplied to our circuit, so 2 x 1.5V = 3V ).</p>
+</li>
+<li>
+<p>Click on the Resistor in the canvas.  In the configuration panel that appears, set the Resistance to the Ω you calculated above.</p>
+</li>
+<li>
+<p>Click and drag between terminals of your components to wire up your circuit.  If you wish, you may click on the individual wires to set their color.  </p>
+<p>After completing your wiring and arranging/rotating the components, your circuit should look something like this:</p>
+<p><img alt="LED Circuit with No Breadboard" src="no_breadboard.png" /></p>
+</li>
+<li>
+<p>Click on the "Start Simulation" button in the upper-right of the browser window to simulate the circuit.  The LED should be brightly lit.</p>
+<div class="admonition failure">
+<p class="admonition-title"><strong>Troubleshooting</strong></p>
+<p>If your LED is blown or shows a warning indicator, your calculated resistor value is too low.  Review your calculations.</p>
+<p>If your LED is dim, your calculated resistor value is too high.  Review your calculations.</p>
+<p>If your LED does not turn on at all, you may have mis-wired your circuit.  Check your connections and wire-routing.  Remember, LEDs are diodes and thus have polarity.</p>
+</div>
+</li>
+</ol>
+<p><br /><br /></p>
+<h3 id="circuit-2-led-circuit-on-a-breadboard">Circuit #2 - LED Circuit on a Breadboard</h3>
+<p>Next, using the same canvas, let's create a breadboard version of the same circuit.  </p>
+<ol>
+<li>
+<p>Move the circuit you just created to the left or right of the canvas to give yourself space for the new circuit.</p>
+</li>
+<li>
+<p>Again, using the Components Palette on the right, click and drag the following components into the canvas:</p>
+<ul>
+<li>Resistor</li>
+<li>LED</li>
+<li>1.5V Battery (AA)</li>
+<li><em><strong>Breadboard</strong></em></li>
+</ul>
+</li>
+<li>
+<p>Set the Battery Count to 2.</p>
+</li>
+<li>
+<p>Set the Resistor's resistance to the same Ω value you calculated for the non-breadboard circuit above.</p>
+</li>
+<li>
+<p>Using wires and the breadboard, create the circuit.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hovering your mouse over the breadboard rows will remind you <a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard#anatomy-of-a-breadboard">how a breadboard is configured</a> (power buses on the outside rails, connected rows separated by a "ravine").</p>
+</div>
+</li>
+<li>
+<p>After completing your wiring and arranging/rotating the components, your circuit should look something like this:</p>
+<p><img alt="LED Circuit with Breadboard" src="breadboard.png" /></p>
+</li>
+<li>
+<p>Click on the "Start Simulation" button again in the upper-right of the browser window to simulate the circuit.  The LED on the breadboard should be brightly lit.</p>
+</li>
+</ol>
+<hr />
+<h2 id="using-a-multimeter">Using a Multimeter</h2>
+<p>Now that we have a working circuit, let's use Tinkercad's virtual multimeter to take some measurements on our circuit.  </p>
+<p>From the Components Palette, find the Multimeter and add it to your canvas.</p>
+<p><img alt="Tinkercad's Virtual Multimeter" src="multimeter.png" /></p>
+<p>Note that the multimeter has three modes.  By default, it will function in Voltage mode as a <strong><code>voltmeter</code></strong>, enabling you to read voltages across different points in your circuit.</p>
+<p>The multimeter can be set to other modes easily by clicking on the multimeter in your canvas to display the configuration panel and selecting a different mode.  In Amperage mode, it will function as an <strong><code>ammeter</code></strong>, enabling you to read the current passing through specific points in your circuit.  In Resistance mode, it will function as an <strong><code>ohmmeter</code></strong>, enabling you to read the resistance between specific points in your circuit.</p>
+<h3 id="reading-voltages">Reading Voltages</h3>
+<p>We know that the total voltage of our circuit is 3V because the voltage differential between the cathode (+ terminal) and anode (- terminal) of the battery is 3V (assuming it is fully charged).</p>
+<p><img alt="Measuring the voltage across battery terminals" src="battery_voltage.png" /></p>
+<p>But let's read voltages between various points in the circuit.  </p>
+<ol>
+<li>
+<p>Read the voltage between the two sides of the resistor:</p>
+<p><img alt="Measure voltage across the resistor" src="resistor_voltage.png" /></p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Voltage Across the Resistor</strong></p>
+<p>Fill in your reading below: 
+$$ Voltage\ =\ \Rule{1cm}{0.15mm}{0.15mm} \ V $$</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Read the voltage between the anode and the cathode of the LED:</p>
+<p><img alt="Measure voltage across the LED" src="LED_voltage.png" /></p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Voltage Across the LED</strong></p>
+<p>Fill in your reading below: 
+$$ Voltage\ =\ \Rule{1cm}{0.15mm}{0.15mm} \ V $$</p>
+</div>
+<p><br /></p>
+</li>
+<li>
+<p>Finally, read the voltage between the two terminals of the battery in the circuit.</p>
+<p><img alt="Measure voltage across the battery" src="wired_battery_voltage.png" /></p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Voltage Across the Battery</strong></p>
+<p>Fill in your reading below: 
+$$ Voltage\ =\ \Rule{1cm}{0.15mm}{0.15mm} \ V $$</p>
+<hr />
+<p>If your voltage reading ≠ 3V, what do you think accounts for the difference?
+<br /><br /><br /><br /><br /><br /><br /><br /></p>
+</div>
+</li>
+<li>
+<p>What do you observe when you add the voltage across the resistor to the voltage across the LED?</p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Total Voltage</strong></p>
+<p>Fill in your reading below: 
+$$ V_{resistor} + V_{led} \ = \ \Rule{1cm}{0.15mm}{0.15mm} \ V $$</p>
+<hr />
+<p>Observation:
+<br /><br /><br /><br /><br /><br /><br /><br /></p>
+</div>
+</li>
+</ol>
+<h3 id="reading-amperage">Reading Amperage</h3>
+<p>Finally, let's use the multimeter as an <strong><code>ammeter</code></strong> to measure the total current (I) being drawn by our circuit. </p>
+<div class="admonition attention">
+<p class="admonition-title">Important</p>
+<p>Remember: Voltmeter and ohmmeters are wired in <strong>parallel</strong> to the component being measured.  However, ammeters <em>must</em> be wired in <strong>series</strong>.  See <a href="https://learn.sparkfun.com/tutorials/series-and-parallel-circuits">https://learn.sparkfun.com/tutorials/series-and-parallel-circuits</a></p>
+</div>
+<p>Wire your multimeter into your circuit in series as illustrated below:</p>
+<p><img alt="Measuring Current in Series" src="current.png" /></p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Measuring Current</strong></p>
+<p>What is the current being drawn by the circuit? <br />
+Provide your answer in both amps (A) and milliamps (mA)
+<br /><br /><br /><br /><br /><br /><br /><br /></p>
+<hr />
+<p>What happens to the current if you increase the voltage in the circuit, such as changing the battery from two AA's (3V) to 3 AA's (4.5V)?</p>
+<p><br /><br /><br /><br /><br /><br /><br /><br /></p>
+<hr />
+<p>Similarly, what happens if you leave the voltage alone but increase the resistance in the circuit, such as increasing the resistance of the resistor to 100 Ω?</p>
+<p><br /><br /><br /><br /><br /><br /><br /><br /></p>
+</div>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Welcome" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
