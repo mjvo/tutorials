@@ -1,3 +1,10 @@
+button[data-md-color-primary]{
+    padding: .8rem;
+    font-weight: bold;
+    width:auto;
+    border-radius: 0.35rem;
+}
+
 #titleb4authors {
     margin: 0 0 4rem 0;
 }

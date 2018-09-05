@@ -1,5 +1,5 @@
 # Site information
-site_name: Wired! Lab - Tutorial Repository
+site_name: Mark Olson's Tutorial Repository
 
 ## To DO - Creative Commons and Google Analytics
 
@@ -18,7 +18,7 @@ theme:
   palette:
     primary: 'white'
     accent: 'indigo'
-  logo: 'images/wired_avatar.svg'
+  logo: 'images/avatar.svg'
   favicon: 'images/favicon.ico'
 
 extra_css:
@@ -31,13 +31,18 @@ markdown_extensions:
       guess_lang: false
   - footnotes
   - meta
+  - pymdownx.arithmatex
   - pymdownx.tasklist:
       custom_checkbox: true
 
+# Extra Javascript
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
 # Page Hierarchy for Nav / TOC
-pages:
+nav:
   - 'index.md'
-  - Sketchup:
-    - 'Introduction to SketchUp 2018' : 'intro2sketchup/index.md'
+  - Circuits:
+    - 'Tinkercad' : 'circuits/tinkercad1/index.md'
 
 
