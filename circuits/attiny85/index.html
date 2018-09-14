@@ -1,0 +1,882 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="An introductory tutorial to the ATtiny85 Microcontroller">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>ATtiny85</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#about-the-attiny85-microcontroller" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Tutorial Repository" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Mark Olson's Tutorial Repository
+              </span>
+              <span class="md-header-nav__topic">
+                ATtiny85
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Tutorial Repository" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Tutorial Repository
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tinkercad1/" title="Tinkercad" class="md-nav__link">
+      Tinkercad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ATtiny85
+      </label>
+    
+    <a href="./" title="ATtiny85" class="md-nav__link md-nav__link--active">
+      ATtiny85
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-attiny85-microcontroller" title="About the ATtiny85 Microcontroller" class="md-nav__link">
+    About the ATtiny85 Microcontroller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attiny85-hands-on-with-tinkercad" title="ATtiny85 Hands-On with Tinkercad" class="md-nav__link">
+    ATtiny85 Hands-On with Tinkercad
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powering-an-attiny85" title="Powering an ATtiny85" class="md-nav__link">
+    Powering an ATtiny85
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-blinky" title="Project "Blinky"" class="md-nav__link">
+    Project "Blinky"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmatically-fade-an-led" title="Programmatically Fade an LED" class="md-nav__link">
+    Programmatically Fade an LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmatically-fade-an-led-with-a-potentiometer" title="Programmatically Fade an LED with a Potentiometer" class="md-nav__link">
+    Programmatically Fade an LED with a Potentiometer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-attiny85-microcontroller" title="About the ATtiny85 Microcontroller" class="md-nav__link">
+    About the ATtiny85 Microcontroller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attiny85-hands-on-with-tinkercad" title="ATtiny85 Hands-On with Tinkercad" class="md-nav__link">
+    ATtiny85 Hands-On with Tinkercad
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powering-an-attiny85" title="Powering an ATtiny85" class="md-nav__link">
+    Powering an ATtiny85
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-blinky" title="Project "Blinky"" class="md-nav__link">
+    Project "Blinky"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmatically-fade-an-led" title="Programmatically Fade an LED" class="md-nav__link">
+    Programmatically Fade an LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmatically-fade-an-led-with-a-potentiometer" title="Programmatically Fade an LED with a Potentiometer" class="md-nav__link">
+    Programmatically Fade an LED with a Potentiometer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">ATtiny85</h1>
+                <p style="float:left;">Last Update: <em>2018-09-12</em></p>
+                
+                <p style="float:right;">Author(s): <em>Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <h2 id="about-the-attiny85-microcontroller">About the ATtiny85 Microcontroller</h2>
+<p><img alt="ATtiny85 microcontroller" src="attiny85.png" /></p>
+<p>The ATtiny85 microcontroller is a powerful yet extremely low cost (~ 50¢ each) <a href="https://learn.sparkfun.com/tutorials/integrated-circuits">integrated circuit</a>. The chip itself operates with an 8-bit data bus, which means it can access <a href="https://en.wikipedia.org/wiki/Octet_(computing)">8-bits</a> of data per computer instruction (set, copy, add, subtract, multiply, compare, etc.).  Its CPU speed is capable of up to 8MHz and it has 8KB flash memory for storing Arduino programs.  [By comparison, our <a href="https://www.adafruit.com/product/3010">Adafruit Feather M0</a> microcontrollers have a 32-bit data bus and operate at 48MHz with 256KB flash memory.  Much more powerful, but they cost 7 times as much!]</p>
+<p>The ATtiny85 requires an operating voltage between 1.8V and 5.5V and has 5 I/O (input/output) pins for connecting electronic components.</p>
+<p>Here is the pin breakout: <br />
+<img alt="ATtiny85 Pinout" src="attiny85pinout.png" /></p>
+<p>Pin #8 (VCC) is connected to the positive terminal of your voltage source (1.8V - 5.5V).  Pin #4 (GND) is connected to ground / the negative terminal of your voltage source.  The <a href="https://www.arduino.cc/reference/en/">Arduino programming language</a> can be used to control pins #5, #6, #7, #2 and #3:</p>
+<ul>
+<li>Pins 0 - 4 (marked in light blue) are all capable of digitalWrite()/digitalRead()
+functions</li>
+<li>Pins 0 &amp; 1 are capable of PWM analogWrite() at 8-bit resolution (0-255)</li>
+<li>Pins A1-A3 (marked in red) are capable of analogRead(), measuring analog voltage through a 10-bit ADC (Analog to Digital Converter).<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></li>
+</ul>
+<p>The RESET pin is a special pin; connecting this pin to GND will restart the program running on your ATtiny85.</p>
+<hr />
+<h2 id="attiny85-hands-on-with-tinkercad">ATtiny85 Hands-On with Tinkercad</h2>
+<p>Over the course of this tutorial, we will create several circuits with the ATtiny85 microcontroller using Autodesk's Tinkercad circuit simulator:</p>
+<ul>
+<li>The classic project "Blinky"</li>
+<li>Programmatically Fade an LED</li>
+<li>Programmatically Fade an LED with a Potentiometer</li>
+<li>RGB LED color control with a Potentiometer</li>
+</ul>
+<p>First, however, we need to wire up our ATtiny85 to a power supply.</p>
+<hr />
+<h3 id="powering-an-attiny85">Powering an ATtiny85</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As noted in the "About" section above, the ATtiny85 has an operating voltage between 1.8V and 5.5V.  Anything below 1.8V and the microcontroller will not have enough voltage to function.  Anything over 5.5V and you risk overloading the chip, as illustrated by the 9V battery blowing the IC in the image below:
+<img alt="9V Overload" src="9v_overload.png" /></p>
+</div>
+<p>For this tutorial, you can use 1.5V AA batteries -- you'll need more than one (2 batteries = 3V; 3 batteries = 4.5V) -- or a 3V coin cell battery.  The illustrations for the remainder of this tutorial will make use of a 3V coin cell battery.  </p>
+<ol>
+<li>
+<p>Place your ATtiny85 in the center of your breadboard, straddling the breadboard's ravine.
+<img alt="ATtiny85 on a breadboard" src="attiny85_breadboard.png" /></p>
+</li>
+<li>
+<p>Place a battery near your breadboard.
+<img alt="Add a battery" src="add_battery.png" /></p>
+</li>
+<li>
+<p>Use a red wire to connect the positive (+) terminal of the battery to the + power bus of the breadboard.</p>
+</li>
+<li>
+<p>Use a red wire to connect the + power bus of the breadboard to the VCC pin of the ATtiny85.</p>
+</li>
+<li>
+<p>Use a black wire to connect the negative (-) terminal of the battery to the - power bus of the breadboard.</p>
+</li>
+<li>
+<p>Use a black wired to connect the - power bus the breadboard to the GND pin of the ATtiny85.
+<img alt="Coin Cell Battery" src="coin_battery.png" /></p>
+</li>
+</ol>
+<hr />
+<h3 id="project-blinky">Project "Blinky"</h3>
+<p>First let's wire up the ATtiny85 for the classic Arduino project, Project Blinky. </p>
+<p>Here is a schematic:
+<img alt="ATtiny85 Project Blinky Schematic" src="attiny85_blink_schematic.png" /></p>
+<p>For this project, you will need the following additional components:</p>
+<ul>
+<li>1 x Red LED</li>
+<li>1 x 47Ω Resistor</li>
+</ul>
+<p>Drag the two components into your Tinkercad window and, consulting the circuit schematic above, recreate the circuit on your breadboard.</p>
+<ol>
+<li>
+<p>Connect the anode (positive terminal) of the LED to digital pin 0 (light blue) of the ATtiny85 microcontroller. <br />
+<img alt="Analog Pins on the ATtiny85" src="attiny85pinout.png" /></p>
+</li>
+<li>
+<p>Connect the cathode (negative terminal) of the LED to one end of the resistor.</p>
+</li>
+<li>
+<p>Connect the other end of the resistor to GND / the negative (-) power bus rail.</p>
+</li>
+<li>
+<p>Your final wiring should look like this:
+<img alt="ATtiny85 wired for Project Blinky" src="attiny85_blink_wiring.png" /></p>
+</li>
+</ol>
+<p>Next we'll turn to the code necessary to turn the LED on and off programmatically.</p>
+<ol>
+<li>
+<p>Click on the Code button in the upper-right of the interface. <br />
+<img alt="Code Button" src="code_button.png" /></p>
+</li>
+<li>
+<p>By default, Tinkercad will open into the Blocks code interface.  Blocks is a visual coding paradigm based on <a href="https://scratch.mit.edu/">MIT's Scratch</a>.  Note that Tinkercad has already pre-populated the Blocks code interface with blocks that set the ATtiny85's "built-in" LED to HIGH, wait one second, and then set the ATtiny85's "built-in" LED to LOW, waiting another second.   </p>
+<p>This may be confusing, since the ATtiny85 does NOT have a "built-in" LED like other Arduino microcontrollers such as the Arduino Uno do.  We <em>could</em> replace the blocks that reference the built-in LED with the block that would "Set Pin 0 to HIGH/LOW".   </p>
+<p><img alt="Block-based Coding Paradigm" src="blocks_coding.png" /></p>
+<p>However, we're going to switch over to the Text coding view instead.</p>
+</li>
+<li>
+<p>Find the dropdown in the upper-left of the code panel and change it from "Blocks" to "Text".  You will be prompted to confirm this intention. Click "Continue."</p>
+</li>
+<li>
+<p>You will note that Tinkercad has pre-populated the code interface with the following:   </p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Wait for 1000 millisecond(s)</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Wait for 1000 millisecond(s)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>As it happens, this is just the code we need to turn pin 0 of the ATtiny85 on and off every second.</p>
+<p>In the <a href="https://www.arduino.cc/reference/en/language/structure/sketch/setup/"><code>setup()</code></a> function, the <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/"><code>pinMode</code></a> of pin 0 is set to <code>OUTPUT</code>.  And then in the <a href="https://www.arduino.cc/reference/en/language/structure/sketch/loop/"><code>loop()</code></a> function, the <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/"><code>digitalWrite()</code></a> function is called on pin 0 and set to HIGH.  A <a href="https://www.arduino.cc/reference/en/language/functions/time/delay/"><code>delay()</code></a> function of 1000 milliseconds is called.  And then a second <code>digitalWrite()</code> function sets pin 0 to LOW, followed by one more 1000 millisecond delay.</p>
+</li>
+<li>
+<p>Click "Start Simulation" and your LED should blink on and off.  </p>
+</li>
+</ol>
+<p><strong>Congratulations!</strong> You've completed Project Blinky!</p>
+<hr />
+<h3 id="programmatically-fade-an-led">Programmatically Fade an LED</h3>
+<p>We can use this same wiring scheme to <em>fade</em> an LED instead of blinking it.  Instead of the <code>digitalWrite()</code> function, we'll instead use <a href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/"><code>analogWrite()</code></a>, taking advantage of the fact that Pin 0 is one of two pins on the ATtiny85 (marked in green below) that is capable of PWM (pulse width modulation). <br />
+<img alt="Analog Pins on the ATtiny85" src="attiny85pinout.png" /></p>
+<p>Let's modify the code accordingly:</p>
+<ol>
+<li>
+<p>The <code>setup()</code> function can be left alone; we want digital pin 0 to function as an <code>OUTPUT</code>.</p>
+</li>
+<li>
+<p>The <code>loop()</code> function requires significant modification, so delete its contents entirely and we will work through the required logic line by line.</p>
+</li>
+<li>
+<p>Recall that PWM works by modifying the duty cycle of the pin.  Rather than being HIGH 100% of the time with a <code>digitalWrite(pin, HIGH)</code> function, or LOW 100% of the time with a <code>digitalWrite(pin, LOW)</code> function, the <code>analogWrite()</code> function enables us to set different percentages of HIGH/LOW to approximate an analog voltage signal at 256 levels between 0V (LOW) and 3V (HIGH).  So, <code>analogWrite(0, 127)</code> will cycle the LED HIGH 50% of the time and LOW 50% of the time and in the case of our 3V circuit, will approximate sending an analog voltage of 1.5V through the LED.   </p>
+<p>So, to fade our LED, we will want to iterate through increasing values between 0 and 255 to fade the LED to on, and then iterate through decreasing values from 255 to 0 to fade the LED off.  One way to write that code is line by line:</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="p">...</span>  <span class="c1">// continue increasing analogWrite by 5</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">245</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">235</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="p">...</span> <span class="c1">// continue decreasing analogWrite by 5</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>But that is NOT very efficient! </p>
+</li>
+<li>
+<p>Luckily, like many programming languages, Arduino has a <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/for/"><code>for</code> control structure</a> that will allow us to radically economize on the lines of code necessary to achieve the same result.   </p>
+<p>Here is the basic structure of a <code>for</code> loop:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">initialization</span><span class="p">;</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//statement(s);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>By convention, most programmers use the variable name <code>i</code> within a <code>for</code> loop.  For example:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// this code will run 1000 times!</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>But one can use any variable name:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">elephants</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">=</span> <span class="n">elephants</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// this code will also run 1000 times!</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The incrementing code, <code>i = i + 1</code> is often abbreviated as <code>i++</code>:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// this code will run 1000 times, too!</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Finally, incrementation is not limited to increments of 1:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// increments of 2</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// this code will run 500 times</span>
+<span class="p">}</span>
+
+<span class="c1">// increments of 5, abbreviated notation</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">5</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="c1">// this code will run 200 times!</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Whew!  That was quite a detour.  Let's get back to our LED fade <code>loop()</code> function.   </p>
+<p>We want our <code>analogWrite()</code> function to iterate up from 0 to 255 in increments of 5, so within our <code>loop()</code> function we can write:</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Click "Start Simulation" and you'll see that we're halfway there.  The LED starts OFF, fades to ON, and then jumps back to OFF again, fades to ON, jumps back to OFF, etc, etc.</p>
+</li>
+<li>
+<p>So we need a second <code>for</code> loop to decrement the light level (highlighted in yellow):</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
+</span><span class="hll">        <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</pre></div>
+
+
+<p>Click "Start Simulation" and the LED should slowly fade in and out, as if it were breathing.  </p>
+</li>
+</ol>
+<p>Congratulations!  You've successfully completed the "Programmatically Fade an LED" project!</p>
+<hr />
+<h3 id="programmatically-fade-an-led-with-a-potentiometer">Programmatically Fade an LED with a Potentiometer</h3>
+<p>In this next project, we'll add a potentiometer to our circuit and use it to control the fade level of the LED.</p>
+<p>Here is the circuit schematic for your reference: <br />
+<img alt="Potentiometer LED schematic" src="attiny85_pot_schematic.png" /></p>
+<ol>
+<li>
+<p>First, delete all of the code in the Text interface of your Code panel.  We will write new code for this project.</p>
+</li>
+<li>
+<p>Next, close the Code panel to access your Components bin and locate the <strong>Potentiometer</strong>.  Drag it onto your Tinkercad canvas. <br />
+<img alt="Add a Potentiometer" src="add_potentiometer.png" /></p>
+</li>
+<li>
+<p>Connect the outer terminals of the potentiometer to the positive (+) and negative (-) bus of your breadboard. <br />
+<img alt="Power and GND connections" src="pot_pwr_gnd.png" /></p>
+</li>
+<li>
+<p>The "wiper" terminal of the potentiometer should be connected to one of the three pins on the ATtiny85 that are capable of reading analog voltages.  They are marked in red as pins A1, A2, and A3 on the pinout diagram. <br />
+<img alt="Analog Pins on the ATtiny85" src="attiny85pinout.png" /></p>
+</li>
+<li>
+<p>In the example below, we've connected the potentiometer's wiper to pin A3 of the ATtiny85 using a yellow wire. <br />
+<img alt="Potentiometer wiper to pin A03" src="pot_wiper_connect.png" /></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point you may be asking:  <em>Why didn't we connect the potentiometer wiper in series with the LED to directly control the LED's brightness?</em></p>
+<p>That's a great question!  Indeed, you might even be wondering why we need the ATtiny85 to accomplish this project at all!  In fact, if all we want to do is use a potentiometer to control the brightness of an LED, we don't need a microcontroller to do that!  You could save yourself time and money and avoid having to touch code at all! </p>
+<p>The purpose of this project, however, is on the one hand purely pedagogical:  to teach you how to use a microcontroller to read an analog voltage.  A microcontroller can put that information to use in many different ways.  In the last project of this tutorial we'll make use of that analog signal to create a circuit that would be quite a bit more difficult to accomplish without a microcontroller.  Stay tuned!</p>
+</div>
+<p>Now that we've wired up our potentiometer, let's turn to the Arduino code necessary to read its output.</p>
+<ol>
+<li>
+<p>Open the Code panel and again, switch to the Text interface.</p>
+</li>
+<li>
+<p>Let's begin by initializing some variables.  We need one to hold the value coming in from our potentiometer on pin A3:   </p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>And let's use a variable name to identify the pin that attaches to our LED.  This is considered a good practice in case you ever need to modify the pin configuration on your hardware.  Rather than having to hunt through your code for every reference to pin <code>0</code>, you can simply change it in the variable list at the top of your sketch.</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="hll"><span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></pre></div>
+
+
+</li>
+<li>
+<p>Let's do the same for the pin that attaches to our potentiometer:</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="hll"><span class="kt">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+</span></pre></div>
+
+
+</li>
+<li>
+<p>Now that we've declared our variables, we can use these in our <code>setup()</code> function to set these pins as OUTPUT and INPUT as needed:</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+
+<span class="hll"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+</span><span class="hll"><span class="p">{</span>
+</span><span class="hll">    <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+
+
+</li>
+<li>
+<p>We can now turn our attention to our program's <code>loop()</code> function.</p>
+<ol>
+<li>
+<p>The first thing we want to do each program cycle is read the value coming in over the ADC at pin A3 from the potentiometer and assign it to our <code>pot_value</code> variable:</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>The next thing we want to do is to use that value to set the <code>analogWrite()</code> value for the LED pin.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important!</p>
+<p>The ADC of pin A3 runs at 10 bits, which means that <code>analogRead()</code> is going to be giving readings between 0 and 1023.   Our <code>analogWrite()</code> function can only take an 8 bit value, between 0 and 255.  </p>
+<p>To reconcile this difference, we need to use Arduino's <a href="https://www.arduino.cc/reference/en/language/functions/math/map/"><code>map()</code> math function</a> and then use that re-mapped value to drive our LED.</p>
+</div>
+<p>In the code highlighted below, we first re-map the 10 bit <code>pot_value</code> to an 8 bit number and then pass that re-mapped value to <code>analogWrite()</code>.</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span><span class="hll">    <span class="n">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">pot_value</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+
+</li>
+</ol>
+</li>
+<li>
+<p>Our full code should read as follows:</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">pot_value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Click on "Start Simulation."  Use your mouse to manipulate the potentiometer.  When the indicator is closest to the pin you have connected to the positive (+) voltage, the LED should burn brightest.  When the indicator is moved toward the pin that you have connected to ground (-), the LED should dim and then turn off completely.</p>
+</li>
+</ol>
+<p>Congratulations!  You've completed the "Programmatically Fade an LED with a Potentiometer" project.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>"10-bit" refers to the <em>resolution</em> of the ADC, meaning that it can convert an analog signal into 1024 (0-1023) discrete levels.  See <a href="https://en.wikipedia.org/wiki/Analog-to-digital_converter#Resolution">https://en.wikipedia.org/wiki/Analog-to-digital_converter#Resolution</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../tinkercad1/" title="Tinkercad" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Tinkercad
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
