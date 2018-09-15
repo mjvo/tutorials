@@ -290,6 +290,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rgb-led-color-control-with-a-potentiometer" title="RGB LED Color Control with a Potentiometer" class="md-nav__link">
+    RGB LED Color Control with a Potentiometer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -368,6 +375,13 @@
           <li class="md-nav__item">
   <a href="#programmatically-fade-an-led-with-a-potentiometer" title="Programmatically Fade an LED with a Potentiometer" class="md-nav__link">
     Programmatically Fade an LED with a Potentiometer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-led-color-control-with-a-potentiometer" title="RGB LED Color Control with a Potentiometer" class="md-nav__link">
+    RGB LED Color Control with a Potentiometer
   </a>
   
 </li>
@@ -518,17 +532,17 @@ functions</li>
 </li>
 <li>
 <p>You will note that Tinkercad has pre-populated the code interface with the following:   </p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-   <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Wait for 1000 millisecond(s)</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Wait for 1000 millisecond(s)</span>
+   <span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Wait for 1000 millisecond(s)</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Wait for 1000 millisecond(s)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -556,38 +570,38 @@ functions</li>
 <li>
 <p>Recall that PWM works by modifying the duty cycle of the pin.  Rather than being HIGH 100% of the time with a <code>digitalWrite(pin, HIGH)</code> function, or LOW 100% of the time with a <code>digitalWrite(pin, LOW)</code> function, the <code>analogWrite()</code> function enables us to set different percentages of HIGH/LOW to approximate an analog voltage signal at 256 levels between 0V (LOW) and 3V (HIGH).  So, <code>analogWrite(0, 127)</code> will cycle the LED HIGH 50% of the time and LOW 50% of the time and in the case of our 3V circuit, will approximate sending an analog voltage of 1.5V through the LED.   </p>
 <p>So, to fade our LED, we will want to iterate through increasing values between 0 and 255 to fade the LED to on, and then iterate through decreasing values from 255 to 0 to fade the LED off.  One way to write that code is line by line:</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">(){</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
     <span class="p">...</span>  <span class="c1">// continue increasing analogWrite by 5</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">245</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">235</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">245</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">235</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
     <span class="p">...</span> <span class="c1">// continue decreasing analogWrite by 5</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -604,7 +618,7 @@ functions</li>
 
 
 <p>By convention, most programmers use the variable name <code>i</code> within a <code>for</code> loop.  For example:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will run 1000 times!</span>
 <span class="p">}</span>
@@ -612,7 +626,7 @@ functions</li>
 
 
 <p>But one can use any variable name:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">elephants</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">=</span> <span class="n">elephants</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">elephants</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">=</span> <span class="n">elephants</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will also run 1000 times!</span>
 <span class="p">}</span>
@@ -620,7 +634,7 @@ functions</li>
 
 
 <p>The incrementing code, <code>i = i + 1</code> is often abbreviated as <code>i++</code>:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will run 1000 times, too!</span>
 <span class="p">}</span>
@@ -629,13 +643,13 @@ functions</li>
 
 <p>Finally, incrementation is not limited to increments of 1:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// increments of 2</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will run 500 times</span>
 <span class="p">}</span>
 
 <span class="c1">// increments of 5, abbreviated notation</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">5</span><span class="p">)</span> 
+<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">5</span><span class="p">)</span> 
 <span class="p">{</span>
     <span class="c1">// this code will run 200 times!</span>
 <span class="p">}</span>
@@ -646,12 +660,12 @@ functions</li>
 <li>
 <p>Whew!  That was quite a detour.  Let's get back to our LED fade <code>loop()</code> function.   </p>
 <p>We want our <code>analogWrite()</code> function to iterate up from 0 to 255 in increments of 5, so within our <code>loop()</code> function we can write:</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
-        <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+        <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
+        <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -661,17 +675,17 @@ functions</li>
 </li>
 <li>
 <p>So we need a second <code>for</code> loop to decrement the light level (highlighted in yellow):</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
-        <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+        <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
+        <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+<span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
 </span><span class="hll">    <span class="p">{</span>
-</span><span class="hll">        <span class="n">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
-</span><span class="hll">        <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span class="hll">        <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
+</span><span class="hll">        <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
 </span><span class="hll">    <span class="p">}</span>
 </span><span class="p">}</span>
 </pre></div>
@@ -720,38 +734,38 @@ functions</li>
 </li>
 <li>
 <p>Let's begin by initializing some variables.  We need one to hold the value coming in from our potentiometer on pin A3:   </p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>And let's use a variable name to identify the pin that attaches to our LED.  This is considered a good practice in case you ever need to modify the pin configuration on your hardware.  Rather than having to hunt through your code for every reference to pin <code>0</code>, you can simply change it in the variable list at the top of your sketch.</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="hll"><span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="hll"><span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></pre></div>
 
 
 </li>
 <li>
 <p>Let's do the same for the pin that attaches to our potentiometer:</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="hll"><span class="kt">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="hll"><span class="kr">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
 </span></pre></div>
 
 
 </li>
 <li>
 <p>Now that we've declared our variables, we can use these in our <code>setup()</code> function to set these pins as OUTPUT and INPUT as needed:</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
 
-<span class="hll"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="hll"><span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
 </span><span class="hll"><span class="p">{</span>
-</span><span class="hll">    <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-</span><span class="hll">    <span class="n">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class="hll">    <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+</span><span class="hll">    <span class="nf">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
 </span><span class="hll"><span class="p">}</span>
 </span></pre></div>
 
@@ -762,9 +776,9 @@ functions</li>
 <ol>
 <li>
 <p>The first thing we want to do each program cycle is read the value coming in over the ADC at pin A3 from the potentiometer and assign it to our <code>pot_value</code> variable:</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
 </span><span class="p">}</span>
 </pre></div>
 
@@ -778,11 +792,11 @@ functions</li>
 <p>To reconcile this difference, we need to use Arduino's <a href="https://www.arduino.cc/reference/en/language/functions/math/map/"><code>map()</code> math function</a> and then use that re-mapped value to drive our LED.</p>
 </div>
 <p>In the code highlighted below, we first re-map the 10 bit <code>pot_value</code> to an 8 bit number and then pass that re-mapped value to <code>analogWrite()</code>.</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
-<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
-</span><span class="hll">    <span class="n">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">pot_value</span><span class="p">);</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span><span class="hll">    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">pot_value</span><span class="p">);</span>
 </span><span class="p">}</span>
 </pre></div>
 
@@ -792,21 +806,21 @@ functions</li>
 </li>
 <li>
 <p>Our full code should read as follows:</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-    <span class="n">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
-    <span class="n">pot_value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
-    <span class="n">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">pot_value</span><span class="p">);</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">pot_value</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -817,6 +831,580 @@ functions</li>
 </li>
 </ol>
 <p>Congratulations!  You've completed the "Programmatically Fade an LED with a Potentiometer" project.</p>
+<div class="admonition question">
+<p class="admonition-title"><strong>Challenge</strong></p>
+<p>You can use this same hardware setup to build another classic Arduino project:  <strong>Using a potentiometer to control the <em>blink speed</em> of an LED.</strong> </p>
+<p>All you need to change is the Arduino code.  See if you can't figure out how to make it work on your own, using the <code>digitalWrite()</code>, <code>delay()</code>, and <code>map()</code> functions.</p>
+<p>Hint:  Map the potentiometer values to milliseconds and use in the <code>delay()</code> function!</p>
+<p>Email your code to your professor!</p>
+</div>
+<hr />
+<h3 id="rgb-led-color-control-with-a-potentiometer">RGB LED Color Control with a Potentiometer</h3>
+<p>For our final circuit in this tutorial, we'll introduce a new component - an RGB LED - and use the readings from a potentiometer to programmatically change its colors depending on where the potentiometer is positioned.</p>
+<p>To save time, we'll begin by duplicating the project we just completed above.</p>
+<ol>
+<li>
+<p>Return to your <a href="https://www.tinkercad.com/#/dashboard?type=circuits&amp;collection=designs">Circuits Dashboard</a>.</p>
+</li>
+<li>
+<p>Find the design you just completed and click on the cog in the upper right corner of the project's card, as illustrated below. <br />
+<img alt="Access Project Options" src="access_options.png" /></p>
+</li>
+<li>
+<p>From the drop-down that appears, choose "Duplicate."</p>
+</li>
+<li>
+<p>Tinkercad should take you to a new project, automatically entitled "Copy of [original project name]".</p>
+</li>
+</ol>
+<p>For this circuit, we'll use the following circuit diagram:
+<img alt="ATtiny85 RGB LED and Potentiometer Schematic" src="attiny85_rgb_schematic.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the ATtiny85 in its basic configuration only has two PWM pins, and to use the full range of an RGB LED you need to have three.  While it is possible to circumvent this limitation with code to enable a 3rd PWM pin, the Tinkercad simulator is not capable of that degree of complexity.  </p>
+<p>So for the purposes of this tutorial, we'll simply make by using the ATtiny85's two PWM pins (0 and 1) and then pin 2 as a digital pin to generate a more limited set of colors.</p>
+</div>
+<p>Let's begin with the wiring of the RGB LED.</p>
+<ol>
+<li>
+<p>Delete the red LED, its resistor, and all of its related jumper wires from your project.  This should leave only the battery and the potentiometer wired to your ATtiny85.</p>
+</li>
+<li>
+<p>Locate in the Components bin the RGB LED component and drag it to your breadboard. <br />
+<img alt="Add RGB LED" src="add_rgb_led.png" /></p>
+</li>
+<li>
+<p>Connect the "common cathode" (-) pin of the RGB LED to GND.</p>
+</li>
+<li>
+<p>Add three 47Ω resistor to your canvas, connecting one each to the red, green, and blue pins of the RGB LED.</p>
+</li>
+<li>
+<p>Connect each resistor to a specific digital pin on the ATtiny85, as follows:</p>
+<ul>
+<li>Connect the blue pin's resistor to digital pin <code>1</code>.</li>
+<li>Connect the green pin's resistor to digital pin <code>0</code>.</li>
+<li>Connect the red pin's resistor to digital pin <code>2</code>.</li>
+</ul>
+</li>
+<li>
+<p>Your circuit should look something like this: <br />
+<img alt="RGB LED wired up with resistors" src="rgb_wired.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Tip</p>
+<p>If the image above is confusing to you, remember how a breadboard works.  Everything in a numbered row on one side of the ravine is connected together.<br /><br />
+<img alt="Basic Breadboard Layout" src="basic_breadboard_layout.png" /></p>
+</div>
+</li>
+</ol>
+<p>Now we can turn our attention to the Arduino Code.  An RGB LED works by mixing three different LEDs - one red, one green, one blue - in different ratios of intensity.</p>
+<p><img alt="RGB Colors" src="rgb_colors.png" /></p>
+<ol>
+<li>
+<p>Let's begin by declaring variables for each of our RGB LED's pins:</p>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="kr">int</span> <span class="n">redPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">greenPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">bluePin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>And then let's initialize each of these pins as OUTPUTs in the <code>setup()</code> function:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Here is a table that outlines different color combinations for the Tinkercad simulator based on ratios of red, green, and blue:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Color</strong></th>
+<th>Red</th>
+<th>Green</th>
+<th>Blue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>100%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>0%</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>0%</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>100%</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td>100%</td>
+<td>25%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Purple</td>
+<td>100%</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td>100%</td>
+<td>0%</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>Turquoise</td>
+<td>0%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>The above values can be translated to code, using <code>analogWrite()</code> and converting the percentages to an 8-bit value.  So the color orange can be achieved by the following:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// orange = red 100%, green 20%, blue 0% </span>
+<span class="nf">analogWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span> <span class="c1">// 25% of 255 is approx. 64</span>
+<span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Since our <code>redPin</code>, pin <code>2</code> is not capable of PWM, we instead need to use <code>digitalWrite()</code> on that pin:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// orange = red 100%, green 20%, blue 0% </span>
+<span class="hll"><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+</span><span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span> <span class="c1">// 25% of 255 is approx. 64</span>
+<span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Put the code above in your <code>loop()</code> function and test it out.   The full code is:</p>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="kr">int</span> <span class="n">redPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">greenPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">bluePin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span> 
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// orange = red 100%, green 20%, blue 0% </span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The RGB LED should glow orange.</p>
+</li>
+<li>
+<p>One of the things you can do in Arduino is declare <em>custom functions</em> outside of your <code>setup()</code> and <code>loop()</code> functions and then call them in these main functions.  For example, you could create a function below your <code>loop()</code> function for the color orange:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">colorOrange</span><span class="p">(){</span>
+    <span class="c1">// orange = red 100%, green 20%, blue 0% </span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Then you can call that function in your <code>loop()</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="kr">int</span> <span class="n">redPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">greenPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">bluePin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span> 
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">(){</span>
+<span class="hll">    <span class="n">colorOrange</span><span class="p">();</span>
+</span><span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">colorOrange</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// orange = red 100%, green 20%, blue 0% </span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">64</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Go ahead and create additional custom functions for red, blue, green, yellow, and turquiose.  <strong><em>Try to do this on your own, without consulting the code below.</em></strong></p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">colorRed</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">colorBlue</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">colorGreen</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">colorYellow</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">colorTurquoise</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">colorPurple</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nf">analogWrite</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Then create a simple sketch that cycles through the colors for a duration of two seconds each.  Replace your <code>loop()</code> function with the following:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">colorRed</span><span class="p">();</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="n">colorBlue</span><span class="p">();</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="n">colorGreen</span><span class="p">();</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="n">colorYellow</span><span class="p">();</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="n">colorPurple</span><span class="p">();</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="n">colorTurquoise</span><span class="p">();</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Test out your code by clicking the "Start Simulation" button. <br />
+<img alt="RGB Cycling Colors" src="rgb_cycle.gif" /></p>
+<div class="admonition failure">
+<p class="admonition-title">Failure?</p>
+<p>If you used a different sequence of colors than the sequence above, you may have noticed that the simulator skips one or more of your colors.  <strong><em>This is an error in the simulator, not your code.</em></strong>  </p>
+<p>I have found that the simulator struggles to switch to orange in particular.  </p>
+</div>
+</li>
+</ol>
+<p>Finally, we can now integrate the potentiometer back into our code and use it to select different colors. </p>
+<p>Note that the potentiometer has seven (7) dots around its perimeter, which have been marked with letters a-g in the image below left.  These markings roughly correspond to the 10-bit potentiometer readings in the table at right:<br />
+<img style="float:left; margin-right: 10px; padding-top:15px;" src="pot_markings.png" alt="Potentiometer Markings" /> </p>
+<table>
+<thead>
+<tr>
+<th>Marking</th>
+<th>pot_value</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>1023</td>
+<td>red</td>
+</tr>
+<tr>
+<td>b</td>
+<td>850</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>c</td>
+<td>680</td>
+<td>green</td>
+</tr>
+<tr>
+<td>d</td>
+<td>510</td>
+<td>yellow</td>
+</tr>
+<tr>
+<td>e</td>
+<td>340</td>
+<td>purple</td>
+</tr>
+<tr>
+<td>f</td>
+<td>170</td>
+<td>turquoise</td>
+</tr>
+<tr>
+<td>g</td>
+<td>0</td>
+<td>orange</td>
+</tr>
+</tbody>
+</table>
+<p>Since it is unlikely that anyone can consistently set the potentiometer to the <em>exact position</em> that generates those specific values, we can create a buffer of a <em>range of values</em> to segment our potentiometer into seven "zones":</p>
+<table>
+<thead>
+<tr>
+<th>Marking</th>
+<th>ideal pot_value</th>
+<th>range</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>1023</td>
+<td>940 - 1023</td>
+<td>red</td>
+</tr>
+<tr>
+<td>b</td>
+<td>850</td>
+<td>770 - 940</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>c</td>
+<td>680</td>
+<td>599 - 769</td>
+<td>green</td>
+</tr>
+<tr>
+<td>d</td>
+<td>510</td>
+<td>428 - 598</td>
+<td>yellow</td>
+</tr>
+<tr>
+<td>e</td>
+<td>340</td>
+<td>257 - 427</td>
+<td>purple</td>
+</tr>
+<tr>
+<td>f</td>
+<td>170</td>
+<td>86 - 256</td>
+<td>turquoise</td>
+</tr>
+<tr>
+<td>g</td>
+<td>0</td>
+<td>0 - 85</td>
+<td>orange</td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively, and perhaps more straightforward, we can map the potentiometer values to a smaller range of values and then use the following to demarcate the potentiometer:</p>
+<table>
+<thead>
+<tr>
+<th>Marking</th>
+<th>ideal pot_value</th>
+<th>range</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>18</td>
+<td>17 - 18</td>
+<td>red</td>
+</tr>
+<tr>
+<td>b</td>
+<td>15</td>
+<td>14 - 16</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>c</td>
+<td>12</td>
+<td>11 - 13</td>
+<td>green</td>
+</tr>
+<tr>
+<td>d</td>
+<td>9</td>
+<td>8 - 10</td>
+<td>yellow</td>
+</tr>
+<tr>
+<td>e</td>
+<td>6</td>
+<td>5 - 7</td>
+<td>purple</td>
+</tr>
+<tr>
+<td>f</td>
+<td>3</td>
+<td>2 - 4</td>
+<td>turquoise</td>
+</tr>
+<tr>
+<td>g</td>
+<td>0</td>
+<td>0 - 1</td>
+<td>orange</td>
+</tr>
+</tbody>
+</table>
+<p>Let's make use of this information to control the RGB LED color with the potentiometer.  Return to your project's code in the Code panel.</p>
+<ol>
+<li>
+<p>Add the highlighted variables -- they should be familiar to you -- above your <code>setup()</code> function:</p>
+<div class="codehilite"><pre><span></span><span class="kr">int</span> <span class="kr">int</span> <span class="n">redPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">greenPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">bluePin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="hll"><span class="kr">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span>
+</span><span class="hll"><span class="kr">int</span> <span class="n">pot_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
+<span class="p">...</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Add the highlighted line to your <code>setup()</code> function:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">redPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">greenPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+    <span class="nf">pinMode</span><span class="p">(</span><span class="n">bluePin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="hll">    <span class="nf">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Finally, re-write your <code>loop()</code> function in this way:</p>
+<ol>
+<li>
+<p>At the start of each program loop, set the value of <code>pot_value</code> to the reading from the potentiometer:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Next, let's re-map the potentiometer value to a new <code>int</code> variable named <code>val</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+<span class="hll">    <span class="kr">int</span> <span class="n">val</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Then use a series of <a href="https://www.arduino.cc/reference/en/language/structure/control-structure/if/"><code>if</code> statements</a> to set the RGB LED to different colors based on the value of <code>val</code> depending on whether it falls within a specified range of values, as in the code below:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
+    <span class="kr">int</span> <span class="n">val</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+
+<span class="hll">    <span class="k">if</span> <span class="p">(</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">)</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">colorOrange</span><span class="p">();</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>    <span class="k">if</span> <span class="p">(</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">colorTurquoise</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">5</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">7</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">colorPurple</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">8</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">colorYellow</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">11</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">13</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">colorGreen</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">14</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">16</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">colorBlue</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">17</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">18</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">colorRed</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+</ol>
+</li>
+<li>
+<p>Test your project by clicking "Start Simulation" and then click on the potentiometer to move it between different marks.</p>
+</li>
+</ol>
+<p>Great job completing the last project in this tutorial! </p>
+<p><strong>Begin brainstorming a circuit based on the ATtiny85 that you'd like to prototype and have manufactured...</strong></p>
 <div class="footnote">
 <hr />
 <ol>
