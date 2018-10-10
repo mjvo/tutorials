@@ -213,7 +213,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tinkercad1/" title="Tinkercad" class="md-nav__link">
+    <a href="../tinkercad/" title="Tinkercad" class="md-nav__link">
       Tinkercad
     </a>
   </li>
@@ -618,7 +618,7 @@ functions</li>
 
 
 <p>By convention, most programmers use the variable name <code>i</code> within a <code>for</code> loop.  For example:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will run 1000 times!</span>
 <span class="p">}</span>
@@ -626,7 +626,7 @@ functions</li>
 
 
 <p>But one can use any variable name:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">elephants</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">=</span> <span class="n">elephants</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">elephants</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">elephants</span> <span class="o">=</span> <span class="n">elephants</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will also run 1000 times!</span>
 <span class="p">}</span>
@@ -634,7 +634,7 @@ functions</li>
 
 
 <p>The incrementing code, <code>i = i + 1</code> is often abbreviated as <code>i++</code>:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will run 1000 times, too!</span>
 <span class="p">}</span>
@@ -643,13 +643,13 @@ functions</li>
 
 <p>Finally, incrementation is not limited to increments of 1:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// increments of 2</span>
-<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// this code will run 500 times</span>
 <span class="p">}</span>
 
 <span class="c1">// increments of 5, abbreviated notation</span>
-<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">5</span><span class="p">)</span> 
+<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">5</span><span class="p">)</span> 
 <span class="p">{</span>
     <span class="c1">// this code will run 200 times!</span>
 <span class="p">}</span>
@@ -662,7 +662,7 @@ functions</li>
 <p>We want our <code>analogWrite()</code> function to iterate up from 0 to 255 in increments of 5, so within our <code>loop()</code> function we can write:</p>
 <div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
         <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
@@ -677,12 +677,12 @@ functions</li>
 <p>So we need a second <code>for</code> loop to decrement the light level (highlighted in yellow):</p>
 <div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
         <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+<span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">lightLevel</span><span class="o">=</span><span class="mi">255</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lightLevel</span> <span class="o">=</span> <span class="n">lightLevel</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
 </span><span class="hll">    <span class="p">{</span>
 </span><span class="hll">        <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lightLevel</span><span class="p">);</span>
 </span><span class="hll">        <span class="nf">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
@@ -1364,31 +1364,31 @@ functions</li>
     <span class="n">pot_value</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span>
     <span class="kr">int</span> <span class="n">val</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">pot_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
 
-<span class="hll">    <span class="k">if</span> <span class="p">(</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="hll">    <span class="k">if</span> <span class="p">(</span> <span class="mi">0</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">1</span> <span class="p">)</span>
 </span><span class="hll">    <span class="p">{</span>
 </span><span class="hll">        <span class="n">colorOrange</span><span class="p">();</span>
 </span><span class="hll">    <span class="p">}</span>
-</span>    <span class="k">if</span> <span class="p">(</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="p">)</span>
+</span>    <span class="k">if</span> <span class="p">(</span> <span class="mi">2</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">4</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">colorTurquoise</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="mi">5</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">7</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">5</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">7</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">colorPurple</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="mi">8</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">8</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">10</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">colorYellow</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="mi">11</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">13</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">11</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">13</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">colorGreen</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="mi">14</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">16</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">14</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">16</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">colorBlue</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="mi">17</span> <span class="o">&lt;=</span> <span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">18</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="mi">17</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">val</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">18</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">colorRed</span><span class="p">();</span>
     <span class="p">}</span>
@@ -1433,7 +1433,7 @@ functions</li>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../tinkercad1/" title="Tinkercad" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tinkercad/" title="Tinkercad" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
