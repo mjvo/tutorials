@@ -43,7 +43,7 @@ extra_javascript:
 nav:
   - 'index.md'
   - Circuits:
-    - 'Tinkercad' : 'circuits/tinkercad1/index.md'
+    - 'Tinkercad' : 'circuits/tinkercad/index.md'
     - 'ATtiny85' : 'circuits/attiny85/index.md'
 
 
