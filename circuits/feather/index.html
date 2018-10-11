@@ -1,0 +1,726 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Setting up the Feather M0">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Feather M0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#about-the-feather-m0" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Tutorial Repository" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Mark Olson's Tutorial Repository
+              </span>
+              <span class="md-header-nav__topic">
+                Feather M0
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Tutorial Repository" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Tutorial Repository
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tinkercad/" title="Tinkercad" class="md-nav__link">
+      Tinkercad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../attiny85/" title="ATtiny85" class="md-nav__link">
+      ATtiny85
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Feather M0
+      </label>
+    
+    <a href="./" title="Feather M0" class="md-nav__link md-nav__link--active">
+      Feather M0
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-feather-m0" title="About the Feather M0" class="md-nav__link">
+    About the Feather M0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-on-dukereg" title="Register on DukeReg" class="md-nav__link">
+    Register on DukeReg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-arduino-ide" title="Configure the Arduino IDE" class="md-nav__link">
+    Configure the Arduino IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blink" title="Blink" class="md-nav__link">
+    Blink
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feather-m0-as-webserver" title="Feather M0 as Webserver" class="md-nav__link">
+    Feather M0 as Webserver
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-feather-m0" title="About the Feather M0" class="md-nav__link">
+    About the Feather M0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-on-dukereg" title="Register on DukeReg" class="md-nav__link">
+    Register on DukeReg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-arduino-ide" title="Configure the Arduino IDE" class="md-nav__link">
+    Configure the Arduino IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blink" title="Blink" class="md-nav__link">
+    Blink
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feather-m0-as-webserver" title="Feather M0 as Webserver" class="md-nav__link">
+    Feather M0 as Webserver
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">Feather M0</h1>
+                <p style="float:left;">Last Update: <em>2018-10-11</em></p>
+                
+                <p style="float:right;">Author(s): <em>Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <p>This tutorial walks through the setup process for registering your Feather M0 on Duke's network and setting up your Arduino IDE to program the device.</p>
+<h2 id="about-the-feather-m0">About the Feather M0</h2>
+<p>For the remainder of the semester we will be working with the <a href="https://www.adafruit.com/product/3010">Adafruit Feather M0</a>, a powerful Arduino-compatible microcontroller with integrated wifi.  </p>
+<p><img alt="Image of Feather M0 microcontroller" src="https://cdn-learn.adafruit.com/assets/assets/000/030/027/original/feather_3010-00.jpg" /></p>
+<p>Adafruit hosts <a href="https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/overview">an excellent overview and setup guide</a> for the Feather M0.  Please consult it alongside this setup tutorial.</p>
+<h2 id="register-on-dukereg">Register on DukeReg</h2>
+<p>Before we can use the Feather M0's wifi capabilities on Duke's network, we need to register its Mac address on <a href="https://dukereg.duke.edu/">DukeReg</a> so that Duke's network will recognize it as an authorized device.</p>
+<ol>
+<li>
+<p>First, locate your Feather M0's Mac address, located on the white sticker on the Feather's wifi chip (outlined in red in the image below):
+    <img alt="Image of Feather M0 with Mac address highlighted in red" src="mac_address.png" /></p>
+</li>
+<li>
+<p>Next, open a web browser to <a href="https://dukereg.duke.edu/">https://dukereg.duke.edu/</a>.  You will be prompted to enter your NetID and password.</p>
+</li>
+<li>
+<p>Click on the green button to "Register a New Device."
+    <img alt="Image of &quot;+ Register a New Device&quot; button" src="dukereg.png" /></p>
+</li>
+<li>
+<p>In the subsequent form, type the Mac address as it appears on your Feather.  Give your device a name ("Feather M0") and choose "Other" for OS and "Personal" for Ownership.
+    <img alt="Image of DukeReg registration form" src="dukereg_form.png" /></p>
+</li>
+<li>
+<p>Click on the blue "Register" button.</p>
+</li>
+<li>
+<p>The page should refresh, indicating that the "Device was successfully registered.</p>
+</li>
+<li>
+<p>Click on the "Back" button to return to your list of registered devices.</p>
+</li>
+<li>
+<p>Confirm that the Mac address you submitted matches the Mac address on your Feather M0.  If it does not match, click the Delete button next to the mis-typed entry and then create a new registration.</p>
+</li>
+</ol>
+<p>Duke's network may take up to 45 minutes to propagate this authorized registration to all its wifi endpoints.   </p>
+<h2 id="configure-the-arduino-ide">Configure the Arduino IDE</h2>
+<p>In this next section, we'll configure the Arduino IDE to recognize the Feather M0 microcontroller.</p>
+<ol>
+<li>
+<p>Launch the Arduino IDE program.</p>
+</li>
+<li>
+<p>Open up the Preferences pane.  (On OS X, this is under the main menu: Arduino --&gt; Preferences.  On Windows, it is acccessible under File --&gt; Preferences.)</p>
+</li>
+<li>
+<p>Be sure to check the box next to "Display Line Numbers."</p>
+</li>
+<li>
+<p>Next, click on the icon to the far right of the "Additional Boards Manager URLs" textbox.<br />
+<img alt="Arduino Preferences Pane" src="arduino_prefs.png" /></p>
+</li>
+<li>
+<p>A dialog box will pop up.  In this box you will see any previous custom board definition URLs you may have entered (such as the <a href="http://highlowtech.org/?p=1695">ATtiny package from Github user damellis</a>):
+    <img alt="Arduino Boards URL dialog" src="boards_url.png" />   </p>
+<p>On a new line, enter the following URL:</p>
+<p><code>https://adafruit.github.io/arduino-board-index/package_adafruit_index.json</code>   </p>
+<p>and then click the "OK" button.</p>
+</li>
+<li>
+<p>Click the "OK" button in the Preferences pane to save your changes.</p>
+</li>
+<li>
+<p>Now we are ready to add the board definitions to Arduino so that we can program the Feather MO.</p>
+<ol>
+<li>
+<p>Open the Boards Manager under the main menu:  Tools --&gt; Board --&gt; Boards Manager:
+<img alt="Boards Manager" src="boards_manager.png" /></p>
+</li>
+<li>
+<p>We will need to install two sets of board definitions.  First, scroll down until you find "Arduino SAMD Boards (32-bits ARM Cortex-M0+) by Arduino".  Click "Install" to download and install the latest version.</p>
+</li>
+<li>
+<p>Further down the list you should also fine "Adafruit SAMD Boards by Adafruit."   Click "Install" to download and install the latest version of this set of board definitions.</p>
+</li>
+</ol>
+<div class="admonition failure">
+<p class="admonition-title">Don't See the Adafruit SAMD option?</p>
+<p>If the Adafruit SAMD Boards option does not appear on your list of possible board definitions to install, you may have entered the URL incorrectly in step #5 above.  Return to your Preferences pane to verify.</p>
+</div>
+<ol>
+<li>Click the "Close" button to close the Boards Manager.</li>
+</ol>
+</li>
+<li>
+<p><strong>Windows users only:</strong>  Download and install the <a href="https://github.com/adafruit/Adafruit_Windows_Drivers/releases/latest">latest Adafruit Drivers Package</a>.</p>
+</li>
+<li>
+<p>Restart the Arduino IDE application.</p>
+</li>
+<li>
+<p>Check to see that the "Adafruit Feather M0" appears as an option under Tools --&gt; Board
+    <img alt="Feather M0 appearing under Boards" src="choose_featherm0.png" /></p>
+</li>
+</ol>
+<h2 id="blink">Blink</h2>
+<p>Now that you've configured the Arduino IDE to recognize the Feather M0, let's test it with a simple Blink sketch.</p>
+<ol>
+<li>
+<p>Use the USB cable to plug your Feather M0 into an available USB port on your computer.</p>
+</li>
+<li>
+<p>Open the default Blink sketch.  From the main menu, choose File --&gt; Examples --&gt; 01.Basics --&gt; Blink</p>
+</li>
+<li>
+<p>Make sure you have the <code>Adafruit Feather M0</code> selected under Tools --&gt; Board.</p>
+</li>
+<li>
+<p>Choose Tools --&gt; Port and select the USB port for your board.</p>
+</li>
+<li>
+<p>Click the Upload button (or choose Sketch --&gt; Upload)</p>
+</li>
+</ol>
+<p>The onboard LED on the Feather M0 should blink on and off every second.</p>
+<h2 id="feather-m0-as-webserver">Feather M0 as Webserver</h2>
+<p>Next we'll make use of the WiFi101 library to enable the Feather M0's wifi chip and use it to serve up a webpage from the Feather itself that can be used to control the onboard LED.</p>
+<ol>
+<li>
+<p>From the main menu, choose Sketch --&gt; Include Library --&gt; Manage Libraries.</p>
+</li>
+<li>
+<p>In the Library Manager dialog box that appears, type "Wifi101" in the <em>Filter your search...</em> text box.</p>
+</li>
+<li>
+<p>The WiFi101 library should appear at the top of the search results.  </p>
+</li>
+<li>
+<p>Click the "Install" button to install the latest version of the library.</p>
+</li>
+<li>
+<p>Click the "Close" button to return to the main programming interface.</p>
+</li>
+<li>
+<p>From the main menu, choose File --&gt; New to start a new sketch.</p>
+<p>We will make use of Tom Igoe's Nov 2012 SimpleWebServerWiFi sketch to create a simple web server that lets you blink an LED via the web.</p>
+<p>This sketch will print the IP address of your WiFi connection (once connected) to the Serial monitor. From there, you can open that address in a web browser to turn on and off the Feather's built-in LED (pin 13).</p>
+<p>If the IP address of your shield is yourAddress:</p>
+<ul>
+<li>http://yourAddress/H turns the LED on</li>
+<li>http://yourAddress/L turns it off</li>
+</ul>
+</li>
+<li>
+<p>Copy and paste the following code into your sketch, replacing what is there by default:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;SPI.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;WiFi101.h&quot;</span><span class="cp"></span>
+
+<span class="kr">char</span> <span class="n">ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;DukeOpen&quot;</span><span class="p">;</span>   <span class="c1">// your network SSID (name)</span>
+<span class="c1">// char pass[] = &quot;&quot;;    // not used with DukeOpen</span>
+
+<span class="kr">int</span> <span class="n">status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>
+<span class="nf">WiFiServer</span> <span class="nf">server</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+<span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>    <span class="c1">// specify built-in LED</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// initialize serial communication</span>
+<span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>    <span class="c1">// set the LED pin mode</span>
+
+<span class="c1">//Configure pins specific to Adafruit ATWINC1500 Feather M0</span>
+<span class="nf">WiFi</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// check for the presence of WiFi:</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_NO_SHIELD</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;WiFi not present&quot;</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="kr">true</span><span class="p">);</span>       <span class="c1">// don&#39;t continue</span>
+<span class="p">}</span>
+
+<span class="c1">// attempt to connect to WiFi network:</span>
+<span class="k">while</span> <span class="p">(</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to Network named: &quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>   <span class="c1">// print the network name (SSID);</span>
+
+    <span class="c1">// Connect to open network. </span>
+    <span class="n">status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+
+    <span class="c1">// if using password WEP, use the following instead</span>
+    <span class="c1">//status = WiFi.begin(ssid, pass);</span>
+
+    <span class="c1">// wait 10 seconds for connection:</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>     <span class="c1">// start the web server on port 80</span>
+<span class="n">printWiFiStatus</span><span class="p">();</span>  <span class="c1">// you&#39;re connected now, so print out the status</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="nf">WiFiClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">server</span><span class="p">.</span><span class="nf">available</span><span class="p">();</span>   <span class="c1">// listen for incoming clients</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">)</span> <span class="p">{</span>   <span class="c1">// if you get a client,</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;new client&quot;</span><span class="p">);</span>   <span class="c1">// print a message out the serial port</span>
+    <span class="kr">String</span> <span class="n">currentLine</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>        <span class="c1">// make a String to hold incoming data from the client</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">())</span> <span class="p">{</span>    <span class="c1">// loop while the client&#39;s connected</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">available</span><span class="p">())</span> <span class="p">{</span>   <span class="c1">// if there&#39;s bytes to read from the client,</span>
+        <span class="kr">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span> <span class="c1">// read a byte, then</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>    <span class="c1">// print it out the serial monitor</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// if the byte is a newline character</span>
+
+        <span class="c1">// if the current line is blank, you got two newline characters in a row.</span>
+        <span class="c1">// that&#39;s the end of the client HTTP request, so send a response:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)</span>
+            <span class="c1">// and a content-type so the client knows what&#39;s coming, then a blank line:</span>
+            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;HTTP/1.1 200 OK&quot;</span><span class="p">);</span>
+            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Content-type:text/html&quot;</span><span class="p">);</span>
+            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+
+            <span class="c1">// the content of the HTTP response follows the header:</span>
+            <span class="n">client</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Click &amp;lt;a href=</span><span class="se">\&quot;</span><span class="s">/H</span><span class="se">\&quot;</span><span class="s">&amp;gt;here&amp;lt;/a&amp;gt; turn the LED on pin 13 on&amp;lt;br&amp;gt;&quot;</span><span class="p">);</span>
+            <span class="n">client</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Click &amp;lt;a href=</span><span class="se">\&quot;</span><span class="s">/L</span><span class="se">\&quot;</span><span class="s">&amp;gt;here&amp;lt;/a&amp;gt; turn the LED on pin 13 off&amp;lt;br&amp;gt;&quot;</span><span class="p">);</span>
+
+            <span class="c1">// The HTTP response ends with another blank line:</span>
+            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+            <span class="c1">// break out of the while loop:</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>      <span class="c1">// if you got a newline, then clear currentLine:</span>
+            <span class="n">currentLine</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">!=</span> <span class="sc">&#39;\r&#39;</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// if you got anything else but a carriage return character,</span>
+        <span class="n">currentLine</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>      <span class="c1">// add it to the end of the currentLine</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Check to see if the client request was &quot;GET /H&quot; or &quot;GET /L&quot;:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s">&quot;GET /H&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span> <span class="c1">// GET /H turns the LED on</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s">&quot;GET /L&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>  <span class="c1">// GET /L turns the LED off</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// close the connection:</span>
+    <span class="n">client</span><span class="p">.</span><span class="nf">stop</span><span class="p">();</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;client disonnected&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nf">printWiFiStatus</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// print the SSID of the network you&#39;re attached to:</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;SSID: &quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">SSID</span><span class="p">());</span>
+
+<span class="c1">// print your WiFi shield&#39;s IP address:</span>
+<span class="nf">IPAddress</span> <span class="n">ip</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">();</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;IP Address: &quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+
+<span class="c1">// print the received signal strength:</span>
+<span class="kr">long</span> <span class="n">rssi</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">RSSI</span><span class="p">();</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;signal strength (RSSI):&quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">rssi</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot; dBm&quot;</span><span class="p">);</span>
+<span class="c1">// print where to go in a browser:</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;To see this page in action, open a browser to http://&quot;</span><span class="p">);</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+</ol>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../attiny85/" title="ATtiny85" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ATtiny85
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
