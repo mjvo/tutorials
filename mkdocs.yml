@@ -45,5 +45,7 @@ nav:
   - Circuits:
     - 'Tinkercad' : 'circuits/tinkercad/index.md'
     - 'ATtiny85' : 'circuits/attiny85/index.md'
+    - 'Feather M0' : 'circuits/feather/index.md'
+    - 'Blynk' : 'circuits/blynk/index.md'
 
 
