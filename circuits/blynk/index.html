@@ -1,0 +1,674 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Using Blynk as an Interface with the Feathe M0">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Blynk</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#getting-started-with-blynk" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Tutorial Repository" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Mark Olson's Tutorial Repository
+              </span>
+              <span class="md-header-nav__topic">
+                Blynk
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Tutorial Repository" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Tutorial Repository
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tinkercad/" title="Tinkercad" class="md-nav__link">
+      Tinkercad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../attiny85/" title="ATtiny85" class="md-nav__link">
+      ATtiny85
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../feather/" title="Feather M0" class="md-nav__link">
+      Feather M0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Blynk
+      </label>
+    
+    <a href="./" title="Blynk" class="md-nav__link md-nav__link--active">
+      Blynk
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-blynk" title="Getting Started with Blynk" class="md-nav__link">
+    Getting Started with Blynk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blynks-display-widgets" title="Blynk's Display Widgets" class="md-nav__link">
+    Blynk's Display Widgets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-twitter-or-email" title="Challenge - Twitter or Email" class="md-nav__link">
+    Challenge - Twitter or Email
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-blynk" title="Getting Started with Blynk" class="md-nav__link">
+    Getting Started with Blynk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blynks-display-widgets" title="Blynk's Display Widgets" class="md-nav__link">
+    Blynk's Display Widgets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-twitter-or-email" title="Challenge - Twitter or Email" class="md-nav__link">
+    Challenge - Twitter or Email
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">Blynk</h1>
+                <p style="float:left;">Last Update: <em>2018-10-12</em></p>
+                
+                <p style="float:right;">Author(s): <em>Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <p>In this tutorial you will be introduced to the <a href="https://www.blynk.cc/">Blynk</a> platform for IoT.  Blynk is a platform with iOS and Android apps to control microcontrollers over the Internet.  It enables the quick prototyping of a graphic interface for your project by simply dragging and dropping widgets.</p>
+<h2 id="getting-started-with-blynk">Getting Started with Blynk</h2>
+<ol>
+<li>
+<p>Install the Blynk library in the Arduino IDE</p>
+<ol>
+<li>
+<p>Launch the Ardunio IDE.</p>
+</li>
+<li>
+<p>From the main menu, choose Sketch --&gt; Include Library --&gt; Manage Libraries.</p>
+</li>
+<li>
+<p>In the "Filter your search..." textbox, enter Blynk</p>
+</li>
+<li>
+<p>The first entry in the search results should be "Blynk by Volodymyr Shymanskyy."  Click the Install button to install the latest version.</p>
+</li>
+<li>
+<p>Click "Close" to return to the main interface.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Open the sample Blynk sketch for the Feather M0:  File --&gt; Examples --&gt; Blynk --&gt; Boards_WiFi --&gt; Adafruit_Feather_M0_WiFi</p>
+</li>
+<li>
+<p>On your mobile device, download and install the Blynk app:</p>
+<p><a href="https://play.google.com/store/apps/details?id=cc.blynk"><button data-md-color-primary="green">Blynk for Android</button></a></p>
+<p><a href="https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&mt=8"><button data-md-color-primary="green">Blynk for IoS</button></a></p>
+<ol>
+<li>
+<p>Launch the app on your mobile device.</p>
+</li>
+<li>
+<p>Click on the "Create New Account" link:</p>
+<p><img alt="Create New Account" src="register_account.png" /></p>
+</li>
+<li>
+<p>Enter your email and set up a password.  Blynk uses your email to send authorization tokens so if you prefer not to use your own current email address, consider setting up a Gmail account specifically for this purpose.</p>
+</li>
+<li>
+<p>Click "Sign Up" and you will be authenticated to the Blynk cloud server.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Next, create your first Blynk app:</p>
+<ol>
+<li>
+<p>Click on "New Project"</p>
+<p><img alt="New Project + button" src="new_project.png" /></p>
+</li>
+<li>
+<p>Give your new project a name.</p>
+</li>
+<li>
+<p>Under choose device, look for "Adafruit Feather M0."  If you are unable to locate it, choose "Arduino MKR1000" which uses the same SAMD chip and WiFi101 library as the Feather M0.  Alternatively, you can use the "Generic Board" with the connection type "Wi-Fi."</p>
+<p><img alt="Select Your Hardware options" src="select_hardware.png" /></p>
+</li>
+<li>
+<p>Finally, decide if you want to have a dark or light theme/background for your app.</p>
+<p><img alt="Choose theme and create new project" src="create_new_project.png" /></p>
+</li>
+<li>
+<p>Finally, click the Create button.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The Blynk mobile application will notify you that it has sent an app-specific Auth Token to your email address.  Later we will copy this into the Arduino sketch you opened in step #2 above.</p>
+</li>
+<li>
+<p>You will next be presented with a blank canvas for your app, which you can populate with <a href="http://docs.blynk.cc/#widgets">Blynk widgets</a>.  </p>
+<p><img alt="Blank canvas" src="blank_canvas.png" /></p>
+<p>Widgets are Blynk's interface modules, and are used to perform a specific input or output function when communicating with your Feather M0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While Blynk is free to use, they limit the number of widgets you can use in a particular app under the free account.  You have a total of 2,000 credits to "spend" on widgets.  When you delete an app, the credits used by the widgets in that app are returned to your account balance.  You can also "recycle" widgets in an existing application, removing it from the app and replenishing your credits.</p>
+<p><img alt="Widget &quot;Costs&quot;" src="widget_costs.png" /></p>
+</div>
+<p>Let's begin by creating a simple Blynk app that controls the on-board LED (pin 13) on the Feather M0.</p>
+<ol>
+<li>
+<p>Click on the <strong>+</strong> icon at the top of the app canvas.</p>
+<p><img alt="Add a widget" src="add_widget.png" /></p>
+</li>
+<li>
+<p>Spend a little time familiarizing yourself with the available widgets.  Click on the [i] icon to read about each one.</p>
+</li>
+<li>
+<p>Select the <a href="http://docs.blynk.cc/#widgets-controllers-button">Button widget</a> and it will be added to your app canvas.</p>
+<p><img alt="Canvas with button widget" src="button_widget.png" />  </p>
+<p>You can press and hold the button widget to position it on your canvas and/or resize it.</p>
+</li>
+<li>
+<p>Tap once on the Button widget to access its properties.  In this case we want the Button widget to control the Feather's on-board LED at pin 13.  Touch the green outlined output box and choose Digital Pin 13.</p>
+<p><img alt="Button pin set to D13" src="button_settings.png" /></p>
+<p>Here you can also decide if you want the widget to be a button or a switch, as well as set labels, font size and font color.  When set as a <strong>button</strong>, the widget will function as a momentary "on" tactile button, which remains on only for the duration of the button press.  When set as a <strong>switch</strong>, the button will toggle between the on and off position, "latching" in place until it is tapped again.</p>
+</li>
+<li>
+<p>Tap the back arrow to return to the app canvas.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>You're now ready to test out your app.  This is a two-step process:</p>
+<ol>
+<li>
+<p>First, press the "play" button on the Blynk canvas.  This will switch the Blynk interface to "playback" mode.  In this mode, tapping your Button widget will operate the button itself instead of bringing up its settings menu.</p>
+<p><img alt="Play button" src="play_button.png" /></p>
+</li>
+<li>
+<p>Next, we need to configure the Adafruit_Feather_M0_WiFi sketch and upload it to the Feather:</p>
+<ul>
+<li>By now you should have received the Auth Token email from Blynk.  Check your email inbox and copy the token (a long string of letters and numbers that will associate your Blynk app with your specific Feather M0)</li>
+<li>Return to the Arduino IDE application.  In the Adafruit_Feather_M0_WiFi sketch, find line 38.  Replace <code>YourAuthToken</code> within the quotes with your actual Auth Token.</li>
+<li>
+<p>On lines 42 and 43, enter your WiFi network name, replacing <code>YourNetworkName</code> and, if required, your network password replacing <code>YourPassword</code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For Duke's network, these lines should read:</p>
+<div class="codehilite"><pre><span></span>char ssid[] = &quot;DukeOpen&quot;;
+char pass[] = &quot;&quot;;
+</pre></div>
+
+
+</div>
+</li>
+<li>
+<p>Save the sketch (you will be prompted to give it a new name.)</p>
+</li>
+<li>Plug your Feather M0 into your USB port.  In Arduino, make sure you have "Adafruit Feather M0" selected under Tools --&gt; Board and the proper USB port under Tools --&gt; Port.</li>
+<li>Verify and then Upload the sketch.</li>
+</ul>
+</li>
+<li>
+<p>Return to the Blynk app on your mobile device.  Tapping the button should flash the Feather's built-in LED on if the Button widget was set to "button" mode.  If set to "switch" mode, each tap will toggle the LED either on or off.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Congratulations!  You've created your first Blynk app.  Blynk offers a range of <a href="http://docs.blynk.cc/#widgets-controllers">controller widgets</a> -- buttons, sliders, timers, two-axis joysticks, step control, and RGBa color pickers.  These can be used to control LEDs, motors, relays, solenoids, etc.</p>
+<hr />
+<h2 id="blynks-display-widgets">Blynk's Display Widgets</h2>
+<p>Now let's explore some of Blynk's <a href="http://docs.blynk.cc/#widgets-displays">display widgets</a> which allow you to display and chart data sent from your Feather microcontroller and any attached sensors.  </p>
+<ol>
+<li>
+<p>Hook up a sensor of your choosing to your Feather M0. Some possibilities include:</p>
+<ul>
+<li>
+<p><a href="https://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor">Temperature Sensor</a> (the TMP36 is in your Redboard Inventor's Kit)</p>
+</li>
+<li>
+<p><a href="https://learn.sparkfun.com/tutorials/photocell-hookup-guide">Light Sensitive Resistor</a></p>
+</li>
+<li>
+<p>Potentiometer</p>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Feather M0 operates at 3.3V logic level! </p>
+</div>
+</li>
+<li>
+<p>In the mobile Blynk app, add a new widget to your canvas by tapping on the <strong>+</strong> icon.  Scroll down to find the Display widgets and choose the "Labeled Value" widget.</p>
+</li>
+<li>
+<p>It will appear as an empty box on your canvas.  Press and hold to resize and/or re-position the widget.</p>
+</li>
+<li>
+<p>Tap once on the widget to access its settings:</p>
+<p><img alt="Labeled Value Widget Settings" src="labeled_value_settings.png" /></p>
+<ol>
+<li>
+<p>Title: Optional, but useful to specify the sensor.</p>
+</li>
+<li>
+<p>Pin (outlined in green):  Choose the pin from which you want to read the sensor (usually an analog input pin).</p>
+</li>
+<li>
+<p>To the right of the pin setting you can specify the expected <em>or</em> mapped values:</p>
+<ul>
+<li>
+<p>Expected values -- these are the "raw" values read by the microcontroller's ADC (analog to digital converter).  [The Adafruit Feather M0's analog input pins are read at 12-bit resolution, so you will want to change the upper value from 1023 to 4096 to reflect this higher resolution.]</p>
+<p><img alt="Feather M0 has 12-bit resolution" src="12_bit.png" /></p>
+</li>
+<li>
+<p>Mapped values -- While you know how to use Arduino's <code>map()</code> function to remap sensor values to different scales within the Arduino sketch itself, Blynk allows you to map incoming values in the mobile app itself.  Note the curved line connecting the lowest sensor value to the highest.  </p>
+<p><img alt="curved line connecting sensor high/low reading" src="unmapped.png" /></p>
+<p>If you tap that line, a greyed out circle with amplitude becomes active, indicating that instead of passing along raw values, Blynk will map the incoming values to the range you specify.</p>
+<p><img alt="mapping of values activated" src="mapped.png" /></p>
+<p>So if you wanted to map your sensor to values 0 to 100, simply use that as a range and Blynk will automatically do the mapping for you!</p>
+</li>
+</ul>
+</li>
+<li>
+<p>By default, this widget will show the values only, but you can format the output to include labels.  For example, if your sensor sends the value 75.385, you can use the following syntax to modify the numerical display:</p>
+<ul>
+<li><code>/pin/</code> will display: <em>75.385</em> (the default)</li>
+<li><code>/pin./</code> will display a rounded, non-decimal value: <em>75</em></li>
+<li><code>/pin.#/</code> will display the value with 10ths of an integer resolution:  <em>75.4</em></li>
+<li><code>/pin.##/</code> will display the value with 100ths of an integer resolution: <em>75.39</em></li>
+</ul>
+<p>as well as add labels:</p>
+<ul>
+<li><code>value: /pin./</code> will display: <em>value 75</em></li>
+<li><code>/pin.#/ %</code> will display: <em>75.4 %</em></li>
+<li><code>level: /pin/ microns</code> will display: <em>level: 75.385 microns</em></li>
+</ul>
+</li>
+<li>
+<p>Finally, you can decide how often you want the blynk app to query your hardware.  Default is every 1 second.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Tap the back arrow to return to your canvas.</p>
+</li>
+<li>
+<p>Press the "play" button on your Blynk canvas.  If your Feather M0 is connected and the sensor properly wired, you should see values updating in the labeled display immediately!</p>
+</li>
+</ol>
+<hr />
+<h2 id="challenge-twitter-or-email">Challenge - Twitter or Email</h2>
+<p>Challenge yourself to create an application that triggers a Tweet or email when a sensor hits a particular threshhold.</p>
+<p><a href="http://docs.blynk.cc/#widgets-notifications">http://docs.blynk.cc/#widgets-notifications</a></p>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../feather/" title="Feather M0" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Feather M0
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
