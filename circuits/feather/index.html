@@ -548,123 +548,129 @@
 </ul>
 </li>
 <li>
-<p>Copy and paste the following code into your sketch, replacing what is there by default:</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;SPI.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;WiFi101.h&quot;</span><span class="cp"></span>
-
-<span class="kr">char</span> <span class="n">ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;DukeOpen&quot;</span><span class="p">;</span>   <span class="c1">// your network SSID (name)</span>
-<span class="c1">// char pass[] = &quot;&quot;;    // not used with DukeOpen</span>
-
-<span class="kr">int</span> <span class="n">status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>
-<span class="nf">WiFiServer</span> <span class="nf">server</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
-<span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>    <span class="c1">// specify built-in LED</span>
-
-<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// initialize serial communication</span>
-<span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>    <span class="c1">// set the LED pin mode</span>
-
-<span class="c1">//Configure pins specific to Adafruit ATWINC1500 Feather M0</span>
-<span class="nf">WiFi</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-
-<span class="c1">// check for the presence of WiFi:</span>
-<span class="k">if</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_NO_SHIELD</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;WiFi not present&quot;</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="kr">true</span><span class="p">);</span>       <span class="c1">// don&#39;t continue</span>
-<span class="p">}</span>
-
-<span class="c1">// attempt to connect to WiFi network:</span>
-<span class="k">while</span> <span class="p">(</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to Network named: &quot;</span><span class="p">);</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>   <span class="c1">// print the network name (SSID);</span>
-
-    <span class="c1">// Connect to open network. </span>
-    <span class="n">status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
-
-    <span class="c1">// if using password WEP, use the following instead</span>
-    <span class="c1">//status = WiFi.begin(ssid, pass);</span>
-
-    <span class="c1">// wait 10 seconds for connection:</span>
-    <span class="nf">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="n">server</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>     <span class="c1">// start the web server on port 80</span>
-<span class="n">printWiFiStatus</span><span class="p">();</span>  <span class="c1">// you&#39;re connected now, so print out the status</span>
-<span class="p">}</span>
-
-<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
-<span class="nf">WiFiClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">server</span><span class="p">.</span><span class="nf">available</span><span class="p">();</span>   <span class="c1">// listen for incoming clients</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">)</span> <span class="p">{</span>   <span class="c1">// if you get a client,</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;new client&quot;</span><span class="p">);</span>   <span class="c1">// print a message out the serial port</span>
-    <span class="kr">String</span> <span class="n">currentLine</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>        <span class="c1">// make a String to hold incoming data from the client</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">())</span> <span class="p">{</span>    <span class="c1">// loop while the client&#39;s connected</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">available</span><span class="p">())</span> <span class="p">{</span>   <span class="c1">// if there&#39;s bytes to read from the client,</span>
-        <span class="kr">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span> <span class="c1">// read a byte, then</span>
-        <span class="nf">Serial</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>    <span class="c1">// print it out the serial monitor</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// if the byte is a newline character</span>
-
-        <span class="c1">// if the current line is blank, you got two newline characters in a row.</span>
-        <span class="c1">// that&#39;s the end of the client HTTP request, so send a response:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)</span>
-            <span class="c1">// and a content-type so the client knows what&#39;s coming, then a blank line:</span>
-            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;HTTP/1.1 200 OK&quot;</span><span class="p">);</span>
-            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Content-type:text/html&quot;</span><span class="p">);</span>
-            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
-
-            <span class="c1">// the content of the HTTP response follows the header:</span>
-            <span class="n">client</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Click &amp;lt;a href=</span><span class="se">\&quot;</span><span class="s">/H</span><span class="se">\&quot;</span><span class="s">&amp;gt;here&amp;lt;/a&amp;gt; turn the LED on pin 13 on&amp;lt;br&amp;gt;&quot;</span><span class="p">);</span>
-            <span class="n">client</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Click &amp;lt;a href=</span><span class="se">\&quot;</span><span class="s">/L</span><span class="se">\&quot;</span><span class="s">&amp;gt;here&amp;lt;/a&amp;gt; turn the LED on pin 13 off&amp;lt;br&amp;gt;&quot;</span><span class="p">);</span>
-
-            <span class="c1">// The HTTP response ends with another blank line:</span>
-            <span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
-            <span class="c1">// break out of the while loop:</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">else</span> <span class="p">{</span>      <span class="c1">// if you got a newline, then clear currentLine:</span>
-            <span class="n">currentLine</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">!=</span> <span class="sc">&#39;\r&#39;</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// if you got anything else but a carriage return character,</span>
-        <span class="n">currentLine</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>      <span class="c1">// add it to the end of the currentLine</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Check to see if the client request was &quot;GET /H&quot; or &quot;GET /L&quot;:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s">&quot;GET /H&quot;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span> <span class="c1">// GET /H turns the LED on</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s">&quot;GET /L&quot;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>  <span class="c1">// GET /L turns the LED off</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="c1">// close the connection:</span>
-    <span class="n">client</span><span class="p">.</span><span class="nf">stop</span><span class="p">();</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;client disonnected&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kr">void</span> <span class="nf">printWiFiStatus</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// print the SSID of the network you&#39;re attached to:</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;SSID: &quot;</span><span class="p">);</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">SSID</span><span class="p">());</span>
-
-<span class="c1">// print your WiFi shield&#39;s IP address:</span>
-<span class="nf">IPAddress</span> <span class="n">ip</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">();</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;IP Address: &quot;</span><span class="p">);</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
-
-<span class="c1">// print the received signal strength:</span>
-<span class="kr">long</span> <span class="n">rssi</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">RSSI</span><span class="p">();</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;signal strength (RSSI):&quot;</span><span class="p">);</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">rssi</span><span class="p">);</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot; dBm&quot;</span><span class="p">);</span>
-<span class="c1">// print where to go in a browser:</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;To see this page in action, open a browser to http://&quot;</span><span class="p">);</span>
-<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-
+<p>Copy and paste the following code into your sketch, replacing what is there by default: <br />
+    <pre><code></p>
+<p>&#35;include &lt;SPI.h&gt;
+&#35;include &lt;WiFi101.h&gt;</p>
+<p>char ssid[] = "DukeOpen";   &#47;&#47; your network SSID (name)
+&#47;&#47; char pass[] = "";    &#47;&#47; commented out because password 
+                        &#47;&#47; is not used with DukeOpen </p>
+<p>int status = WL_IDLE_STATUS;
+WiFiServer server(80);
+int ledPin = 13;    &#47;&#47; specify built-in LED</p>
+<p>void setup() {
+    Serial.begin(9600); &#47;&#47; initialize serial communication
+    pinMode(ledPin, OUTPUT);    &#47;&#47; set the LED pin mode <br />
+    &#47;&#47; Configure pins specific to Adafruit ATWINC1500 Feather M0
+    WiFi.setPins(8,7,4,2); <br />
+    &#47;&#47; check for the presence of WiFi:
+    if (WiFi.status() == WL_NO_SHIELD) {
+        Serial.println("WiFi not present");
+        while (true);       &#47;&#47; don't continue
+    }
+    &#47;&#47; attempt to connect to WiFi network:
+        while ( status != WL_CONNECTED) {
+          Serial.print("Attempting to connect to Network named: ");
+          Serial.println(ssid);   &#47;&#47; print the network name (SSID); <br />
+          &#47;&#47; Connect to open network. 
+          status = WiFi.begin(ssid); <br />
+          &#47;&#47; if using password WEP, use the following instead
+          &#47;&#47; status = WiFi.begin(ssid, pass); <br />
+          &#47;&#47; wait 10 seconds for connection:
+          delay(10000);
+        }
+    server.begin();     &#47;&#47; start the web server on port 80
+    printWiFiStatus();  &#47;&#47; you're connected now, so print out the status
+}</p>
+<p>void loop() {
+    WiFiClient client = server.available();   &#47;&#47; listen for incoming clients <br />
+    if (client) {   &#47;&#47; if you get a client,
+      Serial.println("new client");   &#47;&#47; print a message out the serial port
+      String currentLine = "";        &#47;&#47; make a String to hold incoming data from the client <br />
+      while (client.connected()) {    &#47;&#47; loop while the client's connected <br />
+        if (client.available()) {   &#47;&#47; if there's bytes to read from the client,
+          char c = client.read(); &#47;&#47; read a byte, then
+          Serial.write(c);    &#47;&#47; print it out the serial monitor
+          if (c == '\n') {    &#47;&#47; if the byte is a newline character <br />
+            &#47;&#47; if the current line is blank, you got two newline characters in a row.
+            &#47;&#47; that's the end of the client HTTP request, so send a response:
+            if (currentLine.length() == 0) {
+              &#47;&#47; HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
+              &#47;&#47; and a content-type so the client knows what's coming, then a blank line:
+              client.println("HTTP/1.1 200 OK");
+              client.println("Content-type:text/html");
+              client.println(); <br />
+              &#47;&#47; the content of the HTTP response follows the header:
+              client.print("Click &lt;a href=\"/H\"&gt;here&lt;/a&gt; turn the LED on pin 13 on&lt;br /&gt;");
+              client.print("Click &lt;a href=\'/L\'&gt;here&lt;/a&gt; turn the LED on pin 13 off"); <br />
+              &#47;&#47; The HTTP response ends with another blank line:
+              client.println();
+              &#47;&#47; break out of the while loop:
+              break;
+            }
+            else {    <br />
+              &#47;&#47; if you got a newline, then clear currentLine:
+              currentLine = "";
+            }
+          }
+          else if (c != '\r') {
+            &#47;&#47; if you got anything else but a carriage return character,
+            currentLine += c;      &#47;&#47; add it to the end of the currentLine
+          }
+          &#47;&#47; Check to see if the client request was "GET /H" or "GET /L":
+          if (currentLine.endsWith("GET /H")) {
+            digitalWrite(ledPin, HIGH); &#47;&#47; GET /H turns the LED on
+          }
+          if (currentLine.endsWith("GET /L")) {
+            digitalWrite(ledPin, LOW);  &#47;&#47; GET /L turns the LED off
+          }
+        }
+      }
+      &#47;&#47; close the connection:
+      client.stop();
+      Serial.println("client disonnected");
+    }
+}</p>
+<p>void printWiFiStatus() { <br />
+    &#47;&#47; print the SSID of the network you're attached to:
+    Serial.print("SSID: ");
+    Serial.println(WiFi.SSID()); <br />
+    &#47;&#47; print your WiFi shield's IP address:
+    IPAddress ip = WiFi.localIP();
+    Serial.print("IP Address: ");
+    Serial.println(ip); <br />
+    &#47;&#47; print the received signal strength:
+    long rssi = WiFi.RSSI();
+    Serial.print("signal strength (RSSI):");
+    Serial.print(rssi);
+    Serial.println(" dBm"); <br />
+    &#47;&#47; print where to go in a browser:
+    Serial.print("To see this page in action, open a browser to http://");
+    Serial.println(ip); <br />
+}</p>
+<p></code></pre>   </p>
+<ol>
+<li>
+<p>Verify the code to make sure it compiles.</p>
+</li>
+<li>
+<p>Ensure that you still have the Adafruit Feather M0 selected under Tools --&gt; Board and the correct USB port under Tools --&gt; Port.   Then click the Upload icon to upload the code to your Feather M0.</p>
+</li>
+<li>
+<p>Once the code successfully compiles and uploads, click on the "Serial Monitor" icon in the upper-right of the Arduino sketch interface, or choose Tools --&gt; Serial Monitor from the main menu.</p>
+</li>
+<li>
+<p>In the serial monitor, after about 10 seconds you should see the Feather connect to the wifi network and receive an IP address.  Make note of the IP address that your Feather M0 has been assigned.</p>
+<p><img alt="Serial monitor indicating IP address" src="serial_monitor.png" /></p>
+</li>
+<li>
+<p>Open a browser window and enter "http://" followed by the IP address in the address bar.   The browser should open the following webpage, which is being served directly from the Feather M0:</p>
+<p><img alt="Webpage served from Feather" src="webpage.png" /></p>
+</li>
+<li>
+<p>Click on the links on the webpage to toggle the Feather M0's onboard LED on and off.</p>
+</li>
+</ol>
 </li>
 </ol>
     
