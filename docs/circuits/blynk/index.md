@@ -1,6 +1,6 @@
 ---
 title: Blynk
-description: Using Blynk as an Interface with the Feathe M0
+description: Using Blynk as an Interface with the Feather M0
 authors:  Mark Olson
 updated:  2018-10-12
 ---
@@ -108,7 +108,7 @@ In this tutorial you will be introduced to the [Blynk](https://www.blynk.cc/) pl
 
                 For Duke's network, these lines should read:
 
-                    
+                    :::arduino
                     char ssid[] = "DukeOpen";
                     char pass[] = "";
 
