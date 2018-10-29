@@ -133,113 +133,114 @@ Next we'll make use of the WiFi101 library to enable the Feather M0's wifi chip 
 
 
 1.  Copy and paste the following code into your sketch, replacing what is there by default:   
-    <pre><code>
-    
-    &#35;include &lt;SPI.h&gt;
-    &#35;include &lt;WiFi101.h&gt;
 
-    char ssid[] = "DukeOpen";   &#47;&#47; your network SSID (name)
-    &#47;&#47; char pass[] = "";    &#47;&#47; commented out because password 
-                            &#47;&#47; is not used with DukeOpen 
+    ```arduino
+
+    #include <SPI.h>
+    #include <WiFi101.h>
+
+    char ssid[] = "DukeOpen";  // your network SSID (name)
+    // char pass[] = "";   // commented out because password
+    // is not used with DukeOpen
 
     int status = WL_IDLE_STATUS;
     WiFiServer server(80);
-    int ledPin = 13;    &#47;&#47; specify built-in LED
+    int ledPin = 13;   // specify built-in LED
 
     void setup() {
-        Serial.begin(9600); &#47;&#47; initialize serial communication
-        pinMode(ledPin, OUTPUT);    &#47;&#47; set the LED pin mode   
-        &#47;&#47; Configure pins specific to Adafruit ATWINC1500 Feather M0
-        WiFi.setPins(8,7,4,2);   
-        &#47;&#47; check for the presence of WiFi:
-        if (WiFi.status() == WL_NO_SHIELD) {
-            Serial.println("WiFi not present");
-            while (true);       &#47;&#47; don't continue
-        }
-        &#47;&#47; attempt to connect to WiFi network:
-            while ( status != WL_CONNECTED) {
-              Serial.print("Attempting to connect to Network named: ");
-              Serial.println(ssid);   &#47;&#47; print the network name (SSID);   
-              &#47;&#47; Connect to open network. 
-              status = WiFi.begin(ssid);   
-              &#47;&#47; if using password WEP, use the following instead
-              &#47;&#47; status = WiFi.begin(ssid, pass);   
-              &#47;&#47; wait 10 seconds for connection:
-              delay(10000);
-            }
-        server.begin();     &#47;&#47; start the web server on port 80
-        printWiFiStatus();  &#47;&#47; you're connected now, so print out the status
+      Serial.begin(9600);// initialize serial communication
+      pinMode(ledPin, OUTPUT);   // set the LED pin mode
+      // Configure pins specific to Adafruit ATWINC1500 Feather M0
+      WiFi.setPins(8, 7, 4, 2);
+      // check for the presence of WiFi:
+      if (WiFi.status() == WL_NO_SHIELD) {
+        Serial.println("WiFi not present");
+        while (true);      // don't continue
+      }
+      // attempt to connect to WiFi network:
+      while ( status != WL_CONNECTED) {
+        Serial.print("Attempting to connect to Network named: ");
+        Serial.println(ssid);  // print the network name (SSID);
+        // Connect to open network.
+        status = WiFi.begin(ssid);
+        // if using password WEP, use the following instead
+        // status = WiFi.begin(ssid, pass);
+        // wait 10 seconds for connection:
+        delay(10000);
+      }
+      server.begin();    // start the web server on port 80
+      printWiFiStatus(); // you're connected now, so print out the status
     }
 
     void loop() {
-        WiFiClient client = server.available();   &#47;&#47; listen for incoming clients   
-        if (client) {   &#47;&#47; if you get a client,
-          Serial.println("new client");   &#47;&#47; print a message out the serial port
-          String currentLine = "";        &#47;&#47; make a String to hold incoming data from the client   
-          while (client.connected()) {    &#47;&#47; loop while the client's connected   
-            if (client.available()) {   &#47;&#47; if there's bytes to read from the client,
-              char c = client.read(); &#47;&#47; read a byte, then
-              Serial.write(c);    &#47;&#47; print it out the serial monitor
-              if (c == '\n') {    &#47;&#47; if the byte is a newline character   
-                &#47;&#47; if the current line is blank, you got two newline characters in a row.
-                &#47;&#47; that's the end of the client HTTP request, so send a response:
-                if (currentLine.length() == 0) {
-                  &#47;&#47; HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
-                  &#47;&#47; and a content-type so the client knows what's coming, then a blank line:
-                  client.println("HTTP/1.1 200 OK");
-                  client.println("Content-type:text/html");
-                  client.println();   
-                  &#47;&#47; the content of the HTTP response follows the header:
-                  client.print("Click &lt;a href=\"/H\"&gt;here&lt;/a&gt; turn the LED on pin 13 on&lt;br /&gt;");
-                  client.print("Click &lt;a href=\'/L\'&gt;here&lt;/a&gt; turn the LED on pin 13 off");   
-                  &#47;&#47; The HTTP response ends with another blank line:
-                  client.println();
-                  &#47;&#47; break out of the while loop:
-                  break;
-                }
-                else {      
-                  &#47;&#47; if you got a newline, then clear currentLine:
-                  currentLine = "";
-                }
+      WiFiClient client = server.available();  // listen for incoming clients
+      if (client) {  // if you get a client,
+        Serial.println("new client");  // print a message out the serial port
+        String currentLine = "";       // make a String to hold incoming data from the client
+        while (client.connected()) {   // loop while the client's connected
+          if (client.available()) {  // if there's bytes to read from the client,
+            char c = client.read();// read a byte, then
+            Serial.write(c);   // print it out the serial monitor
+            if (c == '\n') {   // if the byte is a newline character
+              // if the current line is blank, you got two newline characters in a row.
+              // that's the end of the client HTTP request, so send a response:
+              if (currentLine.length() == 0) {
+                // HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
+                // and a content-type so the client knows what's coming, then a blank line:
+                client.println("HTTP/1.1 200 OK");
+                client.println("Content-type:text/html");
+                client.println();
+                // the content of the HTTP response follows the header:
+                client.print("Click <a href=\"/H\">here</a> turn the LED on pin 13 on&lt;br />");
+                client.print("Click <a href=\'/L\'>here</a> turn the LED on pin 13 off");
+                // The HTTP response ends with another blank line:
+                client.println();
+                // break out of the while loop:
+                break;
               }
-              else if (c != '\r') {
-                &#47;&#47; if you got anything else but a carriage return character,
-                currentLine += c;      &#47;&#47; add it to the end of the currentLine
-              }
-              &#47;&#47; Check to see if the client request was "GET /H" or "GET /L":
-              if (currentLine.endsWith("GET /H")) {
-                digitalWrite(ledPin, HIGH); &#47;&#47; GET /H turns the LED on
-              }
-              if (currentLine.endsWith("GET /L")) {
-                digitalWrite(ledPin, LOW);  &#47;&#47; GET /L turns the LED off
+              else {
+                // if you got a newline, then clear currentLine:
+                currentLine = "";
               }
             }
+            else if (c != '\r') {
+              // if you got anything else but a carriage return character,
+              currentLine += c;     // add it to the end of the currentLine
+            }
+            // Check to see if the client request was "GET /H" or "GET /L":
+            if (currentLine.endsWith("GET /H")) {
+              digitalWrite(ledPin, HIGH);// GET /H turns the LED on
+            }
+            if (currentLine.endsWith("GET /L")) {
+              digitalWrite(ledPin, LOW); // GET /L turns the LED off
+            }
           }
-          &#47;&#47; close the connection:
-          client.stop();
-          Serial.println("client disonnected");
         }
+        // close the connection:
+        client.stop();
+        Serial.println("client disonnected");
+      }
     }
 
-    void printWiFiStatus() {   
-        &#47;&#47; print the SSID of the network you're attached to:
-        Serial.print("SSID: ");
-        Serial.println(WiFi.SSID());   
-        &#47;&#47; print your WiFi shield's IP address:
-        IPAddress ip = WiFi.localIP();
-        Serial.print("IP Address: ");
-        Serial.println(ip);   
-        &#47;&#47; print the received signal strength:
-        long rssi = WiFi.RSSI();
-        Serial.print("signal strength (RSSI):");
-        Serial.print(rssi);
-        Serial.println(" dBm");   
-        &#47;&#47; print where to go in a browser:
-        Serial.print("To see this page in action, open a browser to http://");
-        Serial.println(ip);   
+    void printWiFiStatus() {
+      // print the SSID of the network you're attached to:
+      Serial.print("SSID: ");
+      Serial.println(WiFi.SSID());
+      // print your WiFi shield's IP address:
+      IPAddress ip = WiFi.localIP();
+      Serial.print("IP Address: ");
+      Serial.println(ip);
+      // print the received signal strength:
+      long rssi = WiFi.RSSI();
+      Serial.print("signal strength (RSSI):");
+      Serial.print(rssi);
+      Serial.println(" dBm");
+      // print where to go in a browser:
+      Serial.print("To see this page in action, open a browser to http://");
+      Serial.println(ip);
     }
 
-    </code></pre>   
+    ```  
 
     1. Verify the code to make sure it compiles.
 

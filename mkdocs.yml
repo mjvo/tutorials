@@ -32,6 +32,7 @@ markdown_extensions:
   - footnotes
   - meta
   - pymdownx.arithmatex
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
 
@@ -47,5 +48,6 @@ nav:
     - 'ATtiny85' : 'circuits/attiny85/index.md'
     - 'Feather M0' : 'circuits/feather/index.md'
     - 'Blynk' : 'circuits/blynk/index.md'
+    - 'MQTT' : 'circuits/mqtt/index.md'
 
 

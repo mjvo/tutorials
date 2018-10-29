@@ -108,10 +108,11 @@ In this tutorial you will be introduced to the [Blynk](https://www.blynk.cc/) pl
 
                 For Duke's network, these lines should read:
 
-                    :::arduino
+                ```arduino
                     char ssid[] = "DukeOpen";
                     char pass[] = "";
-
+                ```
+                
         * Save the sketch (you will be prompted to give it a new name.)
         * Plug your Feather M0 into your USB port.  In Arduino, make sure you have "Adafruit Feather M0" selected under Tools --> Board and the proper USB port under Tools --> Port.
         * Verify and then Upload the sketch.
