@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
     
     
       
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#coming-soon" tabindex="1" class="md-skip">
+      <a href="#about-this-tutorial" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -190,10 +190,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Circuits
@@ -253,6 +255,100 @@
   </li>
 
         
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        MQTT
+      </label>
+    
+    <a href="./" title="MQTT" class="md-nav__link md-nav__link--active">
+      MQTT
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-tutorial" title="About this Tutorial" class="md-nav__link">
+    About this Tutorial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" title="Quick Start Guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-instructions" title="Detailed Instructions" class="md-nav__link">
+    Detailed Instructions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-wifi-connection" title="Part 1 - WiFi Connection" class="md-nav__link">
+    Part 1 - WiFi Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-mqtt-connection" title="Part 2 - MQTT Connection" class="md-nav__link">
+    Part 2 - MQTT Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-mqtt-subscriptions" title="Part 3:  MQTT Subscriptions" class="md-nav__link">
+    Part 3:  MQTT Subscriptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-mqtt-publishing" title="Part 4:  MQTT Publishing" class="md-nav__link">
+    Part 4:  MQTT Publishing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -277,9 +373,57 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#coming-soon" title="Coming soon" class="md-nav__link">
-    Coming soon
+  <a href="#about-this-tutorial" title="About this Tutorial" class="md-nav__link">
+    About this Tutorial
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" title="Quick Start Guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-instructions" title="Detailed Instructions" class="md-nav__link">
+    Detailed Instructions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-wifi-connection" title="Part 1 - WiFi Connection" class="md-nav__link">
+    Part 1 - WiFi Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-mqtt-connection" title="Part 2 - MQTT Connection" class="md-nav__link">
+    Part 2 - MQTT Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-mqtt-subscriptions" title="Part 3:  MQTT Subscriptions" class="md-nav__link">
+    Part 3:  MQTT Subscriptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-mqtt-publishing" title="Part 4:  MQTT Publishing" class="md-nav__link">
+    Part 4:  MQTT Publishing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -311,8 +455,677 @@
             </div> 
         
     
-    <h2 id="coming-soon">Coming soon</h2>
-<p>An MQTT implementation for the Feather M0... </p>
+    <h2 id="about-this-tutorial">About this Tutorial</h2>
+<p>This tutorial outlines a workflow for implementing <a href="https://www.hivemq.com/blog/mqtt-essentials/">MQTT communication</a> on the Adafruit Feather M0, leveraging the following Arduino libraries:</p>
+<ul>
+<li><a href="https://www.arduino.cc/en/Reference/WiFi101">WiFi101 by Arduino</a></li>
+<li><a href="https://pubsubclient.knolleary.net/">PubSub Client by Nick O'Leary</a></li>
+<li><a href="https://github.com/contrem/arduino-timer">arduino-timer by Michael Contreras</a></li>
+</ul>
+<p>Before you begin, please install these libraries using the Arduino IDE's <a href="https://www.arduino.cc/en/Guide/Libraries#toc3">Library Manager</a>.</p>
+<p>For the purposes of this tutorial, imagine that you want to be able to control the lighting at the entrance of every administrative building on campus.  To accomplish this, you deploy a fleet of Feather M0's to each building.  Each Feather is connected to an LED light.  One Feather will function as your "control center", so it will need a potentiometer for setting brightness levels. </p>
+<p>As a baseline functionality, we want to be able to control the brightness level of ALL of the Feather-connected LEDs on the network, simultaneously adjusting them from one location.   </p>
+<p>Let's prototype this:  Wire up a potentiometer to your Feather M0, terminating its wiper terminal at analog pin A1.   We will make use of the onboard LED (@ pin 13) to save some time but you are welcome to include an LED and appropriate resistor for a 3.3V logic level.</p>
+<p><img alt="Breadboard example of a Feather M0 wired to a potentiometer" src="FeatherM0_MQTT_bb.png" /></p>
+<p>Once you've wired up your hardware like the image above, you can continue below with either the <a href="#quick-start-guide">Quick Start Guide</a> that builds modularly off of a sample code, or with the <a href="#detailed-instructions">Detailed Instructions</a>, which walk step-by-step through the entire process of constructing a functioning project.</p>
+<hr />
+<h2 id="quick-start-guide">Quick Start Guide</h2>
+<p>This Quick Start Guide will make use of a heavily commented codebase that has been structured to allow for easy setup and customization of an MQTT client node.</p>
+<ol>
+<li>
+<p>First, <a href="https://gist.github.com/mjvo/4913d11adcc08d7188819c79e2186b99/archive/c031db38f15b88702a7a1e2f4e109c71d053ac6c.zip">download a .zip file of the code</a> and unzip it.</p>
+</li>
+<li>
+<p>This zip file contains two files:  <code>MQTT_FeatherMO.ino</code> and <code>arduino_secrets.h</code>.  Rename the unzipped folder to <code>MQTT_FeatherMO</code>.  (Arduino requires that the containing folder name match the main .ino sketch name.)</p>
+</li>
+<li>
+<p>Double-click on the <code>MQTT_FeatherMO.ino</code> file to open it in Arduino.</p>
+</li>
+<li>
+<p>The sketch contains two tabs.  Click on the <code>arduino_secrets.h</code> tab and <strong>set your WiFi network's SSID and password (if applicable)</strong>.</p>
+<p><img alt="Sketch open to arduino_secrets.h tab for setting SSID and password" src="arduino_secrets_qs.png" /></p>
+</li>
+<li>
+<p>Return to the MQTT_FeatherM0 tab.</p>
+</li>
+<li>
+<p>Scroll down to lines 28 and 29 and <strong>set your MQTT_BROKER address and MQTT_PORT</strong>.   If your desired broker is TLS/SSL capable, you will use port 8883.  If not, use the default port 1883.  Since our broker, <code>mqtt.colab.duke.edu</code> is capable of TLS/SSL, lines 28 and 29 should read:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#define MQTT_BROKER &quot;mqtt.colab.duke.edu&quot;  </span><span class="c1">// specify MQTT broker address (IP or URL)</span>
+<span class="cp">#define MQTT_PORT 8883  </span><span class="c1">// use 8883 for TLS/SSL MQTT; use 1883 for non-secure</span>
+</pre></div>
+
+</li>
+<li>
+<p>Look at lines 31 - 35.  If your broker is NOT SSL/TLS capable, comment out line 32 and <strong><em>un</em></strong>comment line 35.  In our case, since our broker is TLS/SSL enabled, we can leave these lines unchanged.</p>
+</li>
+<li>
+<p><strong>Scroll down to the "PIN DECLARATIONS" section of the code</strong>.  Here is where you would declare any constants to hold pin #'s for the hardware pins you need your project to employ.  In our case, we want to use pin <code>13</code> as <code>ledPin</code> and pin <code>A1</code> as <code>sensorPin</code>, so <strong><em>un</em></strong>comment lines 54 and 55, as illustrated below:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// ****</span>
+<span class="c1">// PIN DECLARATIONS</span>
+<span class="c1">//</span>
+<span class="c1">// Pin declarations for Feather hardware control</span>
+<span class="c1">// Modify as necessary for your hardware setup.</span>
+<span class="c1">// Don&#39;t forget pinMode in the setup() function!</span>
+<span class="c1">// ****</span>
+<span class="c1">//  examples:</span>
+<span class="hll"><span class="kr">const</span> <span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>   <span class="c1">// onboard LED</span>
+</span><span class="hll"><span class="kr">const</span> <span class="kr">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A1</span><span class="p">;</span>  <span class="c1">// analog input, such as potentiometer</span>
+</span></pre></div>
+
+</li>
+<li>
+<p>Next scroll all the way down to the sketch's <code>setup()</code> function and <strong>find the "PINMODE DECLARATIONS" section.</strong>  Here is where you will need to set the <code>pinMode</code> of any pins specified above.  In our case, we want to set the pinMode of <code>ledPin</code> to <code>OUTPUT</code> and of <code>sensorPin</code> to <code>INPUT</code>.  <strong><em>Un</em></strong>comment lines 181 and 182, as indicated below:</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// ****</span>
+    <span class="c1">// PINMODE DECLARATIONS</span>
+    <span class="c1">// Any pinMode declarations should be set here</span>
+    <span class="c1">// ****</span>
+<span class="hll">    <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+</span><span class="hll">    <span class="nf">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
+</span></pre></div>
+
+</li>
+<li>
+<p>Scroll back up to the "SUBSCRIPTIONS SECTION" (around line 60).  If your project needs to <em>subscribe</em> to any MQTT topics, here is where you both a) <strong>subscribe to the topic(s)</strong> and b) <strong>specify what your Feather M0 should do upon receiving an incoming message at that topic(s)</strong>.  </p>
+<ol>
+<li>
+<p>Continue to Part A:  <code>doSubscriptions()</code>:  Here you can specify -- one per line -- any topics that you would like your Feather M0 to subscribe to from the MQTT broker.  These follow the syntax <code>client.subscribe("/some/topic");</code>  </p>
+<p>Let's specify a subscription to the topic <code>/admin/lightlevel</code>.   Add this line to the <code>doSubscriptions()</code> function, <em>before</em> its closing <code>}</code>, as illustrated below:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">doSubscriptions</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Specify topic subscriptions line by line below, such as</span>
+    <span class="c1">// client.subscribe(&quot;/some/topic&quot;);</span>
+    <span class="c1">// client.subscribe(&quot;/another/topic&quot;);</span>
+
+<span class="hll">    <span class="n">client</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;/admin/lightlevels&quot;</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Next we need to <strong>specify what happens when the Feather receives an MQTT message at a subscribed topic</strong>.  Scroll down and find "PART B - Handle parsing of specific topics below..."</p>
+<p>Here we do a string compare of the incoming topic against a specific topic we expect to receive and parse that message accordingly.  The generic syntax for such parsing is:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="s">&quot;/some/topic/&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="c1">//Do something with its payload</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>In our case, we want to do something when a message comes in at topic <code>/admin/lightlevel</code>, namely, adjust the onboard LEDs brightness.  Add the following code immediately below the line <code>/////// TOPIC SPECIFIC PARSING GOES HERE</code> (approx line 116) and <em>above</em> the closing <code>}</code> for the <code>parseMQTT()</code> function (approx. line 118 )</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">//this listens for a topic called &quot;/admin/lightlevel&quot;</span>
+    <span class="c1">// and then converts its payload string into an integer</span>
+    <span class="c1">// using the atoi() function. It then sets the ledPin level</span>
+    <span class="c1">// accordingly using the analogWrite() function</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="s">&quot;/admin/lightlevel&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">int</span> <span class="n">brightness</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">((</span><span class="kr">char</span><span class="o">*</span><span class="p">)</span><span class="n">payload</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Brightness: &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">brightness</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">brightness</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">){</span>
+            <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Turn LED fully off </span>
+            <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;All OFF&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">brightness</span> <span class="o">&gt;</span> <span class="mi">252</span><span class="p">){</span>
+            <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// Turn LED fully on </span>
+            <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;All ON&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">brightness</span><span class="p">);</span> <span class="c1">// set ledPin brightness</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+</li>
+</ol>
+<p>If all we need to do in our project was subscribe to MQTT topics and parse incoming messages at those topics, we could stop here.  However, we also need at least one of our nodes to be publishing sensor data (in this case, potentiometer settings) to the MQTT broker.</p>
+</li>
+<li>
+<p>Scroll down to the "MQTT PUBLISHING SETUP" section.  Here you can first <strong>set one or more intervals for the Feather to trigger PubSub <code>publish()</code> functions</strong>.  A single interval can trigger any number of publish events.  For example, you might want to publish to four different topics every 500 ms.  And/or different intervals can be set for different topics.  For example, you may wish to publish the value of a potentiometer every 100 ms but a temperature reading only every 15 minutes. </p>
+<p>We want the client LEDs to be quickly notified of any changes in the potentiometer setting so that they can update their brightness in near real-time.  So we'll set up a 100 ms interval for our publishing.  Under Part 1, find the <code>setPubIntervals()</code> function and inside the function, add the following line as highlighted below:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">setPubIntervals</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// syntax:  doPub.every(milliseconds, callbackFunction);</span>
+    <span class="c1">//doPub.every(100, someFunc);  // call the someFunc() function every 100 ms</span>
+<span class="hll">    <span class="n">doPub</span><span class="p">.</span><span class="n">every</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">publishLightlevel</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Finally, you need to <strong>write the callback functions specified in the interval timers above</strong>.  The generic syntax is:</p>
+<div class="codehilite"><pre><span></span><span class="kr">bool</span> <span class="nf">someFunc</span><span class="p">(</span><span class="kr">void</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">client</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">&quot;/some/topic&quot;</span><span class="p">,</span> <span class="s">&quot;value_as_string&quot;</span><span class="p">,</span> <span class="kr">false</span><span class="p">);</span> <span class="c1">// true:false --&gt; retained</span>
+    <span class="k">return</span> <span class="kr">true</span><span class="p">;</span> <span class="c1">// repeat --&gt; true</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>In the example below, every 100 ms (the interval set in Part 1 above), the function <code>publishLightlevel()</code> executes, which reads the analog value at sensorPin, maps it to a value between 0 - 255 (8 bit) and then converts that numerical value to a character array c string.  It then publishes that value to MQTT topic <code>/admin/lightlevel</code> with a retain flag set to <code>false</code>.</p>
+<p>Insert the code below at line 172 (<code>/////////  doPub callback functions go here</code>):</p>
+<div class="codehilite"><pre><span></span><span class="c1">/////////  doPub callback functions go here</span>
+<span class="kr">bool</span> <span class="nf">publishLightlevel</span><span class="p">(</span><span class="kr">void</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">int</span> <span class="n">reading</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span> <span class="c1">// read the potentiometer</span>
+    <span class="n">reading</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4095</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>  <span class="c1">// Feather M0 set to 12-bit ADC</span>
+
+    <span class="kr">char</span> <span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="kr">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="kr">String</span><span class="p">(</span><span class="n">reading</span><span class="p">);</span>
+    <span class="n">msg</span><span class="p">.</span><span class="n">toCharArray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">client</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">&quot;/admin/lightlevel&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="kr">false</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kr">true</span><span class="p">;</span> <span class="c1">// repeat? true</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p><strong>Verify and upload the sketch</strong> to your Feather M0. </p>
+</li>
+<li>
+<p>Once your Feather connects to Wifi and to the MQTT broker, manipulating the potentiometer should dynamically adjust the brightness of your onboard LED.</p>
+</li>
+</ol>
+<hr />
+<h2 id="detailed-instructions">Detailed Instructions</h2>
+<h3 id="part-1-wifi-connection">Part 1 - WiFi Connection</h3>
+<p>As you learned in our <a href="/circuits/feather/#feather-m0-as-webserver">initial Feather tutorial</a>, connecting to the internet requires using the Arduino WiFi library so that the Feather's ATSAMD21G18 ARM Cortex M0 processor can communicate with its Atmel WINC1500 WiFi chip.   Let's begin by walking through the steps necessary to connect the Feather to a WiFi network.</p>
+<ol>
+<li>
+<p>Launch the Arduino IDE.</p>
+</li>
+<li>
+<p>Create a new sketch by choosing File --&gt; New from the main menu.</p>
+</li>
+<li>
+<p>Save that sketch as "MQTT_FeatherM0_Prototype" by choosing File --&gt; Save from the main menu.</p>
+</li>
+<li>
+<p>Ensure that you have "Adafruit Feather M0" selected under Tools --&gt; Board.</p>
+</li>
+<li>
+<p>Add the WiFi101 and SPI libraries to your sketch by either:</p>
+<ul>
+<li>Choosing Sketch --&gt; Include Library --&gt; WiFi101
+    and Sketch --&gt; Include --&gt; SPI</li>
+</ul>
+<p>-- <em>or</em> --</p>
+<ul>
+<li>
+<p>Typing the following code at lines 1 and 2 of your sketch:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;SPI.h&gt;   </span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;WiFi101.h&gt;</span><span class="cp"></span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+<li>
+<p>It's considered a best practice to keep your WiFi access credentials in a separate header file.  To create one, find the &#9662; symbol and left-click on it.  In the pop-up, choose New Tab.</p>
+<p><img alt="Illustration of new tab creation" src="new_tab.png" /></p>
+<p><em>(Alternatively, you can press SHIFT-&#8984;-N)</em></p>
+</li>
+<li>
+<p>You will be prompted to enter a name for this new tab.  Type:</p>
+<p><code>arduino_secrets.h</code></p>
+</li>
+<li>
+<p>A new tab will appear in your IDE workspace, as indicated below:</p>
+<p><img alt="New &quot;arduino_secrets.h&quot; tab appears" src="arduino_secrets.png" /></p>
+<p>In this tab you will want to create <a href="https://www.arduino.cc/reference/en/language/structure/further-syntax/define/">defined constants</a> for your ssid and wifi password (if a password is required for your wifi network):</p>
+<div class="codehilite"><pre><span></span><span class="cp">#define SECRET_SSID &quot;DukeOpen&quot;  </span><span class="c1">// your network SSID (name)</span>
+<span class="cp">#define SECRET_PASS &quot;&quot;  </span><span class="c1">// your network password; leave empty for open networks</span>
+</pre></div>
+
+<p>In the above example, the SSID is set to the open network, <code>DukeOpen</code> with <em>no password</em>.</p>
+</li>
+<li>
+<p>Save your sketch:  File --&gt; Save Return to the main tab of your Arduino sketch.</p>
+</li>
+<li>
+<p>Between the library <code>#include</code> section and the <code>void setup()</code> function, add the following lines:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// WiFi credentials and config</span>
+<span class="cp">#include</span> <span class="cpf">&quot;arduino_secrets.h&quot;</span><span class="cp"></span>
+<span class="kr">char</span> <span class="n">ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="n">SECRET_SSID</span><span class="p">;</span>
+<span class="kr">char</span> <span class="n">pass</span><span class="p">[]</span> <span class="o">=</span> <span class="n">SECRET_PASS</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>  <span class="c1">// variable for WiFi radio&#39;s status</span>
+
+<span class="n">WiFiSSLClient</span> <span class="n">WiFiclient</span><span class="p">;</span> <span class="c1">// instantiate a secure WiFi client</span>
+<span class="c1">// use WiFiClient WiFiclient; for non-secure connections</span>
+</pre></div>
+
+<p>This instantiates several variables necessary for WiFi connectivity and signals to the WiFI101 library that we wish to create an SSL-capable WiFi connection.  If you don't need a secure connection, use <code>WiFiClient WiFiclient;</code> instead.</p>
+</li>
+<li>
+<p>Next, turn your attention to the <code>void setup()</code> function, replacing it with the following code:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">setup</span><span class="p">(){</span>
+    <span class="c1">// Initialize Serial (useful for debugging)</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+
+    <span class="c1">// Feather M0-specific WiFi pins</span>
+    <span class="nf">WiFi</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// attempt to connect to WiFi network:</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to SSID: &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+        <span class="c1">// Connect to WiFi:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kr">sizeof</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if no password</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span> <span class="c1">// connect with SSID alone</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">pass</span><span class="p">);</span> <span class="c1">// connect with SSID and password</span>
+        <span class="p">}</span>
+
+        <span class="c1">// wait 5 seconds for connection:</span>
+        <span class="nf">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// you&#39;re connected now, so print out a success message:</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;You&#39;re connected to the network&quot;</span><span class="p">);</span>
+
+    <span class="c1">// print your Feather&#39;s IP address:</span>
+    <span class="nf">IPAddress</span> <span class="n">ip</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">();</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Device IP Address: &quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Save and verify your Sketch.</p>
+</li>
+<li>
+<p>Plug in your Feather M0 to the USB port of your computer.  </p>
+</li>
+<li>
+<p>Confirm that its USB port is recognized and selected in the Arduino IDE:  Tools --&gt; Port</p>
+</li>
+<li>
+<p>Upload the code to your Feather and open your Serial Monitor.</p>
+</li>
+<li>
+<p>Your Feather should connect to your desired network and indicate a successful connection on the Serial Monitor:</p>
+<p><img alt="Successful connection to WiFi" src="wifi_success.png" /></p>
+</li>
+</ol>
+<hr />
+<h3 id="part-2-mqtt-connection">Part 2 - MQTT Connection</h3>
+<p>Next we need to add the code necessary to make a <a href="https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment">connection to an MQTT broker</a>.  We will use the <a href="https://pubsubclient.knolleary.net/">PubSub Client by Nick O'Leary</a> to connect to our broker.</p>
+<p><strong>Broker</strong>:  mqtt.colab.duke.edu
+<strong>Port</strong>:  8883 (TLS/SSL)</p>
+<p>The above broker is hosted on a virtual machine created using Duke's <a href="https://oit.duke.edu/what-we-do/services/virtual-computing-manager">Virtual Computing Manager</a> service.  If there is interest, a future tutorial will outline how to set up and configure this service, leveraging the open source MQTT broker <a href="https://mosquitto.org/">Mosquitto</a> and for secure connectivity, <a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-other">EFF's Certbot</a> and <a href="https://letsencrypt.org/">Let's Encrypt certificates</a>.</p>
+<p>For now, let's simply make use of this existing broker.</p>
+<ol>
+<li>
+<p>To include the PubSub Client library, add this code below the <code>#include</code> statement for the WiFi101 library at the very top of your sketch:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;PubSubClient.h&gt;</span><span class="cp"></span>
+</pre></div>
+
+</li>
+<li>
+<p>Next, add the configuration variables required by the PubSub Client.  Add the highlighted lines <em>below</em> the line instantiating a secure WiFi client:</p>
+<p><div class="codehilite"><pre><span></span><span class="n">WiFiSSLClient</span> <span class="n">WiFiclient</span><span class="p">;</span> <span class="c1">// instantiate a secure WiFi client for TLS/SSL</span>
+<span class="c1">// use WiFiClient WiFiclient; for non-secure connections</span>
+
+<span class="hll"><span class="c1">// MQTT configuration</span>
+</span><span class="hll"><span class="cp">#define MQTT_BROKER &quot;mqtt.colab.duke.edu&quot;  </span><span class="c1">// specify MQTT broker address (IP or URL)</span>
+</span><span class="hll"><span class="cp">#define MQTT_PORT 8883  </span><span class="c1">// use 1883, or 8883 for TLS/SSL</span>
+</span><span class="hll">
+</span><span class="hll"><span class="c1">// use WiFi connection for MQTT communication</span>
+</span><span class="hll"><span class="n">PubSubClient</span> <span class="nf">client</span><span class="p">(</span><span class="n">WiFiclient</span><span class="p">);</span> 
+</span><span class="hll">
+</span><span class="hll"><span class="c1">// each MQTT client should have a unique ID</span>
+</span><span class="hll"><span class="kr">String</span> <span class="n">device_id</span> <span class="o">=</span> <span class="s">&quot;FeatherM0-&quot;</span><span class="p">;</span>  <span class="c1">// this will be used with Mac address for uniqueness</span>
+</span><span class="hll">
+</span><span class="hll"><span class="c1">// variables for non-blocking MQTT reconnection</span>
+</span><span class="hll"><span class="kr">long</span> <span class="n">lastReconnectAttempt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="hll"><span class="kr">long</span> <span class="n">now</span><span class="p">;</span>
+</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">(){</span>
+</pre></div>
+The code above specifies some defined constants for the MQTT broker and port, and then tells the PubSub client to use the WiFiClient as a communication channel.  The rest of the code sets up some variables to be used later.</p>
+</li>
+<li>
+<p>At the end of your <code>setup()</code> function (but before its closing <code>}</code>), add the following:</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// get your Feather&#39;s MAC address:</span>
+    <span class="kr">byte</span> <span class="n">mac</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+    <span class="nf">WiFi</span><span class="p">.</span><span class="nf">macAddress</span><span class="p">(</span><span class="n">mac</span><span class="p">);</span>
+    <span class="kr">String</span> <span class="n">mac_address</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mac</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="n">mac_address</span> <span class="o">+=</span> <span class="s">&quot;0&quot;</span><span class="p">;</span>
+        <span class="n">mac_address</span> <span class="o">+=</span> <span class="kr">String</span><span class="p">(</span><span class="n">mac</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">HEX</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">mac_address</span> <span class="o">+=</span> <span class="s">&quot;:&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// append mac_address to device_id</span>
+    <span class="c1">// for unique identification</span>
+    <span class="n">device_id</span> <span class="o">+=</span> <span class="n">mac_address</span><span class="p">;</span>
+
+    <span class="c1">// initiate first connection to MQTT broker            </span>
+    <span class="n">client</span><span class="p">.</span><span class="n">setServer</span><span class="p">(</span><span class="n">MQTT_BROKER</span><span class="p">,</span> <span class="n">MQTT_PORT</span><span class="p">);</span>
+
+    <span class="c1">// specify a function to call upon receipt of a msg</span>
+    <span class="c1">// on a subscribed channel; in this case parseMQTT()</span>
+    <span class="c1">//client.setCallback(parseMQTT);</span>
+
+    <span class="c1">// print info on MQTT broker</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to MQTT Broker: &quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">MQTT_BROKER</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">MQTT_PORT</span><span class="p">);</span>
+    <span class="n">lastReconnectAttempt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   
+</pre></div>
+
+<p>This code will get your Feather's hardware mac address and write it to the variable <code>mac_address.</code>  Then it concatenates "FeatherM0-" with your Feather's hardware mac address, rendering a unique identifier for your Feather when communicating with an MQTT broker.  </p>
+<p>The <code>client.setServer()</code> function configures the PubSub client to connect to the specified MQTT broker and port.</p>
+<p>The <code>client.setCallback()</code> function indicates what function to call whenever the PubSub client receives an incoming message on a subscribed channel.   In this case, it will call the <code>parseMQTT()</code> function, which we have yet to define.  Consequently, let's leave the <code>client.setCallback()</code> line commented out for now.</p>
+</li>
+<li>
+<p>We're getting close to having our code in place to connect our Feather to the MQTT broker.  Scroll to the bottom of your Arduino code and replace the <code>setup()</code> function with the following code:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nb">loop</span><span class="p">(){</span>
+    <span class="c1">// get the current time</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="nf">millis</span><span class="p">();</span>
+
+    <span class="c1">// if MQTT connection lost</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// only attempt to reconnect every 5 secs</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">lastReconnectAttempt</span> <span class="o">&gt;</span> <span class="mi">5000</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 5 secs since last reconnect attempt?</span>
+        <span class="n">lastReconnectAttempt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+        <span class="c1">// Attempt to reconnect</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">reconnect</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">lastReconnectAttempt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// MQTT client connected</span>
+        <span class="n">client</span><span class="p">.</span><span class="nb">loop</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This code checks to see if the PubSub client is connected to the MQTT broker; if not, it waits 5 seconds and attempts to connect by running the <code>reconnect()</code> function, which we will define in the next step.  If unsuccessful, it waits another five seconds and tries again.  If successful, it runs the PubSub <code>client.loop()</code> function, which continually checks that the connect is live and listens for incoming messages.</p>
+</li>
+<li>
+<p>Finally, add the following <code>reconnect()</code> function below the <code>loop()</code> function (<strong>after</strong> the <code>loop()</code> function's closing <code>}</code>.)</p>
+<div class="codehilite"><pre><span></span><span class="kr">boolean</span> <span class="nf">reconnect</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">device_id</span><span class="p">.</span><span class="n">c_str</span><span class="p">()))</span> <span class="p">{</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">device_id</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot; connected to MQTT broker&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;MQTT connection failed, rc=&quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">state</span><span class="p">());</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Trying again ...&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Verify and upload the code to your Feather M0.  Open the Serial Monitor and confirm that you are successfully connecting to both your desired wireless network (e.g. DukeOpen) and MQTT server, as indicated in the image below:</p>
+<p><img alt="Successful connection to MQTT server" src="mqtt_success.png" /></p>
+</li>
+</ol>
+<hr />
+<h3 id="part-3-mqtt-subscriptions">Part 3:  MQTT Subscriptions</h3>
+<p>MQTT protocol allows clients to subscribe to "topics" that may be published by other clients connected to the same MQTT broker.  Client subscriptions are "blind" in that clients have no way of verifying if any other clients are publishing at that topic.  </p>
+<p>In the Arduino PubSub library, the function to subscribe to a topic is <code>.subscribe("/some/topic"</code> and must be called <em>after</em> a successful connection to the MQTT broker.   </p>
+<p>In our project, we want client Feather M0's in each administrative building to subscribe to the same topic (e.g. <code>/admin/lightlevel</code>) and use the information published to that topic to set the level of an attached LED.  Let's set this up now. </p>
+<ol>
+<li>
+<p>Right above the <code>setup()</code> function, declare a variable for the attached LED at pin 13:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>   <span class="c1">// onboard LED</span>
+</pre></div>
+
+</li>
+<li>
+<p>Within the <code>setup()</code> function, set the <code>pinMode</code> of <code>ledPin</code> to <code>OUTPUT</code>:</p>
+<div class="codehilite"><pre><span></span>    <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+</pre></div>
+
+</li>
+<li>
+<p>Next, create a new function <strong>outside</strong> of the <code>setup()</code> and <code>loop()</code> functions called <code>doSubscriptions()</code> and subscribe to the topic <code>/admin/lightlevel</code> as highlighted below:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">doSubscriptions</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// specify topic subscriptions line by line below, such as</span>
+    <span class="c1">// client.subscribe(&quot;/some/topic/&quot;);</span>
+    <span class="c1">// client.subscribe(&quot;/another/topic/&quot;);</span>
+<span class="hll">    <span class="n">client</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;/admin/lightlevel&quot;</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>We need to call this <code>doSubscriptions()</code> function after we establish an MQTT connection, so find the function called <code>reconnect()</code> and add the highlighted line below:</p>
+<div class="codehilite"><pre><span></span><span class="kr">boolean</span> <span class="nf">reconnect</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">device_id</span><span class="p">.</span><span class="n">c_str</span><span class="p">()))</span> <span class="p">{</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">device_id</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot; connected to MQTT broker&quot;</span><span class="p">);</span>
+<span class="hll">        <span class="n">doSubscriptions</span><span class="p">();</span>  <span class="c1">// (re)subscribe to desired topics</span>
+</span>        <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;MQTT connection failed, rc=&quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">state</span><span class="p">());</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Trying again ...&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Now that we have subscribed to the desired topic, we need to add a function to our sketch that parses the incoming messages and executes some code on our Feather to change the onboard LED's brightness.</p>
+<ol>
+<li>
+<p>Recall in Part 2, #3 we left the <code>setCallback()</code> function commented out?  Find that line in your <code>setup()</code> function and <strong><em>un</em></strong>comment it:</p>
+<p><div class="codehilite"><pre><span></span>    <span class="c1">// initiate first connection to MQTT broker            </span>
+    <span class="n">client</span><span class="p">.</span><span class="n">setServer</span><span class="p">(</span><span class="n">MQTT_BROKER</span><span class="p">,</span> <span class="n">MQTT_PORT</span><span class="p">);</span>
+
+    <span class="c1">// specify a function to call upon receipt of a msg</span>
+    <span class="c1">// on a subscribed channel; in this case parseMQTT()</span>
+<span class="hll">    <span class="n">client</span><span class="p">.</span><span class="n">setCallback</span><span class="p">(</span><span class="n">parseMQTT</span><span class="p">);</span>
+</span></pre></div>
+This means that every time the PubSub client receives an incoming message at a suscribed topic, the <code>parseMQTT()</code> function will execute. </p>
+</li>
+<li>
+<p>Let's create that function, adding the following to your sketch:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">parseMQTT</span><span class="p">(</span><span class="kr">char</span><span class="o">*</span> <span class="n">topic</span><span class="p">,</span> <span class="kr">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kr">unsigned</span> <span class="kr">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">payload</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>  <span class="c1">// important - do not delete</span>
+
+    <span class="c1">// Handle parsing of specific topics using the &quot;string</span>
+    <span class="c1">// compare&quot; function to differentiate among topics</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="s">&quot;/admin/lightlevel&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">int</span> <span class="n">lightlevel</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">((</span><span class="kr">char</span><span class="o">*</span><span class="p">)</span><span class="n">payload</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Light level: &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">lightlevel</span><span class="p">);</span>
+        <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">lightlevel</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The code above will trigger upon message receipt, compare the <code>topic</code> of the MQTT message, and if it matches <code>admin/lightlevel</code> it will convert the message <code>payload</code> from a character array to an integer and use it to set the PWM analog level of pin 13.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Verify your code and upload it to your Feather M0.</p>
+</li>
+<li>
+<p>If you would like to test your subscription now, you will need to download an MQTT client for your computer.  If not, you can skip down to <a href="#part-4-mqtt-publishing">Part 4: MQTT Publishing</a>.</p>
+<ol>
+<li>
+<p>Download and install <a href="http://workswithweb.com/mqttbox.html">MQTTBox</a> (available for Mac, Linux, and Windows).</p>
+</li>
+<li>
+<p>Once installed, launch the application.</p>
+</li>
+<li>
+<p>Click on the "Create MQTT Client" button.</p>
+</li>
+<li>
+<p>In the settings, use the following for <code>mqtt.colab.duke.edu</code>:</p>
+<ul>
+<li>Client Name:  Duke MQTT</li>
+<li>Protocol:  mqtts / tls</li>
+<li>Host:  mqtt.colab.duke.edu:8883</li>
+<li>SSL / TLS Version:  auto</li>
+<li>SSL / TLS Certificate Type:  CA signed server certificate</li>
+</ul>
+</li>
+<li>
+<p>The rest of the settings can be left unchanged.</p>
+<p><img alt="MQTTBox New Client Settings" src="mqttbox_settings.png" /></p>
+</li>
+<li>
+<p>Click on the "Save" button.</p>
+</li>
+<li>
+<p>The resulting screen should indicate that MQTTBox has successfully connected to the broker with a green "Connected" indicator:</p>
+<p><img alt="MQTTBox connected" src="mqttbox_connected.png" /></p>
+</li>
+<li>
+<p>In the "Topic to Publish" pane, enter the following:</p>
+<ul>
+<li>Topic to publish:  /admin/lightlevel</li>
+<li>Payload: 255</li>
+</ul>
+</li>
+<li>
+<p>Then click the blue "Publish" button.  </p>
+</li>
+<li>
+<p>Click it again.  Each time you click "Publish" you should get a notification at the bottom of the "Topic to Publish" pane indicating a message was published.</p>
+<p><img alt="MQTTBox indication of published topic" src="mqttbox_publish.png" /></p>
+</li>
+<li>
+<p>Check your Feather M0's onboard LED.  It should shine at full brightness. </p>
+</li>
+<li>
+<p>In MQTTBox, change the <code>Payload</code> from <code>255</code> to <code>0</code> and then click the Publish button again.  Your Feather M0's onboard LED should turn off.</p>
+</li>
+<li>
+<p>Try <code>127</code> as a payload.  Your LED should shine at 50% brightness.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>If you were to deploy a fleet of Feather M0's in each admin building this is the extent of the code you would need to install on each Feather.  One Feather will need to serve as the "control," where an attached potentiometer will publish a value to <code>/admin/lightlevel</code> that each subscribed Feather will process to adjust their LED brightness.  We will set up this publish functionality in the next part. </p>
+<hr />
+<h3 id="part-4-mqtt-publishing">Part 4:  MQTT Publishing</h3>
+<p>Finally, in this section we will make use of <a href="https://github.com/contrem/arduino-timer">Michael Contreras' arduino-timer library</a> to publish potentiometer data from our Feather M0 to the topic <code>/admin/lightlevel</code>.  </p>
+<ol>
+<li>
+<p>At the top of your sketch, include the arduino-timer library:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;WiFi101.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;PubSubClient.h&gt;</span><span class="cp"></span>
+<span class="hll"><span class="cp">#include</span> <span class="cpf">&lt;timer.h&gt;</span><span class="cp"></span>
+</span></pre></div>
+
+</li>
+<li>
+<p>Find where you declared the constant <code>ledPin</code> and add a line for the potentiometer attached to analog pin A1:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>   <span class="c1">// onboard LED</span>
+<span class="hll"><span class="kr">const</span> <span class="kr">int</span> <span class="n">sensorPin</span> <span class="o">=</span> <span class="n">A1</span><span class="p">;</span>  <span class="c1">// potentiometer attached to A1</span>
+</span></pre></div>
+
+</li>
+<li>
+<p>In your <code>setup()</code> function, use <code>pinMode()</code> to set <code>sensorPin</code> as an input and also specify that the Feather M0's ADC can function at 12-bit resolution:</p>
+<div class="codehilite"><pre><span></span>    <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="hll">    <span class="nf">pinMode</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c1">// default Arduino ADC resolution is 10-bit</span>
+</span><span class="hll">    <span class="c1">// but we can set it to the Feather M0 native resolution of 12-bit</span>
+</span><span class="hll">    <span class="nf">analogReadResolution</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span> <span class="c1">// gives values of 0 - 4095</span>
+</span></pre></div>
+
+</li>
+<li>
+<p>Next, we'll make use the arduino-timer library to set up a publication interval of 100 milliseconds for publishing our potentiometer data.  Just above the <code>setup()</code> function, add the following:</p>
+<div class="codehilite"><pre><span></span><span class="kr">auto</span> <span class="n">doPub</span> <span class="o">=</span> <span class="n">timer_create_default</span><span class="p">();</span> <span class="c1">// create a timer with default settings</span>
+
+<span class="kr">void</span> <span class="nf">setPubIntervals</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// syntax:  doPub.every(milliseconds, callbackFunction);</span>
+    <span class="n">doPub</span><span class="p">.</span><span class="n">every</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">publishPot</span><span class="p">);</span>  <span class="c1">// call the publishPot() function every 100 ms</span>
+<span class="p">}</span>
+
+
+<span class="c1">// In this example, every 100 ms (set in setPubIntervals above),</span>
+<span class="c1">// this function executes, which reads the analog value at sensorPin,</span>
+<span class="c1">// maps it to a value between 0 - 255 (8 bit) and then converts</span>
+<span class="c1">// that numerical value to a character array c string</span>
+
+<span class="kr">bool</span> <span class="nf">publishPot</span><span class="p">(</span><span class="kr">void</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">int</span> <span class="n">reading</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span> <span class="c1">// read potentiometer</span>
+    <span class="n">reading</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4095</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>  <span class="c1">// Feather M0 set to 12-bit ADC</span>
+    <span class="kr">char</span> <span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// instantiate a character array to hold reading</span>
+    <span class="kr">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="kr">String</span><span class="p">(</span><span class="n">reading</span><span class="p">);</span> <span class="c1">// put reading into msg</span>
+    <span class="n">msg</span><span class="p">.</span><span class="n">toCharArray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// convert msg to char array</span>
+
+    <span class="c1">// publish to topic the msg as char * with a retained </span>
+    <span class="c1">// setting of false (do not retain)</span>
+    <span class="n">client</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">&quot;/admin/lightlevel&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="kr">false</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="kr">true</span><span class="p">;</span> <span class="c1">// repeat? true</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Next, add the following line at very end of your <code>setup()</code> function, but before its closing <code>}</code>:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">setPubIntervals</span><span class="p">();</span> <span class="c1">// initalize any publish intervals</span>
+</pre></div>
+
+</li>
+<li>
+<p>Finally, add the following line at the very end of your <code>loop()</code> function, but before its clsing <code>}</code>:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">doPub</span><span class="p">.</span><span class="n">tick</span><span class="p">();</span> <span class="c1">// tick the doPub timer</span>
+</pre></div>
+
+</li>
+<li>
+<p>Verify and then upload your sketch to your Feather M0.</p>
+</li>
+<li>
+<p>Once your Feather connects to Wifi and to the MQTT broker, manipulating the potentiometer should dynamically adjust the brightness of your onboard LED, as well as the brightness of any other Feather M0 which is connected to MQTT broker <code>mqtt.colab.duke.edu</code> and subscribed to topic <code>/admin/lightlevel</code> using the message parsing above.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In my experience, a potentiometer wired to the Feather M0's analog pin and mapped to an 8-bit value never fully reaches 255 at the upper limit and never fully reaches 0 at the lower limit.  As a consequence, when testing the code above you may have found that your Feather's onboard LED never fully turns off.   </p>
+<p>To fix this, consider this code for parsing the <code>/admin/lightlevel</code> incoming message.  Replace your <code>parseMQTT()</code> function with:</p>
+<div class="codehilite"><pre><span></span><span class="kr">void</span> <span class="nf">parseMQTT</span><span class="p">(</span><span class="kr">char</span><span class="o">*</span> <span class="n">topic</span><span class="p">,</span> <span class="kr">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kr">unsigned</span> <span class="kr">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">payload</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>  <span class="c1">// important - do not delete</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="s">&quot;/admin/lightlevel&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">int</span> <span class="n">brightness</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">((</span><span class="kr">char</span><span class="o">*</span><span class="p">)</span><span class="n">payload</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Brightness: &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">brightness</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">brightness</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">){</span>
+            <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Turn LED fully off </span>
+            <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;All OFF&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">brightness</span> <span class="o">&gt;</span> <span class="mi">252</span><span class="p">){</span>
+            <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// Turn LED fully on </span>
+            <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;All ON&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">brightness</span><span class="p">);</span> <span class="c1">// set ledPin brightness</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This will give you a buffer at either end of the potentiometer where the LED will either be fully on or fully off.</p>
+</div>
+<hr />
+<p>Some things you could do to further enhance this project include:</p>
+<ul>
+<li>
+<p>Save network bandwidth by triggering "publish" commands ONLY when the potentiometer value has changed since the last publish event.  There's no reason to publish every 100 milliseconds when the value of the potentiometer hasn't changed!</p>
+</li>
+<li>
+<p>Consider ways in which making use of the MQTT <code>retained</code> flag might make the entire system more robust.</p>
+</li>
+<li>
+<p>What changes would need to be made to the setup so that one could have potentiometer control at <em>every</em> node, where any one location can be used to control all of the other locations?</p>
+</li>
+</ul>
     
         
     
@@ -329,6 +1142,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../blynk/" title="Blynk" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Blynk
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -349,7 +1183,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../assets/javascripts/application.5e60981f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
