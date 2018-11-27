@@ -1,0 +1,627 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Tutorial for Parsing JSON Data on the Feather">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Twitter JSON</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#about-this-tutorial" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Tutorial Repository" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Mark Olson's Tutorial Repository
+              </span>
+              <span class="md-header-nav__topic">
+                Twitter JSON
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Tutorial Repository" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Tutorial Repository
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tinkercad/" title="Tinkercad" class="md-nav__link">
+      Tinkercad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../attiny85/" title="ATtiny85" class="md-nav__link">
+      ATtiny85
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../feather/" title="Feather M0" class="md-nav__link">
+      Feather M0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../blynk/" title="Blynk" class="md-nav__link">
+      Blynk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mqtt/" title="MQTT" class="md-nav__link">
+      MQTT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../instagram/" title="Instagram API" class="md-nav__link">
+      Instagram API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-tutorial" title="About this Tutorial" class="md-nav__link">
+    About this Tutorial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-arduinojson-library" title="Install ArduinoJSON Library" class="md-nav__link">
+    Install ArduinoJSON Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-wifi-connection" title="Standard WiFi Connection" class="md-nav__link">
+    Standard WiFi Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#twitter-setup" title="Twitter Setup" class="md-nav__link">
+    Twitter Setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">Twitter JSON</h1>
+                <p style="float:left;">Last Update: <em>2018-11-14</em></p>
+                
+                <p style="float:right;">Author(s): <em>Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <h2 id="about-this-tutorial">About this Tutorial</h2>
+<p>Some of your projects require querying the API of an online service (such as Instagram) and then parsing the data sent back from the service.   <a href="https://www.json.org/">JSON</a> (JavaScript Object Notation) is a common data format returned by API queries.  In this tutorial you will explore how to request JSON data from an API using an HTTP GET request and then how to parse that data for use by your Feather.  </p>
+<p>Specifically, this tutorial outlines how to query the Twitter API and its <a href="https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/intro-to-tweet-json.html">"Tweet JSON"</a> data.  </p>
+<h2 id="install-arduinojson-library">Install ArduinoJSON Library</h2>
+<p>First, install Benoit Blanchon's <a href="https://arduinojson.org/">ArduinoJson library</a>.   Proceed with the steps below and/or consult arduinojson.org's <a href="https://arduinojson.org/v5/doc/installation/">official documentation</a>.  </p>
+<ol>
+<li>
+<p>Launch the Arduino application.</p>
+</li>
+<li>
+<p>From the main menu, choose Sketch --&gt; Include Library --&gt; Manage Libraries</p>
+</li>
+<li>
+<p>In the "Filter your search..." box, type <code>JSON</code></p>
+</li>
+<li>
+<p>Scroll down until you find "ArduinoJson by Benoit Blanchon"</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do NOT immediately click Install.  The Library Manager lists the "beta" version by default, but for reliability, you will most likely want to use the latest "production" version.  As of the  of the writing of this tutorial, the latest version is:</p>
+<p><strong><code>version 5.13.3</code></strong></p>
+</div>
+</li>
+<li>
+<p>From the "Version" drop-down box, scroll down past all of the "X.X-beta" versions until you find the latest version non-beta version.  Click on that version to select it.</p>
+</li>
+<li>
+<p>Finally, click the <code>Install</code> button and then <code>Close</code> once the library installation has completed.</p>
+</li>
+</ol>
+<h2 id="standard-wifi-connection">Standard WiFi Connection</h2>
+<p>By now you should be familiar with this section, which outlines the Arduino code necessary to connect the Feather M0 to a WiFi access point.</p>
+<ol>
+<li>
+<p>Create a new Arduino sketch by choosing File --&gt; New from the main menu.</p>
+</li>
+<li>
+<p>Save it by choosing File --&gt; Save and give it a memorable name, such as <code>TwitterDemo</code></p>
+</li>
+<li>
+<p>Replace the code in the Sketch with the code below:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Arduino library dependencies</span>
+<span class="cp">#include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;WiFi101.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// ************</span>
+<span class="c1">// Enter your wifi access credentials in the tab: arduino_secrets.h</span>
+<span class="c1">// ************</span>
+<span class="cp">#include</span> <span class="cpf">&quot;arduino_secrets.h&quot;</span><span class="cp"></span>
+<span class="kr">char</span> <span class="n">ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="n">SECRET_SSID</span><span class="p">;</span>
+<span class="kr">char</span> <span class="n">pass</span><span class="p">[]</span> <span class="o">=</span> <span class="n">SECRET_PASS</span><span class="p">;</span>
+<span class="kr">int</span> <span class="n">wifi_status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>     <span class="c1">// the WiFi radio&#39;s status</span>
+
+<span class="c1">// instantiate a secure  WiFi client</span>
+<span class="c1">// (most APIs require https connections)</span>
+<span class="n">WiFiSSLClient</span> <span class="n">WiFiclient</span><span class="p">;</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">(){</span>
+
+    <span class="c1">//Initialize serial:</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+
+    <span class="c1">// Feather M0-specific WiFi pins</span>
+    <span class="nf">WiFi</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// do initial WiFi connect</span>
+    <span class="n">wifiConnect</span><span class="p">();</span>
+
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">(){</span>
+
+    <span class="c1">// check if wifi lost and if yes, reconnect</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">){</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;WiFi connection lost. Reconnecting...&quot;</span><span class="p">);</span>
+        <span class="n">wifi_status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>
+        <span class="n">wifiConnect</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// connect to WiFi (or reconnect if WiFi lost)</span>
+<span class="kr">void</span> <span class="nf">wifiConnect</span><span class="p">(){</span>
+
+    <span class="c1">// check for the presence of the shield:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_NO_SHIELD</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;WiFi chip not present or accessible&quot;</span><span class="p">);</span>
+        <span class="c1">// don&#39;t continue:</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kr">true</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// attempt to connect to WiFi network:</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">wifi_status</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to SSID: &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+        <span class="c1">// Connect to WiFi:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kr">sizeof</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">wifi_status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+        <span class="n">wifi_status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">pass</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// wait 2 seconds for connection:</span>
+        <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// you&#39;re connected now, so print out a success message:</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;You&#39;re connected to the network&quot;</span><span class="p">);</span>
+
+    <span class="c1">// print your Feather&#39;s IP address:</span>
+    <span class="nf">IPAddress</span> <span class="n">ip</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">();</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Device IP Address: &quot;</span><span class="p">);</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Create a new tab in your sketch:</p>
+<ol>
+<li>
+<p>Find the &#9662; symbol in the upper-right of the Arduino interface and left-click on it.  </p>
+</li>
+<li>
+<p>In the resulting pop-up, choose New Tab.</p>
+<p><em>(Alternatively, you can press SHIFT-&#8984;-N)</em></p>
+</li>
+<li>
+<p>You will be prompted to enter a name for this new tab.  Type:</p>
+<p><code>arduino_secrets.h</code></p>
+<p>and then click "OK".</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The new tab will appear in your IDE workspace.  Copy and paste the following code into the <code>arduino_secrets.h</code> tab in your sketch:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#define SECRET_SSID &quot;DukeOpen&quot;  </span><span class="c1">// your network SSID (name)</span>
+<span class="cp">#define SECRET_PASS &quot;&quot;  </span><span class="c1">// your network password; leave empty for open networks</span>
+</pre></div>
+
+</li>
+<li></li>
+</ol>
+<h2 id="twitter-setup">Twitter Setup</h2>
+<p>To interact with Twitter's API, you will need a developer account and Twitter API keys.</p>
+<ol>
+<li>
+<p>Go to <a href="https://twitter.com/login">https://twitter.com/login</a> and sign in with your Twitter account credentials.</p>
+</li>
+<li>
+<p>Visit <a href="https://developer.twitter.com/en/apply/user">https://developer.twitter.com/en/apply/user</a> to register your Twitter username for developer access.</p>
+<ol>
+<li>
+<p>Your username should be selected by default.  Click "Continue."</p>
+</li>
+<li>
+<p>Next, select the "I am requesting access for my own personal use" radio button.</p>
+</li>
+<li>
+<p>Enter a name for your developer account or project and select Primary Country of Operation.  Click "Continue"</p>
+</li>
+<li>
+<p>On the next screen, choose your use case ("Student project / Learning to code").</p>
+</li>
+<li>
+<p>Describe your project, such as:</p>
+<div class="codehilite"><pre><span></span>1. I am testing the Twitter API with an IoT device (Adafruit Feather M0)
+2. I want my own new Tweets, new followers and likes to my Tweets to trigger functions on my device. (light LEDs, etc)
+3.  No,  simply reading and responding to Twitter data
+4.  Content will not be displayed on device, except abstractly.
+</pre></div>
+
+</li>
+<li>
+<p>Select <code>No</code> for "Will your product, service, or analysis make Twitter content or derived information available to a government entity?"</p>
+</li>
+<li>
+<p>Read and accept the Terms of Service.</p>
+</li>
+<li>
+<p>Finally, check your email inbox for a verification email.  In the email, click the "Confirm Your Email" button.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Now you are ready to create your first Twitter app.  Visit <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a> and click on the "Create an App" button.</p>
+</li>
+<li>
+<p>Enter the App details (these can be modified later):</p>
+<ol>
+<li>
+<p>Name: <code>vms564s_app</code></p>
+</li>
+<li>
+<p>App Description:  <code>This app enables connectivity to an IoT device</code></p>
+</li>
+<li>
+<p>Website URL: <code>https://aahvs.duke.edu</code></p>
+</li>
+<li>
+<p>Tell us how this app will be used: <code>This app is for a class project for VMS564S  Physical Computing and the Internet of Things at Duke University.</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click the Create button.  You will be taken to a summary page.  Verify and/or edit the information as needed.</p>
+</li>
+<li>
+<p>Click on the Permissions tab.  For our purposes, we only need "Read-only" access.  If you want your Arduino app on the Feather to also be able to post Tweets under your account, choose "Read and write".   Click "Save".</p>
+</li>
+<li>
+<p>Next, click on the "Keys and Tokens" tab.</p>
+</li>
+<li>
+<p>Under "Access token &amp; access token secret", click "Create".  This will generate both an <code>Access token</code> and <code>Access token secret</code> that you will need for your Arduino Sketch.  Leave this page open in your browser so you can access these later.  Or return via <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a> </p>
+</li>
+</ol>
+<p>https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview</p>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
