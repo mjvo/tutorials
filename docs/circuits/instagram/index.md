@@ -33,7 +33,7 @@ First, if you have not done so alreadyinstall Benoit Blanchon's [ArduinoJson lib
 1. Finally, click the `Install` button and then `Close` once the library installation has completed.
 
 
-## Standard WiFi Connection
+## Arduino Sketch
 
 By now you should be familiar with this section, which outlines the Arduino code necessary to connect the Feather M0 to a WiFi access point.  We'll use this as a starting point for our sketch.
 
