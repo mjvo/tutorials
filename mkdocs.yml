@@ -49,5 +49,6 @@ nav:
     - 'Feather M0' : 'circuits/feather/index.md'
     - 'Blynk' : 'circuits/blynk/index.md'
     - 'MQTT' : 'circuits/mqtt/index.md'
+    - 'Instagram API' : 'circuits/instagram/index.md'
 
 
