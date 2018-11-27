@@ -657,7 +657,22 @@
 </li>
 </ol>
 <h3 id="arduino-query">Arduino Query</h3>
-<p>Now we need to write the Arduino code to query the Instagram API and to parse the data it returns.  To do this we'll make use of both the </p>
+<p>Go ahead and test the code on your Arduino.  Be sure to change the SSID and password if you're not on Duke's network.  </p>
+<p>Once uploaded, open up the Arduino serial monitor.  You should observe the following behavior:</p>
+<ol>
+<li>
+<p>The Feather connects to wifi and is given an IP address.</p>
+</li>
+<li>
+<p>The Feather queries your Instagram account and returns a welcome message and your current number of followers.</p>
+</li>
+<li>
+<p>The Feather queries your Instagram account and returns your latest post's ID and number of Likes.</p>
+</li>
+<li>
+<p>Then, every minute, the Feather will query both your followers and your posts.  It will indicate a new follower, new Likes, or a new post.</p>
+</li>
+</ol>
     
         
     
