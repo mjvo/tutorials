@@ -110,7 +110,7 @@
                 Mark Olson's Tutorial Repository
               </span>
               <span class="md-header-nav__topic">
-                Twitter JSON
+                Twitter API
               </span>
             
           
@@ -191,10 +191,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Circuits
@@ -278,6 +280,113 @@
   </li>
 
         
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Twitter API
+      </label>
+    
+    <a href="./" title="Twitter API" class="md-nav__link md-nav__link--active">
+      Twitter API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-tutorial" title="About this Tutorial" class="md-nav__link">
+    About this Tutorial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-arduinojson-library" title="Install ArduinoJSON Library" class="md-nav__link">
+    Install ArduinoJSON Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#twitter-setup" title="Twitter Setup" class="md-nav__link">
+    Twitter Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer-access" title="Developer Access" class="md-nav__link">
+    Developer Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twitter-application-only-authentication" title="Twitter Application-only Authentication" class="md-nav__link">
+    Twitter Application-only Authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encode-consumer-api-keysecret" title="Encode Consumer API Key/Secret" class="md-nav__link">
+    Encode Consumer API Key/Secret
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-twitter-api-access" title="Test Twitter API Access" class="md-nav__link">
+    Test Twitter API Access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-sketch" title="Arduino Sketch" class="md-nav__link">
+    Arduino Sketch
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -316,15 +425,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard-wifi-connection" title="Standard WiFi Connection" class="md-nav__link">
-    Standard WiFi Connection
+  <a href="#twitter-setup" title="Twitter Setup" class="md-nav__link">
+    Twitter Setup
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer-access" title="Developer Access" class="md-nav__link">
+    Developer Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#twitter-application-only-authentication" title="Twitter Application-only Authentication" class="md-nav__link">
+    Twitter Application-only Authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encode-consumer-api-keysecret" title="Encode Consumer API Key/Secret" class="md-nav__link">
+    Encode Consumer API Key/Secret
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-twitter-api-access" title="Test Twitter API Access" class="md-nav__link">
+    Test Twitter API Access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#twitter-setup" title="Twitter Setup" class="md-nav__link">
-    Twitter Setup
+  <a href="#arduino-sketch" title="Arduino Sketch" class="md-nav__link">
+    Arduino Sketch
   </a>
   
 </li>
@@ -348,7 +497,7 @@
     
         
         <div id="titleb4authors">
-            <h1 class="titleb4authors">Twitter JSON</h1>
+            <h1 class="titleb4authors">Twitter API</h1>
                 <p style="float:left;">Last Update: <em>2018-11-14</em></p>
                 
                 <p style="float:right;">Author(s): <em>Mark Olson</em></p>
@@ -358,10 +507,10 @@
         
     
     <h2 id="about-this-tutorial">About this Tutorial</h2>
-<p>Some of your projects require querying the API of an online service (such as Instagram) and then parsing the data sent back from the service.   <a href="https://www.json.org/">JSON</a> (JavaScript Object Notation) is a common data format returned by API queries.  In this tutorial you will explore how to request JSON data from an API using an HTTP GET request and then how to parse that data for use by your Feather.  </p>
+<p>Some of your projects require querying the API of an online service -- such as [Instagram]((https://www.instagram.com/developer/), <a href="https://api.nasa.gov/">NASA</a>, or <a href="https://openweathermap.org/api">OpenWeatherMap</a> -- and then parsing the data sent back from the service.   <a href="https://www.json.org/">JSON</a> (JavaScript Object Notation) is a common data format returned by API queries.  In this tutorial you will explore how to request JSON data from an API using an HTTP GET request and then how to parse that data for use by your Feather.  </p>
 <p>Specifically, this tutorial outlines how to query the Twitter API and its <a href="https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/intro-to-tweet-json.html">"Tweet JSON"</a> data.  </p>
 <h2 id="install-arduinojson-library">Install ArduinoJSON Library</h2>
-<p>First, install Benoit Blanchon's <a href="https://arduinojson.org/">ArduinoJson library</a>.   Proceed with the steps below and/or consult arduinojson.org's <a href="https://arduinojson.org/v5/doc/installation/">official documentation</a>.  </p>
+<p>First, install Benoit Blanchon's <a href="https://arduinojson.org/">ArduinoJson library</a> into the Arduino IDE.   Proceed with the steps below and/or consult arduinojson.org's <a href="https://arduinojson.org/v5/doc/installation/">official documentation</a>.  </p>
 <ol>
 <li>
 <p>Launch the Arduino application.</p>
@@ -387,122 +536,8 @@
 <p>Finally, click the <code>Install</code> button and then <code>Close</code> once the library installation has completed.</p>
 </li>
 </ol>
-<h2 id="standard-wifi-connection">Standard WiFi Connection</h2>
-<p>By now you should be familiar with this section, which outlines the Arduino code necessary to connect the Feather M0 to a WiFi access point.</p>
-<ol>
-<li>
-<p>Create a new Arduino sketch by choosing File --&gt; New from the main menu.</p>
-</li>
-<li>
-<p>Save it by choosing File --&gt; Save and give it a memorable name, such as <code>TwitterDemo</code></p>
-</li>
-<li>
-<p>Replace the code in the Sketch with the code below:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Arduino library dependencies</span>
-<span class="cp">#include</span> <span class="cpf">&lt;SPI.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;WiFi101.h&gt;</span><span class="cp"></span>
-
-<span class="c1">// ************</span>
-<span class="c1">// Enter your wifi access credentials in the tab: arduino_secrets.h</span>
-<span class="c1">// ************</span>
-<span class="cp">#include</span> <span class="cpf">&quot;arduino_secrets.h&quot;</span><span class="cp"></span>
-<span class="kr">char</span> <span class="n">ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="n">SECRET_SSID</span><span class="p">;</span>
-<span class="kr">char</span> <span class="n">pass</span><span class="p">[]</span> <span class="o">=</span> <span class="n">SECRET_PASS</span><span class="p">;</span>
-<span class="kr">int</span> <span class="n">wifi_status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>     <span class="c1">// the WiFi radio&#39;s status</span>
-
-<span class="c1">// instantiate a secure  WiFi client</span>
-<span class="c1">// (most APIs require https connections)</span>
-<span class="n">WiFiSSLClient</span> <span class="n">WiFiclient</span><span class="p">;</span>
-
-<span class="kr">void</span> <span class="nb">setup</span><span class="p">(){</span>
-
-    <span class="c1">//Initialize serial:</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-
-    <span class="c1">// Feather M0-specific WiFi pins</span>
-    <span class="nf">WiFi</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-
-    <span class="c1">// do initial WiFi connect</span>
-    <span class="n">wifiConnect</span><span class="p">();</span>
-
-<span class="p">}</span>
-
-<span class="kr">void</span> <span class="nb">loop</span><span class="p">(){</span>
-
-    <span class="c1">// check if wifi lost and if yes, reconnect</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">){</span>
-        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;WiFi connection lost. Reconnecting...&quot;</span><span class="p">);</span>
-        <span class="n">wifi_status</span> <span class="o">=</span> <span class="n">WL_IDLE_STATUS</span><span class="p">;</span>
-        <span class="n">wifiConnect</span><span class="p">();</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-
-<span class="c1">// connect to WiFi (or reconnect if WiFi lost)</span>
-<span class="kr">void</span> <span class="nf">wifiConnect</span><span class="p">(){</span>
-
-    <span class="c1">// check for the presence of the shield:</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_NO_SHIELD</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;WiFi chip not present or accessible&quot;</span><span class="p">);</span>
-        <span class="c1">// don&#39;t continue:</span>
-        <span class="k">while</span> <span class="p">(</span><span class="kr">true</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// attempt to connect to WiFi network:</span>
-    <span class="k">while</span> <span class="p">(</span> <span class="n">wifi_status</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to SSID: &quot;</span><span class="p">);</span>
-        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
-        <span class="c1">// Connect to WiFi:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="kr">sizeof</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">wifi_status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">else</span> <span class="p">{</span>
-        <span class="n">wifi_status</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">pass</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="c1">// wait 2 seconds for connection:</span>
-        <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// you&#39;re connected now, so print out a success message:</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;You&#39;re connected to the network&quot;</span><span class="p">);</span>
-
-    <span class="c1">// print your Feather&#39;s IP address:</span>
-    <span class="nf">IPAddress</span> <span class="n">ip</span> <span class="o">=</span> <span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">();</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Device IP Address: &quot;</span><span class="p">);</span>
-    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
-
-<span class="p">}</span>
-</pre></div>
-
-</li>
-<li>
-<p>Create a new tab in your sketch:</p>
-<ol>
-<li>
-<p>Find the &#9662; symbol in the upper-right of the Arduino interface and left-click on it.  </p>
-</li>
-<li>
-<p>In the resulting pop-up, choose New Tab.</p>
-<p><em>(Alternatively, you can press SHIFT-&#8984;-N)</em></p>
-</li>
-<li>
-<p>You will be prompted to enter a name for this new tab.  Type:</p>
-<p><code>arduino_secrets.h</code></p>
-<p>and then click "OK".</p>
-</li>
-</ol>
-</li>
-<li>
-<p>The new tab will appear in your IDE workspace.  Copy and paste the following code into the <code>arduino_secrets.h</code> tab in your sketch:</p>
-<div class="codehilite"><pre><span></span><span class="cp">#define SECRET_SSID &quot;DukeOpen&quot;  </span><span class="c1">// your network SSID (name)</span>
-<span class="cp">#define SECRET_PASS &quot;&quot;  </span><span class="c1">// your network password; leave empty for open networks</span>
-</pre></div>
-
-</li>
-<li></li>
-</ol>
 <h2 id="twitter-setup">Twitter Setup</h2>
+<h3 id="developer-access">Developer Access</h3>
 <p>To interact with Twitter's API, you will need a developer account and Twitter API keys.</p>
 <ol>
 <li>
@@ -528,7 +563,7 @@
 <div class="codehilite"><pre><span></span>1. I am testing the Twitter API with an IoT device (Adafruit Feather M0)
 2. I want my own new Tweets, new followers and likes to my Tweets to trigger functions on my device. (light LEDs, etc)
 3.  No,  simply reading and responding to Twitter data
-4.  Content will not be displayed on device, except abstractly.
+4.  Content will not be displayed on device, except abstractly. [Of course, if you will display Twitter content (such as on an Arduino-connected LCD) you should say so here and describe its use case.]
 </pre></div>
 
 </li>
@@ -573,10 +608,165 @@
 <p>Next, click on the "Keys and Tokens" tab.</p>
 </li>
 <li>
-<p>Under "Access token &amp; access token secret", click "Create".  This will generate both an <code>Access token</code> and <code>Access token secret</code> that you will need for your Arduino Sketch.  Leave this page open in your browser so you can access these later.  Or return via <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a> </p>
+<p>Under "Consumer API keys", click "Regenerate".  This will generate both an <code>API Key</code> and <code>API Secret Key</code> that you will need for the next section of this tutorial.  Leave this page open in your browser so you can access these in the next section.  You can always return to find them via <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a> </p>
 </li>
 </ol>
-<p>https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/overview</p>
+<h3 id="twitter-application-only-authentication">Twitter Application-only Authentication</h3>
+<p>For this tutorial, we will make use of Twitter's <a href="https://developer.twitter.com/en/docs/basics/authentication/overview/application-only">application-only authentication</a> schema.  In this schema, you will encode the API key and secret for your app and store it on the Feather.  Then you will use these credentials to generate a "Bearer" token that will allow your Feather to make queries against the Twitter API.</p>
+<h4 id="encode-consumer-api-keysecret">Encode Consumer API Key/Secret</h4>
+<p>The <a href="https://developer.twitter.com/en/docs/basics/authentication/overview/application-only">documentation</a> specifies that you need to encode your access token and access token secret as a single "RFC 1738- and Base64-encoded" string.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="http://www.blooberry.com/indexdot/html/topics/urlencoding.htm">RFC 1738</a> encoding, also known as "url safe" encoding, will have no effect on the consumer key and secret at this time, but may in the future.  You can encode here if necessary: <a href="https://www.freeformatter.com/url-encoder.html">https://www.freeformatter.com/url-encoder.html</a> </p>
+</div>
+<ol>
+<li>
+<p>In a new browser window, visit: https://www.base64encode.org/</p>
+<p><img alt="Base64 Encoder Window" src="base64.png" /></p>
+</li>
+<li>
+<p>You will want to paste into the form your API key and secret in the following format, where key and secret are separated by a <code>:</code> with no spaces:</p>
+<p><code>consumerAPIkey:APIsecret</code></p>
+</li>
+<li>
+<p>Thus, the consumer API key <code>xvz1evFS4wEEPTGEFPHBog</code> and secret <code>L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg</code> would become:</p>
+<p><code>xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg</code></p>
+</li>
+<li>
+<p>Click the green "&gt; Encode &lt;" button.   The resulting encoded string should appear in the results pane.</p>
+<p>The key/secret combination above yields the following base64 encoded string:</p>
+<p><code>eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==</code></p>
+</li>
+<li>
+<p>Copy the base64 encoded string and paste somewhere you can make use of it in the next section.</p>
+</li>
+</ol>
+<h4 id="test-twitter-api-access">Test Twitter API Access</h4>
+<p>Now you can test the string you generated above for its ability to query the Twitter API for a "Bearer" token, which can then be used to query for Twitter data.  The easiest way to test is to use the application called <a href="https://curl.haxx.se/">cURL</a></p>
+<ol>
+<li>
+<p>Open the Terminal on your computer and type the following at the command prompt:</p>
+<p><code>curl --version</code></p>
+<p>and then press enter.  You should see the curl version print out in your terminal.  If not, you will need to install the command-line application.  If that is the case, use the curl download wizard @ <a href="https://curl.haxx.se/dlwiz/?type=bin">https://curl.haxx.se/dlwiz/?type=bin</a></p>
+</li>
+<li>
+<p>In your browser, visit: https://curlbuilder.com/</p>
+</li>
+<li>
+<p>In the form on that page, use the following settings:</p>
+<ol>
+<li>
+<p>HTTP Method:  <code>POST</code></p>
+</li>
+<li>
+<p>URL: <code>https://api.twitter.com/oauth2/token</code></p>
+</li>
+<li>
+<p>Body: <code>grant_type=client_credentials</code></p>
+</li>
+<li>
+<p>Click on the "Add Custom Header" button .</p>
+</li>
+<li>
+<p>In the resulting fields, use <code>Authorization</code> for <strong>Header key</strong> and and then <code>Basic base64string</code> for <strong>Header value</strong> where <em>base64string</em> is the base64 encoded string you generated in the previous section.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Scroll to the bottom of the page and find the "here you are!" field.  Select all and copy the contents of the text box below.</p>
+</li>
+<li>
+<p>In your Terminal, paste what you just copied and press the ENTER key.   Your computer should execute the cURL command, sending your base64string to the Twitter API for authorization and returning a JSON file similar to the following:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="s2">&quot;bearer&quot;</span><span class="p">,</span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="s2">&quot;AAAAAAAAAdAAAAAO%2FnxQAAAAAAbZZuPjgaOoJcLhV8A%3DZ84ZCilzHuKvPXYqTl7fjQ216gCjrdT8hJTV1y7w1NMmw&quot;</span><span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>You will want to copy the access_token and keep it in a secure location.</p>
+</li>
+<li>
+<p>Now you can test querying a particular user's public Tweets with your access_token (per <a href="https://developer.twitter.com/en/docs/tweets/timelines/overview">https://developer.twitter.com/en/docs/tweets/timelines/overview</a>) In your browser, return to: https://curlbuilder.com/</p>
+</li>
+<li>
+<p>In the form on that page, use the following settings:</p>
+<ol>
+<li>
+<p>HTTP Method:  <code>GET</code></p>
+</li>
+<li>
+<p>URL: <code>https://api.twitter.com/1.1/statuses/user_timeline.json?count=1&amp;screen_name=twitterapi</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you wish, you can replace the screen_name of <code>twitterapi</code> with your personal Twitter screen name to query your own Twitter feed for its latest Tweet.</p>
+</div>
+</li>
+<li>
+<p>Body: leave blank</p>
+</li>
+<li>
+<p>Click on the "Add Custom Header" button .</p>
+</li>
+<li>
+<p>In the resulting fields, use <code>Authorization</code> for <strong>Header key</strong> and and then <code>Bearer access_token</code> for <strong>Header value</strong> where <em>access_token</em> is what you copied in step #5 above.</p>
+<p><img alt="cURL GET request" src="curl.png" /></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Scroll down and copy the entire contents of the generated cURL command.</p>
+</li>
+<li>
+<p>Paste them into your Terminal and press ENTER.</p>
+</li>
+<li>
+<p>If successful, the cURL command should return a long JSON object containing the latest tweet from the specified user whose screenname is <code>twitterapi</code>, as illustrated below:</p>
+<p><img alt="cURL Response JSON" src="cURL_response.png" /></p>
+</li>
+</ol>
+<h2 id="arduino-sketch">Arduino Sketch</h2>
+<p>Finally we can set up the Arduino sketch necessary to query the Twitter API directly from the Feather M0.</p>
+<ol>
+<li>
+<p>Create a new Arduino sketch by choosing File --&gt; New from the main menu.</p>
+</li>
+<li>
+<p>Save it by choosing File --&gt; Save and give it a memorable name, such as <code>TwitterQuery</code></p>
+</li>
+<li>
+<p>Create a new tab in your sketch:</p>
+<ol>
+<li>
+<p>Find the &#9662; symbol in the upper-right of the Arduino interface and left-click on it.  </p>
+</li>
+<li>
+<p>In the resulting pop-up, choose New Tab.</p>
+<p><em>(Alternatively, you can press SHIFT-&#8984;-N)</em></p>
+</li>
+<li>
+<p>You will be prompted to enter a name for this new tab.  Type:</p>
+<p><code>arduino_secrets.h</code></p>
+<p>and then click "OK".</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The new tab will appear in your IDE workspace.  Copy and paste the following code into the <code>arduino_secrets.h</code> tab in your sketch:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#define SECRET_SSID &quot;DukeOpen&quot;  </span><span class="c1">// your network SSID (name)</span>
+<span class="cp">#define SECRET_PASS &quot;&quot;  </span><span class="c1">// your network password; leave empty for open networks</span>
+
+<span class="cp">#define TWITTER_TOKEN &quot;base64 encoded API key/secret goes here&quot;</span>
+</pre></div>
+
+<p>[Recall that the base64 encoded string is what you produced above in the section entitled <strong>Encode Consumer API Key/Secret</strong>]</p>
+</li>
+<li>
+<p>Return to the main tab of your Arduino sketch.  </p>
+</li>
+<li>
+<p><em>Replace</em> the contents of that tab with the code provided at this Github gist:</p>
+<p><script src="https://gist.github.com/mjvo/e960cc12b70ca33ebd4923e6d5c34df9.js"></script></p>
+</li>
+</ol>
     
         
     
@@ -593,6 +783,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../instagram/" title="Instagram API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Instagram API
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
