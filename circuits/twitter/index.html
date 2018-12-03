@@ -498,7 +498,7 @@
         
         <div id="titleb4authors">
             <h1 class="titleb4authors">Twitter API</h1>
-                <p style="float:left;">Last Update: <em>2018-11-14</em></p>
+                <p style="float:left;">Last Update: <em>2018-12-01</em></p>
                 
                 <p style="float:right;">Author(s): <em>Mark Olson</em></p>
                 
@@ -629,12 +629,12 @@
 <p><code>consumerAPIkey:APIsecret</code></p>
 </li>
 <li>
-<p>Thus, the consumer API key <code>xvz1evFS4wEEPTGEFPHBog</code> and secret <code>L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg</code> would become:</p>
+<p>Thus, the hypothetical consumer API key <code>xvz1evFS4wEEPTGEFPHBog</code> and secret <code>L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg</code> would become:</p>
 <p><code>xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg</code></p>
 </li>
 <li>
 <p>Click the green "&gt; Encode &lt;" button.   The resulting encoded string should appear in the results pane.</p>
-<p>The key/secret combination above yields the following base64 encoded string:</p>
+<p>The key/secret combination above yields the following base64 encoded string (yours will be different):</p>
 <p><code>eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==</code></p>
 </li>
 <li>
@@ -680,6 +680,10 @@
 <div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="s2">&quot;bearer&quot;</span><span class="p">,</span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="s2">&quot;AAAAAAAAAdAAAAAO%2FnxQAAAAAAbZZuPjgaOoJcLhV8A%3DZ84ZCilzHuKvPXYqTl7fjQ216gCjrdT8hJTV1y7w1NMmw&quot;</span><span class="p">}</span>
 </pre></div>
 
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The JSON above is for example purposes only; you will need to generate an access_token specific to your Twitter account. </p>
+</div>
 </li>
 <li>
 <p>You will want to copy the access_token and keep it in a secure location.</p>
@@ -765,6 +769,16 @@
 <li>
 <p><em>Replace</em> the contents of that tab with the code provided at this Github gist:</p>
 <p><script src="https://gist.github.com/mjvo/e960cc12b70ca33ebd4923e6d5c34df9.js"></script></p>
+</li>
+<li>
+<p>On line 17 of the main Arduino sketch there is a variable where you can set the screen name of the Twitter user whose latest Tweet you'd like to query.   </p>
+</li>
+<li>
+<p>Verify and upload the sketch to your Feather.</p>
+</li>
+<li>
+<p>If successful, both information about the specified Twitter user and their latest Tweet should print out to the Arduino serial monitor.</p>
+<p><img alt="Serial Monitor Output" src="serial_monitor_output.png" /></p>
 </li>
 </ol>
     
