@@ -222,7 +222,7 @@ Finally we can set up the Arduino sketch necessary to query the Twitter API dire
 
     <script src="https://gist.github.com/mjvo/e960cc12b70ca33ebd4923e6d5c34df9.js"></script>
 
-1. On line 17 of the main Arduino sketch there is a variable where you can set the screen name of the Twitter user whose latest Tweet you'd like to query.   
+1. Around line 20 of the main Arduino sketch there is a variable `twitter_user` where you can set the screen name of the Twitter user whose latest Tweet you'd like to query.   
 
 1. Verify and upload the sketch to your Feather.
 
