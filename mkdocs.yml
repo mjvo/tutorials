@@ -50,5 +50,6 @@ nav:
     - 'Blynk' : 'circuits/blynk/index.md'
     - 'MQTT' : 'circuits/mqtt/index.md'
     - 'Instagram API' : 'circuits/instagram/index.md'
+    - 'Twitter API' : 'circuits/twitter/index.md'
 
 

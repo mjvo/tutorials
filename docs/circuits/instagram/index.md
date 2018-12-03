@@ -35,7 +35,7 @@ First, if you have not done so alreadyinstall Benoit Blanchon's [ArduinoJson lib
 
 ## Arduino Sketch
 
-By now you should be familiar with this section, which outlines the Arduino code necessary to connect the Feather M0 to a WiFi access point.  We'll use this as a starting point for our sketch.
+Finally we can set up the Arduino sketch necessary to query the Instagram API directly from the Feather M0.
 
 1. Create a new Arduino sketch by choosing File --> New from the main menu.
 
