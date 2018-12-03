@@ -2,7 +2,7 @@
 title: Twitter JSON
 description: A Tutorial for Parsing JSON Data on the Feather
 authors:  Mark Olson
-updated:  2018-11-14
+updated:  2018-12-01
 ---
 
 ## About this Tutorial
@@ -104,13 +104,13 @@ The [documentation](https://developer.twitter.com/en/docs/basics/authentication/
 
     `consumerAPIkey:APIsecret`
 
-1. Thus, the consumer API key `xvz1evFS4wEEPTGEFPHBog` and secret `L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg` would become:
+1. Thus, the hypothetical consumer API key `xvz1evFS4wEEPTGEFPHBog` and secret `L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg` would become:
 
     `xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg`
 
 1. Click the green "> Encode <" button.   The resulting encoded string should appear in the results pane.
 
-    The key/secret combination above yields the following base64 encoded string:
+    The key/secret combination above yields the following base64 encoded string (yours will be different):
 
     `eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
@@ -147,6 +147,9 @@ Now you can test the string you generated above for its ability to query the Twi
     ```json
     {"token_type":"bearer","access_token":"AAAAAAAAAdAAAAAO%2FnxQAAAAAAbZZuPjgaOoJcLhV8A%3DZ84ZCilzHuKvPXYqTl7fjQ216gCjrdT8hJTV1y7w1NMmw"}
     ```
+
+    !!! important
+        The JSON above is for example purposes only; you will need to generate an access_token specific to your Twitter account. 
 
 1.  You will want to copy the access_token and keep it in a secure location.
 
@@ -218,3 +221,11 @@ Finally we can set up the Arduino sketch necessary to query the Twitter API dire
 1. _Replace_ the contents of that tab with the code provided at this Github gist:
 
     <script src="https://gist.github.com/mjvo/e960cc12b70ca33ebd4923e6d5c34df9.js"></script>
+
+1. On line 17 of the main Arduino sketch there is a variable where you can set the screen name of the Twitter user whose latest Tweet you'd like to query.   
+
+1. Verify and upload the sketch to your Feather.
+
+1.  If successful, both information about the specified Twitter user and their latest Tweet should print out to the Arduino serial monitor.
+
+    ![Serial Monitor Output](serial_monitor_output.png)
