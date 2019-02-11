@@ -109,7 +109,7 @@ The PyTorch tutorial makes use of the [Large-scale CelebFaces Attributes (CelebA
     ```
     The progress of the unzip action will unfold in the Terminal.  This may take several minutes to complete.  Remember, the zip file contains over 200,000 images!
 
-## Invoke Jupyter Notebook
+## Part IV:  Invoke Jupyter Notebook
 
 This section of the tutorial explains how to invoke a Jupyter Notebook server in the DCC GPU environment and access it with your web browser.
 
@@ -226,7 +226,7 @@ If you're working through this tutorial from start to finish, you're already log
 
 
 
-## Executing a Jupyter Notebook
+## Part V:  Executing a Jupyter Notebook
 
 To open a Jupyter notebook, simply click on its filename in the browser window.  By default, it will load in an "untrusted" state.  In this mode, clicking the "Run" button will step through each "cell" of the code, pausing at the next until you again click "Run."
 
