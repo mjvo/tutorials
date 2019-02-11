@@ -51,5 +51,7 @@ nav:
     - 'MQTT' : 'circuits/mqtt/index.md'
     - 'Instagram API' : 'circuits/instagram/index.md'
     - 'Twitter API' : 'circuits/twitter/index.md'
+  - 'Machine Learning':
+    - 'PyTorch DCGAN' : 'machine-learning/pytorch-dcgan/index.md'
 
 
