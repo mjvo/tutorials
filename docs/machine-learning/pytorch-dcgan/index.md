@@ -228,7 +228,7 @@ If you're working through this tutorial from start to finish, you're already log
 
 ## Executing a Jupyter Notebook
 
-To open a Jupyter notebook, simply click on it in the browser window.  By default, it will load in an "untrusted" state.  In this mode, clicking the "Run" button will step through each "cell" of the code, pausing at the next until you again click "Run."
+To open a Jupyter notebook, simply click on its filename in the browser window.  By default, it will load in an "untrusted" state.  In this mode, clicking the "Run" button will step through each "cell" of the code, pausing at the next until you again click "Run."
 
 After successfully going through each cell, the next launch of the Notebook will execute the code without user intervention.
 
