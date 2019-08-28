@@ -1,5 +1,5 @@
 # Site information
-site_name: Mark Olson's Tutorial Repository
+site_name: Mark Olson's Lab & Tut Repo
 
 ## To DO - Creative Commons and Google Analytics
 
@@ -22,7 +22,7 @@ theme:
   favicon: 'images/favicon.ico'
 
 extra_css:
-  - 'stylesheets/extra.css'
+  - stylesheets/extra.css
 
 # Extensions
 markdown_extensions:
@@ -43,7 +43,7 @@ extra_javascript:
 # Page Hierarchy for Nav / TOC
 nav:
   - 'index.md'
-  - Circuits:
+  - 'Circuits':
     - 'Tinkercad' : 'circuits/tinkercad/index.md'
     - 'ATtiny85' : 'circuits/attiny85/index.md'
     - 'Feather M0' : 'circuits/feather/index.md'
@@ -53,5 +53,5 @@ nav:
     - 'Twitter API' : 'circuits/twitter/index.md'
   - 'Machine Learning':
     - 'PyTorch DCGAN' : 'machine-learning/pytorch-dcgan/index.md'
-
-
+  - 'Web &amp; Multimedia':
+    - 'Week 1 Lab' : 'web-multimedia/week1/index.md'
