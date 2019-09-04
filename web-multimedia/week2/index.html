@@ -409,8 +409,30 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#public_html-folder-structure-setup" class="md-nav__link">
-    Public_html Folder Structure Setup
+  <a href="#part-1-public_html-folder-structure-setup" class="md-nav__link">
+    Part 1: Public_html Folder Structure Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-landing-page" class="md-nav__link">
+    Part 2:  Landing Page
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-requirements" class="md-nav__link">
+    Minimal Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reach-goals" class="md-nav__link">
+    Reach Goals
   </a>
   
 </li>
@@ -419,11 +441,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements-for-a" class="md-nav__link">
-    Requirements for a &#10003;
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -477,8 +497,30 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#public_html-folder-structure-setup" class="md-nav__link">
-    Public_html Folder Structure Setup
+  <a href="#part-1-public_html-folder-structure-setup" class="md-nav__link">
+    Part 1: Public_html Folder Structure Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-landing-page" class="md-nav__link">
+    Part 2:  Landing Page
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-requirements" class="md-nav__link">
+    Minimal Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reach-goals" class="md-nav__link">
+    Reach Goals
   </a>
   
 </li>
@@ -487,11 +529,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements-for-a" class="md-nav__link">
-    Requirements for a &#10003;
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -548,7 +588,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="public_html-folder-structure-setup">Public_html Folder Structure Setup</h3>
+<h3 id="part-1-public_html-folder-structure-setup">Part 1: Public_html Folder Structure Setup</h3>
 <ol>
 <li>
 <p>Find the folder on your local harddrive where you saved your first webpage, <code>about-me.html</code>.</p>
@@ -605,9 +645,80 @@
 <li>
 <p>Visiting <a href="https://people.duke.edu/~netID/labs/lab01/">https://people.duke.edu/~netID/labs/lab01/</a> should display the archived version of your <code>about-me.html</code> page.</p>
 </li>
+<li>
+<p>Finally, since you renamed and moved the <code>about-me.html</code> page on your local directory, you'll need to pull it down from the <code>public_html</code> directory so that your local and remote files and folders are in sync.  </p>
+</li>
 </ol>
-<h2 id="requirements-for-a">Requirements for a &#10003;</h2>
+<h3 id="part-2-landing-page">Part 2:  Landing Page</h3>
+<p>In this second part of the lab assignment, you will create a new design for the "homepage" of your https://people.duke.edu/~netID site.  Here you will make use of HTML5 sectioning tags to define a semantic structure to your HTML and then leverage what you are learning with CSS to create a more advanced design and layout for that page.  </p>
+<h4 id="minimal-requirements">Minimal Requirements</h4>
 <p>Use the following checklist to make sure you meet the minimum requirements to earn a <strong>&#10003;</strong> for this assignment.  Scroll down to the <a href="#reach-goals-for-a">Reach Goals</a> section below for suggestions to extend your work to attain a <strong>&#10003;+</strong>.</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Launch Brackets, start a new file (File &rarr; New).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Save it as <code>index.html</code> in the root of your local harddrive folder.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use the following as your template html:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title of the document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/~netID/css/main.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>Main menu Goes Here<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+            One or more sections here. Be sure to use a new <span class="ni">&amp;lt;</span>section<span class="ni">&amp;gt;</span> element for each section.
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span>Sidebar or aside content here<span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>Footer content here<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that you'll need to update the <code>&lt;link&gt;</code> element's <code>href</code> attribute with your netID.</p>
+</div>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Using semantically correct HTML, add the following content to the template:</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Links in the <code>&lt;nav&gt;</code> section:</p>
+<ol>
+<li>
+<p>A link with text content of <code>Home</code> and an <code>href</code> attribute that points to <code>index.html</code> in the root of your site (e.g. this should point to the very same page that you're editing right now.)</p>
+</li>
+<li>
+<p>A link with text content of <code>About Me</code> that points to the <code>about-me.html</code> page in the root of your site. </p>
+</li>
+</ol>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> In the <code>&lt;section&gt;</code> section element(s), use headings and paragraphs to explain what this site is, an archive of your work for Fundamentals of Web-Based Communication.  </p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> In the <code>&lt;footer&gt;</code> section element, create a copyright statement that uses the html entity code for the copyright symbol.</p>
+</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create a new file in Brackets and save it as <code>main.css</code> in the <code>css</code> folder.</p>
+</li>
+</ul>
+<h4 id="reach-goals">Reach Goals</h4>
     
         
     
