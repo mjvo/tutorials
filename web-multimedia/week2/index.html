@@ -577,14 +577,9 @@
 <p>Archive your first <code>about-me.html</code> webpage so that it is accessible at the following URL (where <code>netID</code> is <em>your</em> netiD): <a href="https://people.duke.edu/~netID/labs/01/index.html">https://people.duke.edu/~netID/labs/01/index.html</a></p>
 </li>
 <li>
-<p>Develop two new webpages, using HTML5 sectioning tags and what you have learned about CSS layout and the Box Model:</p>
+<p>Develop a new webpage, using HTML5 sectioning tags and what you have learned about CSS layout and the Box Model:</p>
 <ul>
-<li>
-<p>A landing page that is accessible at the following URL (again, where <code>netID</code> is <em>your</em> netiD): <a href="https://people.duke.edu/~netID/">https://people.duke.edu/~netID/</a></p>
-</li>
-<li>
-<p>A "Labs" landing page will contain links to each of the labs completed over the course of the semester, accessible at the following URL:  <a href="https://people.duke.edu/~netID/labs/">https://people.duke.edu/~netID/labs/</a></p>
-</li>
+<li>A landing page that is accessible at the following URL (again, where <code>netID</code> is <em>your</em> netiD): <a href="https://people.duke.edu/~netID/">https://people.duke.edu/~netID/</a></li>
 </ul>
 </li>
 </ol>
@@ -646,7 +641,15 @@
 <p>Visiting <a href="https://people.duke.edu/~netID/labs/lab01/">https://people.duke.edu/~netID/labs/lab01/</a> should display the archived version of your <code>about-me.html</code> page.</p>
 </li>
 <li>
-<p>Finally, since you renamed and moved the <code>about-me.html</code> page on your local directory, you'll need to <em>download</em> it from the <code>public_html</code> directory so that your local and remote files and folders are in sync.  </p>
+<p>Finally, since you renamed and moved the <code>about-me.html</code> page on your local directory, you'll need to download it from the public_html directory so that your local and remote files and folders are in sync. Downloading a file in FileZilla is simple:  Find the file in your remote <code>public_html</code> directory (right-hand pane) and drag the file into your local working folder (left-hand pane). </p>
+<p>The structure of your <strong>local</strong> working folder on your harddrive should now look like this:
+<img alt="Interim File-Folder Structure after downloading about-me.html" src="interim_file-folder_structure1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a good time to consider your understanding of the difference and relation between the files stored in the public_html folder of your CIFS share (e.g. the webserver <code>people.duke.edu</code>) and the files stored on your local harddrive where you are editing the files.</p>
+<p>These files are not kept in sync by default when using FileZilla, but you want to ensure that they are identical at the start of any significant editing session or else you risk introducing a situation where your site works locally but not on the webserver, or vice versa.  </p>
+<p>If you need clarification on this, please discuss with your lab instructors.</p>
+</div>
 </li>
 </ol>
 <h3 id="part-2-landing-page">Part 2:  Landing Page</h3>
@@ -655,10 +658,16 @@
 <p>Use the following checklist to make sure you meet the minimum requirements to earn a <strong>&#10003;</strong> for this assignment.  Scroll down to the <a href="#reach-goals-for-a">Reach Goals</a> section below for suggestions to extend your work to attain a <strong>&#10003;+</strong>.</p>
 <ul class="task-list">
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Launch Brackets, start a new file (File &rarr; New).</p>
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Launch Brackets. </p>
 </li>
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Save it as <code>index.html</code> in the root of your local harddrive folder.</p>
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Go to File &rarr; Open Folder and find your local site folder.  Click the <code>Open</code> button to select that folder as your working directory.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Start a new file (File &rarr; New).</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Save it as <code>index.html</code> in the root of your local site folder on your harddrive.</p>
 </li>
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use the following as your template html:</p>
@@ -710,34 +719,62 @@
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> In the <code>&lt;section&gt;</code> section element(s), use headings and paragraphs to explain what this site is, an archive of your work for Fundamentals of Web-Based Communication.  </p>
 </li>
 <li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use the <code>&lt;aside&gt;</code> section element to briefly introduce yourself.  Use a heading element for a title that is appropriate to the context of other headings on your page, and then pen a sentence or two about yourself.  End with a link to your <code>about-me.html</code> page.  Example:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>A Little Bit About Me<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I am a 20th year Duke student who loves apple pie <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span><span class="ni">&amp;agrave;</span> la mode<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> and code.<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;about-me.html&quot;</span><span class="p">&gt;</span>Read More About Me<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+
+</li>
+<li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> In the <code>&lt;footer&gt;</code> section element, create a copyright statement that uses the html entity code for the copyright symbol.</p>
 </li>
 </ul>
 </li>
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create a new file in Brackets and save it as <code>main.css</code> in the <code>css</code> folder.  You will use this file for styling your homepage (as well as any other pages on your midterm site.)</p>
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Next, you'll use a linked CSS file to style your homepage. You will use this file for styling all of the pages on your midterm site.</p>
 <ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create a new file in Brackets and save it as <code>main.css</code> in the <code>css</code> folder within your local site directory on your harddrive. </p>
+</li>
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Since you linked to it in the <code>&lt;head&gt;</code> of your HTML file, any changes you make to this CSS file should automatically update when previewing your page in Brackets. </p>
 </li>
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test this by adding the following CSS to the <code>main.css</code> file and saving it:</p>
-<div class="codehilite"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="o">*</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ff0000</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
-<p>You should see the margins of your page increase and all of your content should be enclosed in red-bordered box.</p>
+<p>You should see the margins of your page increase as well as around each element in your page.  All elements should be enclosed in red-bordered box.</p>
 </li>
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use what you've learned about CSS for styling fonts, page layout, text and continue researching CSS selectors and the properties that CSS allows you to modify as you shape the look and feel of your site.</p>
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Using the proper syntax for comments in CSS, <code>/* comment goes here */</code>, comment out that style declaration but leave it at the top of your page to use as needed for further testing. </p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use what you've learned about CSS for styling fonts, page layout, text, and images.  Continue researching CSS selectors and the properties that CSS allows you to modify as you shape the look and feel of your site.</p>
 </li>
 </ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Finally, SFTP these two files -- <code>index.html</code> and <code>css/main.css</code> to your <code>public_html</code> directory so that your homepage is visible at your <code>people.duke.edu</code> URL.</p>
 </li>
 </ul>
 <h4 id="reach-goals">Reach Goals</h4>
-<p>Coming soon . . .</p>
+<p>Here are some reach goals to tackle once you have begun to create a site aesthetic that you are happy with:</p>
+<ul>
+<li>
+<p>Familiarize yourself with <a href="https://internetingishard.com/html-and-css/floats/">the CSS <code>float</code> property</a> and use what you learn change the default HTML flow of your document.  For example, you may wish to convert your <code>&lt;nav&gt;</code> section into a vertical menu that is positioned on the left-hand side of the page.   Or float your <code>&lt;aside&gt;</code> on the right.</p>
+</li>
+<li>
+<p>Familiarize yourself with <a href="https://www.w3schools.com/css/css_positioning.asp">the CSS positioning properties</a> and use what you learn to make your header or footer stick to the top or bottom of the page.</p>
+</li>
+<li>
+<p>Use CSS link states to transform your navigation links into buttons that dynamically change when a user mouses over or clicks on them.</p>
+</li>
+</ul>
     
         
     
