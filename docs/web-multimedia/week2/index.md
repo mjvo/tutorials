@@ -162,7 +162,7 @@ Use the following checklist to make sure you meet the minimum requirements to ea
     
     * [ ] Use what you've learned about CSS for styling fonts, page layout, text, and images.  Continue researching CSS selectors and the properties that CSS allows you to modify as you shape the look and feel of your site.
 
-* [ ] Finally, SFTP these two files -- `index.html` and `css/main.css` to your `public_html` directory so that your homepage is visible at your `people.duke.edu` URL.
+* [ ] Finally, SFTP these two files -- `index.html` and `css/main.css` to your `public_html` directory so that your homepage is visible at the root of your `people.duke.edu` URL and your CSS file resides in the `css` folder on the server.
 
 #### Reach Goals
 
