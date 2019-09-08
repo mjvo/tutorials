@@ -125,9 +125,9 @@ Use the following checklist to make sure you meet the minimum requirements to ea
 
     * [ ] Links in the `<nav>` section:
     
-        1. A link with text content of `Home` and an `href` attribute that points to `index.html` in the root of your site (e.g. this should point to the very same page that you're editing right now.)
+        1. A link (`<a>` element) with text content of `Home` and an `href` attribute that points to `index.html` in the root of your site (e.g. this should point to the very same page that you're editing right now.)
 
-        1. A link with text content of `About Me` that points to the `about-me.html` page in the root of your site. 
+        1. A link (`<a>` element) with text content of `About Me` that points to the `about-me.html` page in the root of your site. 
 
     * [ ] In the `<section>` section element(s), use headings and paragraphs to explain what this site is, an archive of your work for Fundamentals of Web-Based Communication.  
 
