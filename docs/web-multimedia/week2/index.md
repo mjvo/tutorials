@@ -119,7 +119,7 @@ Use the following checklist to make sure you meet the minimum requirements to ea
     ```
 
     !!! important
-        Note that you'll need to update the `<link>` element's `href  ` attribute with your netID.
+        Note that the `<link>` element's `href  ` is a file relative path and that has changed from the original posting of this document.  Root relative paths are not working consistently on `people.duke.edu` and we are trying to ascertain why in consultation with OIT.  Root relative paths seem to work for an `<img>` element's `src` attribute, but not a `<link>` element's `href` attribute. 
 
 * [ ] Using semantically correct HTML, add the following content to the template:
 
