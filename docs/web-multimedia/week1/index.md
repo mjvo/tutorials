@@ -1,5 +1,5 @@
 ---
-title: Week 1
+title: Lab 1
 description: My First Homepage Assignment
 authors:  Mark Olson
 updated:  2019-08-26

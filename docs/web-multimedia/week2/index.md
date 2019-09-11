@@ -1,5 +1,5 @@
 ---
-title: Week 2
+title: Lab 2
 description: Site Architecture - First Steps
 authors:  Mark Olson
 updated:  2019-09-04
