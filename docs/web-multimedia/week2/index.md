@@ -78,7 +78,7 @@ In this second lab assignment, you will accomplish several things:
 
 In this second part of the lab assignment, you will create a new design for the "homepage" of your https://people.duke.edu/~netID site.  Here you will make use of HTML5 sectioning tags to define a semantic structure to your HTML and then leverage what you are learning with CSS to create a more advanced design and layout for that page.  Here you should draw on the information presented in the chapters assigned from Duckett (2011) to style text, color, layout and images. 
 
-#### Minimal Requirements
+## Requirements for a &#10003;
 
 Use the following checklist to make sure you meet the minimum requirements to earn a **&#10003;** for this assignment.  Scroll down to the [Reach Goals](#reach-goals-for-a) section below for suggestions to extend your work to attain a **&#10003;+**.
 

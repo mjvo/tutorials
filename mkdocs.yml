@@ -54,5 +54,6 @@ nav:
   - 'Machine Learning':
     - 'PyTorch DCGAN' : 'machine-learning/pytorch-dcgan/index.md'
   - 'Web &amp; Multimedia':
-    - 'Week 1 Lab' : 'web-multimedia/week1/index.md'
-    - 'Week 2 Lab' : 'web-multimedia/week2/index.md'
+    - 'Lab 1' : 'web-multimedia/week1/index.md'
+    - 'Lab 2' : 'web-multimedia/week2/index.md'
+    - 'Lab 3' : 'web-multimedia/week3/index.md'
