@@ -112,3 +112,7 @@ Some reach goals:
 * Use the CSS `border` and `box-shadow` properties to add some three-dimensionality to your page and/or the gallery items.
 
 * Use the [CSS `:hover` selector](https://www.w3schools.com/cssref/sel_hover.asp) and the [CSS `filter` property](https://www.w3schools.com/cssref/css3_pr_filter.asp) to either blur or make grayscale each of your gallery images when you hover your mouse over them.
+
+### Example
+
+![Example of Gallery Mockup](GalleryMockup.png)
