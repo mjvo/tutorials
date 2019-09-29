@@ -1,0 +1,824 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="CSS Grid and Flexbox">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Lab 4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#css-grid-and-flexbox" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Lab & Tutorial Repo" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Mark Olson's Lab & Tutorial Repo
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Lab 4
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Lab & Tutorial Repo" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Lab & Tutorial Repo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/tinkercad/" title="Tinkercad" class="md-nav__link">
+      Tinkercad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/attiny85/" title="ATtiny85" class="md-nav__link">
+      ATtiny85
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/feather/" title="Feather M0" class="md-nav__link">
+      Feather M0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/blynk/" title="Blynk" class="md-nav__link">
+      Blynk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/mqtt/" title="MQTT" class="md-nav__link">
+      MQTT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/instagram/" title="Instagram API" class="md-nav__link">
+      Instagram API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/twitter/" title="Twitter API" class="md-nav__link">
+      Twitter API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Machine Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Machine Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../machine-learning/pytorch-dcgan/" title="PyTorch DCGAN" class="md-nav__link">
+      PyTorch DCGAN
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Web &amp; Multimedia
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Web &amp; Multimedia
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week1/" title="Lab 1" class="md-nav__link">
+      Lab 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week2/" title="Lab 2" class="md-nav__link">
+      Lab 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week3/" title="Lab 3" class="md-nav__link">
+      Lab 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 4
+      </label>
+    
+    <a href="./" title="Lab 4" class="md-nav__link md-nav__link--active">
+      Lab 4
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#css-grid-and-flexbox" class="md-nav__link">
+    CSS Grid and Flexbox
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-a" class="md-nav__link">
+    Requirements for a &#10003;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reach-goals" class="md-nav__link">
+    Reach Goals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#css-grid-and-flexbox" class="md-nav__link">
+    CSS Grid and Flexbox
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-a" class="md-nav__link">
+    Requirements for a &#10003;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reach-goals" class="md-nav__link">
+    Reach Goals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">Lab 4</h1>
+                <p style="float:left;">Last Update: <em>2019-09-28</em></p>
+                
+                <p style="float:right;">Author(s): <em>Augustus Wendell &amp; Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <div class="admonition danger">
+<p>Due:  <em><strong><em>Second</em> Lab Section meeting of the week of September 30<sup>th</sup></strong></em></p>
+</div>
+<h2 id="css-grid-and-flexbox"><strong>CSS Grid and Flexbox</strong></h2>
+<h3 id="overview">Overview</h3>
+<p>In this fourth lab assignment, you will create a mock-up of a Labs landing / index page. You will use both CSS Flexbox and Grid techniques to layout the components for this page.  The concept here is that you will have a single page available at https://people.duke.edu/~netID/labs/lab04/index.html which will display information about and link to each of the labs you've completed so far this semester.</p>
+<p>The page should be structured as follows (see screenshot below for a visual representation) and ideally should be accomplished without modifying the <em>structure</em> of the HTML document provided below.  In other words, as much as possible, leave the HTML alone and design with CSS only.</p>
+<ul>
+<li>
+<p>All major elements on the page (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>) should be centered on the page with a maximum width of 960 pixels. </p>
+</li>
+<li>
+<p>Flexbox should be used to create a horizontal layout for the navigation links.   The "Home" link should be positioned on the left-hand side of the navigation element, with the remaining links on the right side.</p>
+</li>
+<li>
+<p>A grid container should define the layout of the main elements of the page, a series of <code>&lt;article&gt;</code> elements containing information on each of the labs you've completed this semester.</p>
+</li>
+<li>
+<p>At the base of the page will be a footer element using Flexbox for layout with copyright and links to both Duke University and to your primary department webpage.</p>
+</li>
+<li>
+<p>Use two Google typefaces/fonts, a sans-serif font for the header and footer content, and a serif font for the main content.  Be sure to select typefaces that are legible and sympathetic when occupying the same page.</p>
+</li>
+<li>
+<p>Use a three-color color scheme for this page. One “highlight” color should be used in light weight to define the extents of the navigation and footer elements, one “text color” with strong legibility (low saturation, dark value/tone) should be used for all text, and a third color should be used as either a subtle background/panel/object color or within the article elements. Color schemes must be generated from an online color palette generator (color.adobe.com, colormind.io, etc.).</p>
+</li>
+</ul>
+<p><img alt="Screenshot of Basic Page" src="lab04_basic.png" /></p>
+<h3 id="requirements-for-a">Requirements for a &#10003;</h3>
+<p>Use the following step-by-step to make sure you meet the minimum requirements to earn a <strong>&#10003;</strong> for this assignment.  Scroll down to the <a href="#reach-goals-for-a">Reach Goals</a> section below for suggestions to extend your work to attain a <strong>&#10003;+</strong>.</p>
+<ol>
+<li>
+<p>Launch Brackets.</p>
+</li>
+<li>
+<p>In your local website directory, create a new .css file in your <code>/css</code> folder, naming it <code>lab04.css</code>.</p>
+</li>
+<li>
+<p>In your <code>/labs</code> folder, create a new folder called <code>lab04</code>.  Inside of the newly-created <code>lab04</code> folder, create a file named <code>index.html</code></p>
+</li>
+<li>
+<p>Copy and paste the following HTML into your newly-created <code>index.html</code> file and save it:</p>
+<p><div class="codehilite"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Labs Landing Mockup<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../../css/lab04.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nav-links&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;home&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../../index.html&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../../about-me.html&quot;</span><span class="p">&gt;</span>About Me<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../../labs/index.html&quot;</span><span class="p">&gt;</span>Labs<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;labs-grid&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;page_title&quot;</span><span class="p">&gt;</span>Labs<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">article</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lab1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_item&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_number&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../lab01/index.html&quot;</span><span class="p">&gt;</span>Lab 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dummyimage.com/125x300/3d3d3d/9e9e9e&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Lab 1 screenshot&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_title&quot;</span><span class="p">&gt;</span>My First Webpage<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_description&quot;</span><span class="p">&gt;</span>In this first lab assignment, I created a valid HTML5 webpage where I introduced myself to my instructors and classmates. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">article</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lab2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_item&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_number&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../lab02/index.html&quot;</span><span class="p">&gt;</span>Lab 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dummyimage.com/125x300/3d3d3d/9e9e9e&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Lab 2 screenshot&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_title&quot;</span><span class="p">&gt;</span>Site Architecture - First Steps<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_description&quot;</span><span class="p">&gt;</span>In this second lab assignment, I set up the file-folder structure of this website and created a new homepage using HTML5 sectioning elements and CSS layout using the box model <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">article</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lab3&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_item&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_number&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../lab03/index.html&quot;</span><span class="p">&gt;</span>Lab 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dummyimage.com/125x300/3d3d3d/9e9e9e&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Lab 3 screenshot&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_title&quot;</span><span class="p">&gt;</span>Inline-Block Gallery<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_description&quot;</span><span class="p">&gt;</span>In this third lab assignment, I built a mock-up of a web gallery, using the inline-block CSS display property.  I also explored the use of dummy content generators.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">article</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;lab4&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_item&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_number&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./index.html&quot;</span><span class="p">&gt;</span>Lab 4<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dummyimage.com/125x300/3d3d3d/9e9e9e&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Lab 4 screenshot&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_title&quot;</span><span class="p">&gt;</span>CSS Grid and Flexbox<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_description&quot;</span><span class="p">&gt;</span>In this fourth lab assignment, I styled the page you are currently viewing using both grid and flexbox layout strategies.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">article</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;the_rest&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_item&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_number&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./index.html&quot;</span><span class="p">&gt;</span>The Rest<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_image&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dummyimage.com/125x300/3d3d3d/9e9e9e&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Rest of Labs screenshot&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_title&quot;</span><span class="p">&gt;</span>TBD<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lab_description&quot;</span><span class="p">&gt;</span>The rest of my labs have yet to be completed but will go here.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;footer-items&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2019<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://aahvs.duke.edu&quot;</span><span class="p">&gt;</span>Art, Art History <span class="ni">&amp;amp;</span> Visual Studies<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.duke.edu&quot;</span><span class="p">&gt;</span>Duke University<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+Ideally, you won't need to modify the HTML on this page.  Save it and use CSS exclusively for layout and design.</p>
+</li>
+<li>
+<p>Return to the <code>lab04.css</code> file and begin styling the document using CSS.</p>
+</li>
+<li>
+<p>The first two lines of your CSS file should contain <code>@import</code> rules that pull in two separate font CSS from <a href="https://fonts.google.com/">Google Fonts</a>.  One font should be serifed, the other a sans-serif font.</p>
+</li>
+<li>
+<p>Use the appropriate <code>font-family</code> CSS declarations to use the sans-serif font for the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements, and the serifed font for the <code>&lt;main&gt;</code> element.</p>
+</li>
+<li>
+<p>The <code>&lt;header&gt;</code> of your page should be an element spanning 100% of the width of the page and use flexbox to center its children (e.g. the <code>&lt;nav&gt;</code> element.):</p>
+<div class="codehilite"><pre><span></span><span class="nt">header</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>The navigation bar (<code>&lt;nav&gt;</code>) of your page should be styled to display at a height of 100px and a width of 960 pixels.  Use the <code>box-sizing: border-box;</code> declaration so that border and padding are not calculated into the width of the box model for <code>&lt;nav&gt;</code>.  You can give it a border that fits in with your three-color scheme.</p>
+</li>
+<li>
+<p>Use flexbox for horizontal layout of the navigation links:</p>
+<div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">nav-links</span> <span class="p">{</span>
+    <span class="k">list-style-type</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-end</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>The "Home" link should be positioned at the <em>left</em> of the <code>&lt;nav&gt;</code> element, by specifying the <code>flex</code> property of the <code>#home</code> element.  </p>
+</li>
+<li>
+<p>Use appropriate padding to space out the navigation elements and ensure that you have 20 pixels between the "Home" link and the navigation element's left edge and between the last menu item and the navigation element's right edge.</p>
+</li>
+<li>
+<p>The grid container for the labs (<code>#labs-grid</code>) should be given a maximum width of 960 pixels and centered on the page using the <code>margin: 0 auto;</code> technique.</p>
+</li>
+<li>
+<p>The grid container for the labs should also be set to <code>display: grid;</code>  The grid columns should be set to make 3 columns of 1 fractional width each: <code>grid-template-columns: 1fr 1fr 1fr;</code> and the grid rows should be set so that the first row is 100 pixels high and the rest are auto-sized:  <code>grid-template-rows: 100px auto;</code></p>
+</li>
+<li>
+<p>Set the gap between rows to 15 pixels and the gap between columns at 10 pixels.</p>
+</li>
+<li>
+<p>Use the <code>grid-column</code> declaration to set the <code>#page-title</code> element to span all three columns (e.g. from the first grid-line to the fourth.)</p>
+</li>
+<li>
+<p>Now turn your attention to the <code>&lt;article&gt;</code> elements.  Use CSS grid to layout the content of each <code>.lab-item</code> info card with the following fractional widths designating 2 columns and 3 rows:</p>
+<p><img alt="Fractional Widths" src="fractional.png" /></p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">lab_item</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">2</span><span class="n">fr</span><span class="p">;</span>
+    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">4</span><span class="n">fr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Use <code>grid-template-areas</code> to specify this layout of elements in the <code>.lab-item</code> grid:</p>
+<p><img alt="Named grid-template-areas" src="named.png" /></p>
+<div class="codehilite"><pre><span></span>    <span class="nt">grid-template-areas</span><span class="o">:</span>
+        <span class="s2">&quot;image number&quot;</span>
+        <span class="s2">&quot;image title&quot;</span>
+        <span class="s2">&quot;image description&quot;</span><span class="o">;</span>
+</pre></div>
+
+<p>and then be sure to assign your HTML elements to those named areas:</p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">lab_image</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">image</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span><span class="nc">lab_number</span><span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">number</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span><span class="nc">lab_title</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">title</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span><span class="nc">lab-description</span> <span class="p">{</span> <span class="k">grid-area</span><span class="p">:</span> <span class="n">description</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Employ your three-color color scheme.</p>
+</li>
+<li>
+<p>Use <code>padding</code> and <code>grid-column-gap</code> and <code>grid-row-gap</code> to introduce some breathing room into your design.</p>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Be sure to save your work and then SFTP the changes you've made to your local directory to your <code>public_html</code> directory on the <code>people.duke.edu</code> webserver:</p>
+<ul>
+<li>
+<p>The folder <code>lab04</code> containing the index.html file should be transferred into the <code>labs</code> folder of your <code>public_html</code> directory on the webserver.</p>
+</li>
+<li>
+<p>The file <code>lab04.css</code> should be transferred to the <code>css</code> folder in the <code>public_html</code> directory on the webserver.</p>
+</li>
+</ul>
+</div>
+<h3 id="reach-goals">Reach Goals</h3>
+<p>Use <code>@media</code> queries to make the page layout responsive to smaller screens.  For example, you may wish to have the layout switch to a two-column grid of labs below 640px and to a single column grid below 400px.  </p>
+<p>And/or you may want the grid layout of the <code>.lab-item</code> info cards themselves to change at lower resolutions. </p>
+<p>Use relative font-sizing (<code>rem</code>) to set the font-size of different elements on the page.</p>
+<p>And, as always, leverage what you've learned about CSS more generally to create an aesthetically-pleasing webpage.</p>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../week3/" title="Lab 3" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 3
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
