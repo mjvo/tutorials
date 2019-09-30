@@ -704,10 +704,10 @@ Ideally, you won't need to modify the HTML on this page.  Save it and use CSS ex
 <p>Set the gap between rows to 15 pixels and the gap between columns at 10 pixels.</p>
 </li>
 <li>
-<p>Use the <code>grid-column</code> declaration to set the <code>#page-title</code> element to span all three columns (e.g. from the first grid-line to the fourth.)</p>
+<p>Use the <code>grid-column</code> declaration to set the <code>#page_title</code> element to span all three columns (e.g. from the first grid-line to the fourth.)</p>
 </li>
 <li>
-<p>Now turn your attention to the <code>&lt;article&gt;</code> elements.  Use CSS grid to layout the content of each <code>.lab-item</code> info card with the following fractional widths designating 2 columns and 3 rows:</p>
+<p>Now turn your attention to the <code>&lt;article&gt;</code> elements.  Use CSS grid to layout the content of each <code>.lab_item</code> info card with the following fractional widths designating 2 columns and 3 rows:</p>
 <p><img alt="Fractional Widths" src="fractional.png" /></p>
 <div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">lab_item</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
@@ -718,7 +718,7 @@ Ideally, you won't need to modify the HTML on this page.  Save it and use CSS ex
 
 </li>
 <li>
-<p>Use <code>grid-template-areas</code> to specify this layout of elements in the <code>.lab-item</code> grid:</p>
+<p>Use <code>grid-template-areas</code> to specify this layout of elements in the <code>.lab_item</code> grid:</p>
 <p><img alt="Named grid-template-areas" src="named.png" /></p>
 <div class="codehilite"><pre><span></span>    <span class="nt">grid-template-areas</span><span class="o">:</span>
         <span class="s2">&quot;image number&quot;</span>
@@ -755,7 +755,7 @@ Ideally, you won't need to modify the HTML on this page.  Save it and use CSS ex
 </div>
 <h3 id="reach-goals">Reach Goals</h3>
 <p>Use <code>@media</code> queries to make the page layout responsive to smaller screens.  For example, you may wish to have the layout switch to a two-column grid of labs below 640px and to a single column grid below 400px.  </p>
-<p>And/or you may want the grid layout of the <code>.lab-item</code> info cards themselves to change at lower resolutions. </p>
+<p>And/or you may want the grid layout of the <code>.lab_item</code> info cards themselves to change at lower resolutions. </p>
 <p>Use relative font-sizing (<code>rem</code>) to set the font-size of different elements on the page.</p>
 <p>And, as always, leverage what you've learned about CSS more generally to create an aesthetically-pleasing webpage.</p>
     
