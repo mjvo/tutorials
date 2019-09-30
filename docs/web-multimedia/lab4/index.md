@@ -149,9 +149,9 @@ Use the following step-by-step to make sure you meet the minimum requirements to
 
 1.  Set the gap between rows to 15 pixels and the gap between columns at 10 pixels.
 
-1.  Use the `grid-column` declaration to set the `#page-title` element to span all three columns (e.g. from the first grid-line to the fourth.)
+1.  Use the `grid-column` declaration to set the `#page_title` element to span all three columns (e.g. from the first grid-line to the fourth.)
 
-1. Now turn your attention to the `<article>` elements.  Use CSS grid to layout the content of each `.lab-item` info card with the following fractional widths designating 2 columns and 3 rows:
+1. Now turn your attention to the `<article>` elements.  Use CSS grid to layout the content of each `.lab_item` info card with the following fractional widths designating 2 columns and 3 rows:
 
     ![Fractional Widths](fractional.png)
 
@@ -163,7 +163,7 @@ Use the following step-by-step to make sure you meet the minimum requirements to
     }
     ```
 
-1. Use `grid-template-areas` to specify this layout of elements in the `.lab-item` grid:
+1. Use `grid-template-areas` to specify this layout of elements in the `.lab_item` grid:
 
     ![Named grid-template-areas](named.png)
 
@@ -199,7 +199,7 @@ Use the following step-by-step to make sure you meet the minimum requirements to
 
 Use `@media` queries to make the page layout responsive to smaller screens.  For example, you may wish to have the layout switch to a two-column grid of labs below 640px and to a single column grid below 400px.  
 
-And/or you may want the grid layout of the `.lab-item` info cards themselves to change at lower resolutions. 
+And/or you may want the grid layout of the `.lab_item` info cards themselves to change at lower resolutions. 
 
 Use relative font-sizing (`rem`) to set the font-size of different elements on the page.
 
