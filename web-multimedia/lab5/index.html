@@ -1,0 +1,1045 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="CSS Animations and HTML5 Media">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Lab 5</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#css-animations-and-html5-media" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Mark Olson's Lab & Tutorial Repo" class="md-header-nav__button md-logo">
+          
+            <img src="../../images/avatar.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Mark Olson's Lab & Tutorial Repo
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Lab 5
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Mark Olson's Lab & Tutorial Repo" class="md-nav__button md-logo">
+      
+        <img src="../../images/avatar.svg" width="48" height="48">
+      
+    </a>
+    Mark Olson's Lab & Tutorial Repo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Circuits
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Circuits
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/tinkercad/" title="Tinkercad" class="md-nav__link">
+      Tinkercad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/attiny85/" title="ATtiny85" class="md-nav__link">
+      ATtiny85
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/feather/" title="Feather M0" class="md-nav__link">
+      Feather M0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/blynk/" title="Blynk" class="md-nav__link">
+      Blynk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/mqtt/" title="MQTT" class="md-nav__link">
+      MQTT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/instagram/" title="Instagram API" class="md-nav__link">
+      Instagram API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../circuits/twitter/" title="Twitter API" class="md-nav__link">
+      Twitter API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Machine Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Machine Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../machine-learning/pytorch-dcgan/" title="PyTorch DCGAN" class="md-nav__link">
+      PyTorch DCGAN
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Web &amp; Multimedia
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Web &amp; Multimedia
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab1/" title="Lab 1" class="md-nav__link">
+      Lab 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab2/" title="Lab 2" class="md-nav__link">
+      Lab 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab3/" title="Lab 3" class="md-nav__link">
+      Lab 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab4/" title="Lab 4" class="md-nav__link">
+      Lab 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 5
+      </label>
+    
+    <a href="./" title="Lab 5" class="md-nav__link md-nav__link--active">
+      Lab 5
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#css-animations-and-html5-media" class="md-nav__link">
+    CSS Animations and HTML5 Media
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-a" class="md-nav__link">
+    Requirements for a &#10003;
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-transition-countdown-bar" class="md-nav__link">
+    CSS Transition Countdown Bar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-ball-animation" class="md-nav__link">
+    CSS Ball Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html5-video-with-subtitles" class="md-nav__link">
+    HTML5 Video with Subtitles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reach-goals" class="md-nav__link">
+    Reach Goals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#css-animations-and-html5-media" class="md-nav__link">
+    CSS Animations and HTML5 Media
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-for-a" class="md-nav__link">
+    Requirements for a &#10003;
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-transition-countdown-bar" class="md-nav__link">
+    CSS Transition Countdown Bar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-ball-animation" class="md-nav__link">
+    CSS Ball Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html5-video-with-subtitles" class="md-nav__link">
+    HTML5 Video with Subtitles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reach-goals" class="md-nav__link">
+    Reach Goals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+    
+    
+        
+        <div id="titleb4authors">
+            <h1 class="titleb4authors">Lab 5</h1>
+                <p style="float:left;">Last Update: <em>2019-10-18</em></p>
+                
+                <p style="float:right;">Author(s): <em>Mark Olson</em></p>
+                
+                <hr />
+            </div> 
+        
+    
+    <div class="admonition danger">
+<p>Due:  <em><strong><em>Second</em> Lab Section meeting of the week of October 21<sup>st</sup></strong></em></p>
+</div>
+<h2 id="css-animations-and-html5-media"><strong>CSS Animations and HTML5 Media</strong></h2>
+<h3 id="overview"><strong>Overview</strong></h3>
+<p>The fifth lab assignment encompasses three goals:</p>
+<ul>
+<li>
+<p>Use CSS Transitions to animate the width property in a stepwise fashion to create a 5-second "countdown bar" that activates on <code>:hover</code>.</p>
+</li>
+<li>
+<p>Use CSS Animations to create a looping animation of a beach ball moving down a hill.</p>
+</li>
+<li>
+<p>Use the HTML5 <code>&lt;video&gt;</code> element to embed an .mp4 video on your page and subtitle it using a <a href="http://html5doctor.com/video-subtitling-and-webvtt/">VTT subtitle</a> <code>&lt;track&gt;</code> element.  </p>
+</li>
+</ul>
+<p>These HTML, CSS, and media files are provided for you as a starting point:  <a href="lab05.zip">lab005.zip</a></p>
+<p>Download and unzip.  Place the <code>lab05</code> folder in the <code>labs</code> folder in your local site.</p>
+<hr>
+
+<h3 id="requirements-for-a"><strong>Requirements for a &#10003;</strong></h3>
+<p>Use the following step-by-step to make sure you meet the minimum requirements to earn a <strong>&#10003;</strong> for this assignment.  Scroll down to the <a href="#reach-goals-for-a">Reach Goals</a> section below for suggestions to extend your work to attain a <strong>&#10003;+</strong>.</p>
+<ol>
+<li>
+<p>Launch Brackets.</p>
+</li>
+<li>
+<p>Choose File &rarr; Open Folder from the main menu and then locate the unzipped <code>lab05</code> folder.</p>
+</li>
+<li>
+<p>Familiarize yourself with the existing HTML in <code>index.html</code>, reproduced here for your convenience:</p>
+<div class="codehilite"><pre><span></span> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Lab 05 - CSS Animations and HTML5 Media<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./css/lab05.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">stylesheet</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>CSS Animations and HTML5 Media<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;countdown&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Stepped Countdown Bar<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bar&quot;</span><span class="p">&gt;</span>Countdown<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ball-roll&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Rolling Ball Animation<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;anim-container&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/beach-ball-svgrepo-com.svg&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;media&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>HTML5 Video<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+</li>
+<li>
+<p>Familiarize yourself with the existing CSS in the <code>css/lab05.css</code> file, reproduced here for your convience:</p>
+<div class="codehilite"><pre><span></span><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span> <span class="p">{</span>
+    <span class="c">/* a little breathing room between sections */</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* count-down bar */</span>
+<span class="p">.</span><span class="nc">bar</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">750</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">4</span><span class="kt">rem</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#deb887</span><span class="p">;</span>
+    <span class="k">line-height</span><span class="p">:</span> <span class="mi">4</span><span class="kt">rem</span><span class="p">;</span>
+    <span class="k">padding-left</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* the &quot;scene&quot; for our rolling ball animation */</span>
+<span class="p">#</span><span class="nn">anim-container</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">1000</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+    <span class="c">/* generate a &quot;hill&quot; using CSS linear-gradient */</span>
+    <span class="k">background-image</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">10</span><span class="kt">deg</span><span class="p">,</span> <span class="mh">#013A6B</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#87ceeb</span> <span class="mi">50</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* size and position the beachball before animation */</span>
+<span class="p">.</span><span class="nc">ball</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">left</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<hr>
+
+</li>
+</ol>
+<h4 id="css-transition-countdown-bar"><strong>CSS Transition Countdown Bar</strong></h4>
+<p>In this section of the tutorial, you will write the CSS necessary to animate the <code>&lt;div&gt;</code> with a class of <code>bar</code> to shrink in a step-wise fashion over 5 seconds.  </p>
+<ol>
+<li>
+<p>Find the <code>.bar</code> selector in your <code>css/lab05.css</code> file.   This CSS defines the "starting" state of the transition.  Note that the <code>width</code> property is set to <code>1000px</code>.</p>
+</li>
+<li>
+<p>Immediately below the CSS block for the <code>.bar</code> selector, create a new block of CSS for <code>.bar:hover:</code>.   This block will define the "end" state of the transition.  At the end of our transition, we want the countdown bar to be shorter (500px, for example).  Replace the comment in the CSS snippet below with the appropriate code.</p>
+<p>```css
+.bar:hover {
+    /<em> write your css here for the 'end state' of your transition </em>/
+}</p>
+</li>
+<li>
+<p>Test the non-interpolating (no transition - yet!) animation by mousing over the countdown bar in the browser preview of your lab page.</p>
+</li>
+<li>
+<p>Next we will add to the <code>.bar</code> CSS selector block the CSS necessary to interpolate the transition.   Find the <code>.bar</code> CSS selector block,and then add the following CSS property declarations <em>before</em> its closing <code>}</code>.  </p>
+<ul>
+<li><code>transition-property</code></li>
+<li><code>transition-duration</code></li>
+<li><code>transition-timing-function</code></li>
+<li><code>transition-delay</code></li>
+</ul>
+<p>Use <code>linear</code> for the <code>transition-timing-function</code> and <code>5s</code> for the <code>transition-duration</code>, for now.  It's up to you to determine what other values to use.  See <a href="https://www.w3schools.com/css/css3_transitions.asp">w3schools.com's CSS Transitions</a> if you need a review.</p>
+<p>If you are comfortable with the different components of a CSS transition, feel free to use the <code>transition</code> shorthand.  </p>
+</li>
+<li>
+<p>Test your <em>linear</em> transition now in the Brackets preview.</p>
+</li>
+<li>
+<p>Now change the <code>transition-timing-function</code> from <code>linear</code> to <code>steps(x)</code>, where <code>x</code> is the number of steps you want your transition to take.  [Remember, we want a 5 second countdown timer].  Your goal is to have your transition animation increment once per second over 5 seconds.</p>
+</li>
+<li>
+<p>Test your <em>step-wise</em> transition now in the Brackets preview.</p>
+</li>
+<li>
+<p>Note that there's a <em>delay</em> of a step before the animation starts when using stepwise interpolation.  This can be remedied by setting the <code>direction</code> parameter of the <code>steps()</code> declaration of the <code>transition-timing-function</code> property.  See Joni Trythall's <a href="https://designmodo.com/steps-css-animations/"><q>How to Use steps() in CSS Animations</q> (designmodo)</a>.</p>
+<p>See if you can figure out whether <code>start</code> or <code>end</code> is the appropriate parameter to use, and why.</p>
+</li>
+</ol>
+<p>Your end result should look like this:<br>
+<img alt="Sample Countdown Bar" src="stepped_bar_final.gif" /></p>
+<p>If that seemed easy, try the <a href="#reach-goals-for-a">Reach Goal</a> of adding a text indicator to your countdown bar.</p>
+<hr>
+
+<h4 id="css-ball-animation"><strong>CSS Ball Animation</strong></h4>
+<p>In this section of the tutorial, you'll animate an SVG of a beachball so that it moves down a hill.  </p>
+<p>Again, first familiarize yourself with the HTML and CSS you've been given.  Find the <code>&lt;section&gt;</code> element in the HTML file with an ID of <code>ball-roll</code>.  Note the elements in this section:  An <code>&lt;h2&gt;</code> subtitle, a <code>&lt;div&gt;</code> container for the animation (<code>#anim-container</code>) with a width of 1000px and height of 400px and a background gradient that gives the impression of a hill.  Inside (and <em>relative</em> to) that container is an SVG image of beachball, sized and positioned using CSS.</p>
+<ol>
+<li>
+<p>Unlike CSS transitions, a CSS animation is defined independently of the selectors to which it will later be applied.  It is defined in an <code>@keyframes</code> block. </p>
+</li>
+<li>
+<p>In the <code>css/lab05.css</code> file, locate the <code>#anim-container</code> CSS block and <em>below</em> its closing <code>}</code>, at the following CSS:</p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">keyframes</span> <span class="nt">downhill</span> <span class="p">{</span>
+    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span> 
+        <span class="c">/* start state CSS goes here */</span>
+    <span class="p">}</span>
+    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="c">/* end state CSS goes here */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Note the syntax:  <code>@keyframes</code> is followed by the <em>name of the animation</em> (arbitrary and decided by you) and is followed by opening <code>{</code> and closing <code>}</code>.  Inside those curly brackets are a start point (<code>0%</code>) and end point (<code>100%</code>), each with their own set of curly brackets inside which you declare the starting and ending states of the animation using <a href="https://www.quackit.com/css/css3/animations/animatable_properties/">animatable CSS properties</a>.</p>
+</li>
+<li>
+<p>Since we want to move the ball to the right and down over the course of the animation, we could animate using <em>either</em>:</p>
+<ul>
+<li>The <code>left</code> and <code>top</code> CSS properties<br>&ndash; or &ndash;<br></li>
+<li>The CSS <a href="https://www.w3schools.com/cssref/css3_pr_transform.asp"><code>transform</code></a> property</li>
+</ul>
+<p>There are pros and cons to either approach, best learned through exploration and trial and error.  You are encouraged to explore both to see how they animate differently.  For now, we will use the <code>left</code> and <code>top</code> CSS properties.</p>
+<ol>
+<li>
+<p>We know that we want the starting state of our animation to match what we see now.   So in the <code>0%</code> section of the <code>@keyframes downhill</code> block, enter the same <code>top</code> and <code>left</code> position as the <code>.ball</code> class' current state:</p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">keyframes</span> <span class="nt">downhill</span> <span class="p">{</span>
+    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span> 
+        <span class="c">/* start state CSS goes here */</span>
+<span class="hll">        <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">left</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="c">/* end state CSS goes here */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>We also know that our <code>#anim-container</code> div is 1000px wide x 400px tall. If we want the ball follow the decline of the hill, we know that the <code>top</code> and <code>left</code> declarations need to be modified in a mathematical manner.  <em>If we know that the ball needs to travel a 10 degree decline over 1000 pixels, <strong>what does its vertical travel need to be, rounded to the nearest pixel?</strong></em> </p>
+<p><img alt="Diagram of decline" src="trig_calc.png" /></p>
+<p>Here we can use <a href="https://courses.lumenlearning.com/boundless-algebra/chapter/trigonometry-and-right-triangles/">right triangle trigonometry</a>, where the following applies: <span><span class="MathJax_Preview">tan(angle) = \frac{opposite \ leg}{adjacent \ leg}</span><script type="math/tex">tan(angle) = \frac{opposite \ leg}{adjacent \ leg}</script></span></p>
+<p>Since we know the angle (10) and the adjacent leg (1000), we can calculate the length of the opposite leg.  Do the math and see if you can figure out the precise pixel change needed.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Don't forget that the <code>.ball</code> is starting already 50 pixels down from the top edge of its container(e.g. <code>top: 50px;</code>).  You need to account for that when you calculate the distance it needs to travel.  In other words, add 50 pixels to the calculated length of the opposite leg above.</p>
+<p>You can test your values by temporarily plugging them into the <code>.ball</code> CSS block but be sure to restore <code>left</code> and <code>top</code> to their original values when you're done testing.</p>
+</div>
+</li>
+<li>
+<p>Enter your calculations into the <code>100%</code> end state declaration of your <code>@keyframes downhill</code> block:</p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">keyframes</span> <span class="nt">downhill</span> <span class="p">{</span>
+    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span> 
+        <span class="c">/* start state CSS goes here */</span>
+<span class="hll">        <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span><span class="hll">        <span class="k">left</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="c">/* end state CSS goes here */</span>
+        <span class="k">top</span><span class="p">:</span>  <span class="o">??</span> <span class="n">px</span><span class="p">;</span> <span class="c">/* you calculate: opposite leg + 50px */</span>
+        <span class="k">left</span><span class="p">:</span> <span class="mi">1010</span> <span class="n">px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+</ol>
+</li>
+<li>
+<p>Fantastic!  Now we're ready to apply the <code>@keyframes downhill</code> animation to our <code>.ball</code> SVG image.  </p>
+<ol>
+<li>
+<p>Within the <code>.ball</code> CSS block and before its closing <code>}</code>, enter the following CSS declarations:</p>
+<div class="codehilite"><pre><span></span><span class="nt">animation-name</span><span class="o">:</span> <span class="nt">downhill</span><span class="o">;</span> <span class="c">/* name of the animation to apply */</span>
+<span class="nt">animation-duration</span><span class="o">:</span> <span class="nt">4s</span><span class="o">;</span> <span class="c">/* length of the animation, in sec or ms */</span>
+<span class="nt">animation-delay</span><span class="o">:</span> <span class="nt">1s</span><span class="o">;</span> <span class="c">/* how long to delay before start of animation */</span>
+<span class="nt">animation-iteration-count</span><span class="o">:</span> <span class="nt">1</span><span class="o">;</span> <span class="c">/* number of times to play, can be infinite */</span>
+</pre></div>
+
+</li>
+<li>
+<p>Use Brackets to preview the animation.  Reload the page to play it again.  It should look like this:</p>
+<p><img alt="Ball Roll 1" src="ball-roll1.gif" /></p>
+</li>
+<li>
+<p>Note that the ball, when it reaches the edge of its container, spills into the page.  It would be more convincing if it rolled "out of the frame."  To accomplish this, add the following CSS inside the <code>#anim-container</code> block, before its closing <code>}</code>:</p>
+<div class="codehilite"><pre><span></span><span class="nt">overflow</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
+</pre></div>
+
+</li>
+<li>
+<p>Think for a minute about the experience of watching a ball rolling down a hill.  Doesn't it pick up speed as it travels?   We can change the behavior of the animation by modifying its <a href="https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp"><code>animation-timing-function</code> property</a> (aka its speed curve or interpolation function).  Try adding the following to the <code>.ball</code> CSS block:</p>
+<div class="codehilite"><pre><span></span><span class="nt">animation-name</span><span class="o">:</span> <span class="nt">downhill</span><span class="o">;</span> <span class="c">/* name of the animation to apply */</span>
+<span class="nt">animation-duration</span><span class="o">:</span> <span class="nt">4s</span><span class="o">;</span> <span class="c">/* length of the animation, in sec or ms */</span>
+<span class="nt">animation-delay</span><span class="o">:</span> <span class="nt">1s</span><span class="o">;</span> <span class="c">/* how long to delay before start of animation */</span>
+<span class="nt">animation-iteration-count</span><span class="o">:</span> <span class="nt">1</span><span class="o">;</span> <span class="c">/* number of times to play, can be infinite */</span>
+<span class="hll"><span class="nt">animation-timing-function</span><span class="o">:</span> <span class="nt">ease-in</span><span class="o">;</span>
+</span></pre></div>
+
+</li>
+<li>
+<p>Additionally, if we don't want the animation to "reset" back to its first frame upon completion, we can make use of the <a href="https://www.w3schools.com/cssref/css3_pr_animation-fill-mode.asp"><code>animation-fill-mode</code> property</a>.  Setting it to <code>forwards</code> will stop the animation on the last keyframe (<code>100%</code>) and prevent it from resetting to its starting state:</p>
+<div class="codehilite"><pre><span></span><span class="nt">animation-name</span><span class="o">:</span> <span class="nt">downhill</span><span class="o">;</span> <span class="c">/* name of the animation to apply */</span>
+<span class="nt">animation-duration</span><span class="o">:</span> <span class="nt">4s</span><span class="o">;</span> <span class="c">/* length of the animation, in sec or ms */</span>
+<span class="nt">animation-delay</span><span class="o">:</span> <span class="nt">1s</span><span class="o">;</span> <span class="c">/* how long to delay before start of animation */</span>
+<span class="nt">animation-iteration-count</span><span class="o">:</span> <span class="nt">1</span><span class="o">;</span> <span class="c">/* number of times to play, can be infinite */</span>
+<span class="nt">animation-timing-function</span><span class="o">:</span> <span class="nt">ease-in</span><span class="o">;</span>
+<span class="hll"><span class="nt">animation-fill-mode</span><span class="o">:</span> <span class="nt">forwards</span><span class="o">;</span> 
+</span></pre></div>
+
+</li>
+</ol>
+</li>
+<li>
+<p>What else can we do to make the ball rolling animation more convincing?  The ball should actually "roll" shouldn't it?  Rotate clockwise as it moves down the hill?  Creating this effect is simple using the <code>rotate(deg)</code> capabilites of the <a href="https://www.w3schools.com/cssref/css3_pr_transform.asp">CSS <code>transform</code> property</a>. </p>
+<p>Modify your <code>@keyframes downhill</code> animation to include a rotate of 0 degrees as a starting point, and then let's assume it rotates <em>two full rotations</em> by the end of the animation, or 720 degrees:</p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">keyframes</span> <span class="nt">downhill</span> <span class="p">{</span>
+    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">left</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="hll">        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">top</span><span class="p">:</span> <span class="o">??</span> <span class="n">px</span><span class="p">;</span> <span class="c">/* nice try - you still need to calculate this value */</span>
+        <span class="k">left</span><span class="p">:</span> <span class="mi">1010</span><span class="kt">px</span><span class="p">;</span>
+<span class="hll">        <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">720</span><span class="kt">deg</span><span class="p">);</span> <span class="c">/* 2 x 360 degree full rotation */</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</li>
+</ol>
+<p>Your final animation should look like this:</p>
+<video width="90%" controls>
+    <source src="ball-roll2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<hr>
+
+<h4 id="html5-video-with-subtitles"><strong>HTML5 Video with Subtitles</strong></h4>
+<p>In this final section of the tutorial, you'll use the <a href="https://www.w3schools.com/tags/tag_video.asp">HTML5 <code>&lt;video&gt;</code> element</a> to display a video on your page.</p>
+<ol>
+<li>
+<p>In your HTML file, find the section with an id of <code>media</code>.</p>
+</li>
+<li>
+<p>Beneath the <code>&lt;h2&gt;</code> subtitle element, create a <code>&lt;video&gt;</code> element.  </p>
+</li>
+<li>
+<p>Add the <code>controls</code> attribute so that the play and volume controls are presented to the viewer.</p>
+<p>Optional:  In Chrome the default HTML5 media player has a "download" option in its control set.  If you wish to disable, at the following to your video element:  <code>controlsList="nodownload"</code></p>
+</li>
+<li>
+<p>Within that <code>&lt;video&gt;</code> element, add a <code>&lt;source&gt;</code> element, with an <code>src</code> attribute that points to the <code>cockroach.mp4</code> file in the <code>video</code> folder.  Also be sure to set the <code>type</code> attribute to <code>video/mp4</code> since this is an h.264-encoded video in an mp4 container.</p>
+</li>
+<li>
+<p>Check your work in the Brackets preview.  </p>
+</li>
+<li>
+<p>Now we can add a subtitle track by including a <a href="https://www.w3schools.com/tags/tag_track.asp"><code>&lt;track&gt;</code> element</a> as a child of the <code>&lt;video&gt;</code> / sibling of the <code>&lt;source&gt;</code> element:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./video/subtitles.vtt&quot;</span> <span class="na">kind</span><span class="o">=</span><span class="s">&quot;subtitles&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;English&quot;</span><span class="p">&gt;</span>
+</pre></div>
+
+</li>
+<li>
+<p>In the video playback controls, you should now see a &vellip; and be able to locate and turn on the "English" subtitles.  </p>
+<p>[The symbol may be different in other browsers.  In Firefox, for example, the <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Closed_captioning_symbol.svg" width=20px height=auto> symbol is used.]</p>
+</li>
+<li>
+<p>Finally, edit the <code>video/subtitles.vtt</code> file in Brackets to create your own original "caption this" narrative for the <a href="https://www.cnn.com/2019/10/19/us/nyc-cigarette-cockroach-viral-video-trnd/index.html">Cigarette Cockroach</a> video.  </p>
+<p>The timestamp format should be in one of two formats:</p>
+<ul>
+<li><code>mm:ss.ttt</code> (currently used)</li>
+<li>or, for longer videos, <code>hh:mm:ss.ttt</code></li>
+</ul>
+<p><code>hh</code> is hours (must be <em>at least</em> two digits. use a leading 0 for single digit hours, e.g. 03) <br />
+<code>mm</code> is minutes (must be two digits, 00 to 59) <br />
+<code>ss</code> is seconds (must be two digits, 00 to 59)
+<code>ttt</code> is milliseconds (must be three digits, 00 to 999)</p>
+</li>
+<li>
+<p>If you wish to have the subtitles / captions turned on without requiring the viewer to turn them on, you can add the <code>default</code> attribute to the <code>&lt;track&gt;</code> element, such as:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./video/subtitles.vtt&quot;</span> <span class="na">kind</span><span class="o">=</span><span class="s">&quot;subtitles&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;English&quot;</span> <span class="na">default</span><span class="p">&gt;</span>
+</pre></div>
+
+</li>
+</ol>
+<p>Your results should look like this:<br>
+<img alt="HTML5 video" src="video.gif" /></p>
+<hr>
+
+<h3 id="reach-goals"><strong>Reach Goals</strong></h3>
+<p>Some suggestions to extend your work in this lab:</p>
+<ul>
+<li>
+<p>Create a second countdown bar using CSS animation (not the transition property) with <strong>text that decrements from "5 seconds" to "0 seconds" as the bar width shrinks</strong>.  Hint: Use the <a href="https://www.w3schools.com/cssref/pr_gen_content.asp">CSS Content property</a> along with the <a href=""><code>::before</code></a> or <a href="https://www.w3schools.com/cssref/sel_after.asp"><code>::after</code></a> pseudo-selectors in your <code>@keyframe</code> animation.</p>
+</li>
+<li>
+<p>Make your ball "bounce" a little bit as it moves down the hill.  This can be accomplished by adding more frames to your existing <code>@keyframes downhill</code> animation, or you can create a second animation, <code>@keyframes bounce</code> and also apply it to the SVG ball.</p>
+</li>
+<li>
+<p>Add a poster attribute to your HTML5 <code>&lt;video&gt;</code> element and then style the <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">WebVTT subtitles</a> to add nuance to your narrative.  Styling the subtitles in your <code>css/lab05.css</code> file will affect all videos covered by that stylesheet.  Styling within the VTT file itself will only affect the specific video.</p>
+</li>
+</ul>
+<p>Have fun!</p>
+    
+        
+    
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../lab4/" title="Lab 4" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 4
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
