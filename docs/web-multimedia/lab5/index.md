@@ -115,15 +115,16 @@ Use the following step-by-step to make sure you meet the minimum requirements to
 
 In this section of the tutorial, you will write the CSS necessary to animate the `<div>` with a class of `bar` to shrink in a step-wise fashion over 5 seconds.  
 
-1.  Find the `.bar` selector in your `css/lab05.css` file.   This CSS defines the "starting" state of the transition.  Note that the `width` property is set to `1000px`.
+1.  Find the `.bar` selector in your `css/lab05.css` file.   This CSS defines the "starting" state of the transition.  Note that the `width` property is set to `750px`.
 
-1.  Immediately below the CSS block for the `.bar` selector, create a new block of CSS for `.bar:hover:`.   This block will define the "end" state of the transition.  At the end of our transition, we want the countdown bar to be shorter (500px, for example).  Replace the comment in the CSS snippet below with the appropriate code.
+1.  Immediately below the CSS block for the `.bar` selector, create a new block of CSS for `.bar:hover`.   This block will define the "end" state of the transition.  At the end of our transition, we want the countdown bar to be shorter (500px, for example).  Replace the comment in the CSS snippet below with the appropriate code.
 
     ```css
     .bar:hover {
         /* write your css here for the 'end state' of your transition */
     }
-
+    ```
+    
 1. Test the non-interpolating (no transition - yet!) animation by mousing over the countdown bar in the browser preview of your lab page.
 
 1. Next we will add to the `.bar` CSS selector block the CSS necessary to interpolate the transition.   Find the `.bar` CSS selector block,and then add the following CSS property declarations _before_ its closing `}`.  
