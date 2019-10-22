@@ -725,14 +725,15 @@
 <p>In this section of the tutorial, you will write the CSS necessary to animate the <code>&lt;div&gt;</code> with a class of <code>bar</code> to shrink in a step-wise fashion over 5 seconds.  </p>
 <ol>
 <li>
-<p>Find the <code>.bar</code> selector in your <code>css/lab05.css</code> file.   This CSS defines the "starting" state of the transition.  Note that the <code>width</code> property is set to <code>1000px</code>.</p>
+<p>Find the <code>.bar</code> selector in your <code>css/lab05.css</code> file.   This CSS defines the "starting" state of the transition.  Note that the <code>width</code> property is set to <code>750px</code>.</p>
 </li>
 <li>
-<p>Immediately below the CSS block for the <code>.bar</code> selector, create a new block of CSS for <code>.bar:hover:</code>.   This block will define the "end" state of the transition.  At the end of our transition, we want the countdown bar to be shorter (500px, for example).  Replace the comment in the CSS snippet below with the appropriate code.</p>
-<p>```css
-.bar:hover {
-    /<em> write your css here for the 'end state' of your transition </em>/
-}</p>
+<p>Immediately below the CSS block for the <code>.bar</code> selector, create a new block of CSS for <code>.bar:hover</code>.   This block will define the "end" state of the transition.  At the end of our transition, we want the countdown bar to be shorter (500px, for example).  Replace the comment in the CSS snippet below with the appropriate code.</p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">bar</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="c">/* write your css here for the &#39;end state&#39; of your transition */</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>Test the non-interpolating (no transition - yet!) animation by mousing over the countdown bar in the browser preview of your lab page.</p>
