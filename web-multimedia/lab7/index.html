@@ -737,13 +737,15 @@
 
 </li>
 <li>
-<p>Finally, you can add an event listener to the "submit" button to call the <code>goMadLib()</code> function on the click event:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">submitBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">);</span>
-<span class="nx">submitBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">goMadLib</span><span class="p">);</span>
-</pre></div>
+<p>Finally, you can add an event listener to the "submit" button to call the <code>goMadLib()</code> function on the click event.  Importantly, this needs to be <strong>outside</strong> of the <code>goMadLib()</code> function.   So add the following <em>after</em> the closing curly bracket of your function:</p>
+<div class="codehilite"><pre><span></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">newContent</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="hll"><span class="kd">let</span> <span class="nx">submitBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="nx">submitBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">goMadLib</span><span class="p">);</span>
+</span></pre></div>
 
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition warning">
+<p class="admonition-title">SUPER IMPORTANT</p>
 <p>By default, a form button will force a page reload, as if you are submitting your form data to a remote database.  We need to override that behavior for this exercise, as we don't want the page to reload.   Add the following <code>onsubmit</code> attribute to the <code>&lt;form&gt;</code> element in your HTML:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;formData&quot;</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&quot;event.preventDefault();&quot;</span><span class="p">&gt;</span>
 </pre></div>
