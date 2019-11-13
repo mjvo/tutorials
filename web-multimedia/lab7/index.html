@@ -742,8 +742,16 @@
 <span class="nx">submitBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">goMadLib</span><span class="p">);</span>
 </pre></div>
 
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>By default, a form button will force a page reload, as if you are submitting your form data to a remote database.  We need to override that behavior for this exercise, as we don't want the page to reload.   Add the following <code>onclick</code> attribute to the <code>&lt;form&gt;</code> element in your HTML:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;formData&quot;</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&quot;event.preventDefault();&quot;</span><span class="p">&gt;</span>
+</pre></div>
+
+</div>
 </li>
 </ol>
+<p>If you encounter errors, use the Javascript Console in Chrome's Developer tools to troubleshoot.</p>
 <h3 id="reach-goals"><strong>Reach Goals</strong></h3>
 <p>Some suggestions to extend your work in this lab:</p>
 <ul>
@@ -754,7 +762,7 @@
 <p>Create a "reset" button that clears out all data, clears the story, and returns the input form to its empty state.</p>
 </li>
 <li>
-<p>Use Javascript for basic form validation, ensuring that no fields are left blank.  </p>
+<p>Use Javascript for basic form validation, ensuring that no fields are left blank.  Hint: this can be added to form inputs using the "onblur" event through the <code>addEventListener()</code> method.</p>
 </li>
 </ul>
     
