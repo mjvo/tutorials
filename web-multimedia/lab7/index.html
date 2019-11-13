@@ -690,7 +690,7 @@
 
 <p>Now that we have the form object, we can access each form element and its value by using the  the <code>.namedItem()</code> method on the <a href="https://www.w3schools.com/jsref/coll_form_elements.asp">form elements collection</a>:</p>
 <div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">goMadLib</span><span class="p">()</span> <span class="p">{</span> 
-    <span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
 
 <span class="hll">    <span class="kd">let</span> <span class="nx">adj1</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;adjective1&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
 </span><span class="hll">    <span class="kd">let</span> <span class="nx">clothing</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;clothing&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
@@ -716,7 +716,7 @@
     <span class="kd">let</span> <span class="nx">clothing</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;clothing&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
     <span class="c1">// continue with your remaining inputs (not all listed above)</span>
 
-<span class="hll">    <span class="kd">let</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="s2">&quot;On a &quot;</span> <span class="o">+</span> <span class="nx">adj1</span> <span class="s2">&quot; November day, &quot;</span><span class="p">;</span>
+<span class="hll">    <span class="kd">let</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="s2">&quot;On a &quot;</span> <span class="o">+</span> <span class="nx">adj1</span> <span class="o">+</span> <span class="s2">&quot; November day, &quot;</span><span class="p">;</span>
 </span><span class="hll">
 </span><span class="hll">    <span class="nx">newContent</span> <span class="o">+=</span> <span class="s2">&quot;I woke up to the &quot;</span> <span class="o">+</span> <span class="nx">adj2</span> <span class="o">+</span> <span class="s2">&quot; smell of &quot;</span> <span class="o">+</span> <span class="nx">liquid</span> <span class="o">+</span> <span class="s2">&quot; percolating in the &quot;</span> <span class="o">+</span> <span class="nx">room</span> <span class="o">+</span> <span class="s2">&quot; downstairs.&quot;</span><span class="p">;</span>
 </span><span class="hll">
@@ -751,7 +751,7 @@
 <p>Instead of storing each verb, adjective, noun in its own variable, store them in an array using the array <code>push()</code> method and then use array indexes to display them in the Mad Lib.</p>
 </li>
 <li>
-<p>Create a "reset" button that clears out all data and returns to the input form.</p>
+<p>Create a "reset" button that clears out all data, clears the story, and returns the input form to its empty state.</p>
 </li>
 <li>
 <p>Use Javascript for basic form validation, ensuring that no fields are left blank.  </p>
