@@ -671,16 +671,17 @@
 <li>
 <p>Let's first create a function that will, once fully implemented, grab all of the form input values and insert them into your MadLib narrative.    </p>
 <p>A function is declared with the keyword <code>function</code>, followed by an arbitrary (but hopefully semantically informative) function name, followed by a pair of parenthesis (which optionally contain the function's arguments as variables).  The function itself follows those parenthesis, enclosed in curly brackets.  In this case, we'll create a function called "goMadLib" in betweeen the opening and closing <code>&lt;script&gt;</code> tags:</p>
-<p><code>javascript
-&lt;script type="text/javascript"&gt;
-    // javascript goes here
-    function goMadLib() {
-    // function javascript goes here
- }
- &lt;/script&gt;</code></p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="c1">// javascript goes here</span>
+<span class="hll">    <span class="kd">function</span> <span class="nx">goMadLib</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="hll">    <span class="c1">// function javascript goes here</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
 </li>
 <li>
-<p>Our next step is to use javascript to select each form input and assign its contents to its own variable.  You could do this by assigning each <code>&lt;input&gt;</code> an ID and then make use of the <code>getElementById</code> method.  But we already have assigned each element a "name" atttribute, so rather than create redundant IDs, we can instead grab the entire form by its ID and then make use of the <a href="https://www.w3schools.com/jsref/coll_form_elements.asp">form elements collection</a> in the DOM.</p>
+<p>Now let's populate the function with javascript that selects each form input and assign its contents to its own variable.  You <em>could</em> do this by assigning each <code>&lt;input&gt;</code> an ID and then make use of the <code>getElementById</code> method.  But we already have assigned each <code>&lt;input&gt;</code> element a "name" atttribute, so rather than create redundant IDs, we can instead grab the entire form by its ID and then make use of the <a href="https://www.w3schools.com/jsref/coll_form_elements.asp">form elements collection</a> from the DOM.  [But if you prefer to stick with the <code>getElementByID()</code> method, that's fine too!  There are several valid ways to accomplish most things in javascript.]</p>
 <p>First, declare a variable to hold the form object:</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
 </pre></div>
