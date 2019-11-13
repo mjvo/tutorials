@@ -628,7 +628,7 @@
 </li>
 <li>
 <p>Beneath the <code>&lt;legend&gt;</code> element, create labelled input fields for each of the words that your form will collect to insert into the narrative.  Your Mad Lib should collect at least eight (8) words.  For example:</p>
-<div class="codehilite"><pre><span></span> <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;form&quot;</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span> <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;formData&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Javascript Mad Libs<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
 <span class="hll">        <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Adjective: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;adjective1&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
@@ -668,7 +668,24 @@
 </pre></div>
 
 </li>
-<li></li>
+<li>
+<p>Our first step is to use javascript to select each form input and assign its contents to its own variable.  You could do this by assigning each <code>&lt;input&gt;</code> an ID and then make use of the <code>getElementById</code> method.  But we already have assigned each element a "name" atttribute, so rather than create redundant IDs, we can instead grab the entire form by its ID and then make use of the <a href="https://www.w3schools.com/jsref/coll_form_elements.asp">form elements collection</a> in the DOM.</p>
+<p>First, declare a variable to hold the form object:</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
+</pre></div>
+
+<p>Second, declare a unique variable for each input, specifying it using the following syntax:</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">adj1</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;adjective1&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">clothing</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;clothing&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+
+<span class="c1">// You&#39;ll of course modify the above with your own form input names</span>
+<span class="c1">// and make sure you assign all form inputs to their own respective values</span>
+<span class="c1">//</span>
+<span class="c1">//  The .item() method works the same as the .namedItem() method</span>
+<span class="c1">// let variable = formData.elements.item(&quot;input_name&quot;).value;</span>
+</pre></div>
+
+</li>
 </ol>
 <h3 id="reach-goals"><strong>Reach Goals</strong></h3>
 <p>Some suggestions to extend your work in this lab:</p>
