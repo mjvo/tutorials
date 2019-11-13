@@ -682,24 +682,66 @@
 </li>
 <li>
 <p>Now let's populate the function with javascript that selects each form input and assign its contents to its own variable.  You <em>could</em> do this by assigning each <code>&lt;input&gt;</code> an ID and then make use of the <code>getElementById</code> method.  But we already have assigned each <code>&lt;input&gt;</code> element a "name" atttribute, so rather than create redundant IDs, we can instead grab the entire form by its ID and then make use of the <a href="https://www.w3schools.com/jsref/coll_form_elements.asp">form elements collection</a> from the DOM.  [But if you prefer to stick with the <code>getElementByID()</code> method, that's fine too!  There are several valid ways to accomplish most things in javascript.]</p>
-<p>First, declare a variable to hold the form object:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
+<p>First, declare a variable to hold the form object.  Recall that the form was assigned an ID of "formData" (using proper camelcase):</p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">goMadLib</span><span class="p">()</span> <span class="p">{</span> 
+<span class="hll">    <span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
+</span><span class="p">}</span>
 </pre></div>
 
-<p>Second, declare a unique variable for each input, specifying it using the <code>.namedItem()</code> method using the following syntax:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">adj1</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;adjective1&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">clothing</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;clothing&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<p>Now that we have the form object, we can access each form element and its value by using the  the <code>.namedItem()</code> method on the <a href="https://www.w3schools.com/jsref/coll_form_elements.asp">form elements collection</a>:</p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">goMadLib</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
 
-<span class="c1">// You&#39;ll of course modify the above with your own form input names</span>
-<span class="c1">// and make sure you assign all form inputs to their own respective values</span>
-<span class="c1">//</span>
-<span class="c1">//  The .item() method works the same as the .namedItem() method</span>
-<span class="c1">// let variable = formData.elements.item(&quot;input_name&quot;).value;</span>
+<span class="hll">    <span class="kd">let</span> <span class="nx">adj1</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;adjective1&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span><span class="hll">    <span class="kd">let</span> <span class="nx">clothing</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;clothing&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span>    <span class="c1">// continue with your remaining inputs</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>You'll of course modify the above with your own form input names and make sure you assign all form inputs to their own respective values</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>.item()</code> method works the same as the <code>.namedItem()</code> method</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">variable</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="s2">&quot;input_name&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</li>
+<li>
+<p>Now that each form input's value is stored in its own variable, we can use those variables and some string operations to generate our MadLib text:</p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">goMadLib</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formData&quot;</span><span class="p">);</span>
+
+    <span class="kd">let</span> <span class="nx">adj1</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;adjective1&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">clothing</span> <span class="o">=</span> <span class="nx">formData</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">namedItem</span><span class="p">(</span><span class="s2">&quot;clothing&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+    <span class="c1">// continue with your remaining inputs (not all listed above)</span>
+
+<span class="hll">    <span class="kd">let</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="s2">&quot;On a &quot;</span> <span class="o">+</span> <span class="nx">adj1</span> <span class="s2">&quot; November day, &quot;</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="nx">newContent</span> <span class="o">+=</span> <span class="s2">&quot;I woke up to the &quot;</span> <span class="o">+</span> <span class="nx">adj2</span> <span class="o">+</span> <span class="s2">&quot; smell of &quot;</span> <span class="o">+</span> <span class="nx">liquid</span> <span class="o">+</span> <span class="s2">&quot; percolating in the &quot;</span> <span class="o">+</span> <span class="nx">room</span> <span class="o">+</span> <span class="s2">&quot; downstairs.&quot;</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="nx">newContent</span> <span class="o">+=</span> <span class="s2">&quot;I wrapped my &quot;</span> <span class="o">+</span> <span class="nx">bodypart</span> <span class="o">+</span> <span class="s2">&quot; in a warm &quot;</span> <span class="o">+</span> <span class="nx">clothing</span> <span class="o">+</span> <span class="s2">&quot; and sat down to ...&quot;</span><span class="p">;</span>
+</span><span class="p">}</span>
 </pre></div>
 
 </li>
 <li>
-<p>Now that each form input's value is stored in a variable, </p>
+<p>As a final step in our <code>goMadLib()</code> function, we'll use the <code>innerHTML()</code> method to insert the MadLib into the "content" DIV:</p>
+<div class="codehilite"><pre><span></span>    <span class="nx">newContent</span> <span class="o">+=</span> <span class="s2">&quot;I wrapped my &quot;</span> <span class="o">+</span> <span class="nx">bodypart</span> <span class="o">+</span> <span class="s2">&quot; in a warm &quot;</span> <span class="o">+</span> <span class="nx">clothing</span> <span class="o">+</span> <span class="s2">&quot; and sat down to ...&quot;</span><span class="p">;</span>
+
+    <span class="c1">// this sets the innerHTML of our content DIV to the concatenated </span>
+    <span class="c1">// string contained in the variable newContent </span>
+<span class="hll">    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="p">(</span><span class="nx">newContent</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Finally, you can add an event listener to the "submit" button to call the <code>goMadLib()</code> function on the click event:</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">submitBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">);</span>
+<span class="nx">submitBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">goMadLib</span><span class="p">);</span>
+</pre></div>
+
 </li>
 </ol>
 <h3 id="reach-goals"><strong>Reach Goals</strong></h3>
